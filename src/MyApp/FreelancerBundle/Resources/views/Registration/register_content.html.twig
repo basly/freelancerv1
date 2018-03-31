@@ -1,0 +1,227 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+<script>
+    $(document).ready(function(){
+        $('#titre').text('Register as Freelancer');
+        $('select').removeAttr('multiple');
+        $('select').val('ROLE_FREELANCER');
+        $('#job').hide(100);
+        $("#btn-free").addClass('active');
+        $("#btn-job").removeClass('active');
+        $('#fos_user_registration_form_domaine').val('null');
+        $('#fos_user_registration_form_activitySector').val('null');
+        $('#fos_user_registration_form_registrationNum').val('null');
+        $('#fos_user_registration_form_socialRaison').val('null');
+        $('#fos_user_registration_form_skills').val('');
+        $('#fos_user_registration_form_disponibility').val('');
+        $('#fos_user_registration_form_cv').val('');
+        $('#fos_user_registration_form_firstName').val('');
+        $('#fos_user_registration_form_lastName').val('');
+        $('#fos_user_registration_form_birthDate').val('');
+        $('#fos_user_registration_form_phoneNumber').val('');
+        $('#fos_user_registration_form_address').val('');
+        $('select').css('visibility','hidden');
+        $("#btn-free").click(function(){
+            $('#fos_user_registration_form_skills').val('');
+            $('#fos_user_registration_form_cv').val('');
+            $('#fos_user_registration_form_disponibility').val('');
+            $('#fos_user_registration_form_firstName').val('');
+            $('#fos_user_registration_form_lastName').val('');
+            $('#fos_user_registration_form_birthDate').val('');
+            $('#fos_user_registration_form_phoneNumber').val('');
+            $('#fos_user_registration_form_address').val('');
+            $('#job').hide(100);
+            $('#free').show(100);
+            $('#fos_user_registration_form_domaine').val('null');
+            $('#fos_user_registration_form_registrationNum').val('null');
+            $('#fos_user_registration_form_activitySector').val('null');
+            $('#fos_user_registration_form_socialRaison').val('null');
+            $('select').val('ROLE_FREELANCER');
+            $("#btn-free").addClass('active');
+            $("#btn-free").addClass('active');
+            $("#btn-job").removeClass('active');
+            $('#titre').text('Register as Freelancer');
+        });
+        $("#btn-job").click(function(){
+            $('#fos_user_registration_form_skills').val('null');
+            $('#fos_user_registration_form_cv').val('null');
+            $('#fos_user_registration_form_disponibility').val('null');
+            $('#fos_user_registration_form_domaine').val('');
+            $('#fos_user_registration_form_registrationNum').val('');
+            $('#fos_user_registration_form_activitySector').val('');
+            $('#fos_user_registration_form_socialRaison').val('');
+            $('#job').show(100);
+            $('#free').hide(100);
+            $('select').val('ROLE_JOBOWNER');
+            $("#btn-free").removeClass('active');
+            $("#btn-job").addClass('active');
+            $('#titre').text('Register as JobOwner');
+        });
+    });
+</script>
+<div class="text-center">
+
+    <!--<button type="radio" name="role[]" class="btn-role" id="btn-free">Freelancer</button>
+    <button type="radio" name="role[]" class="btn-role" id="btn-job">JobOwner</button>-->
+</div>
+<!-- Nav tabs -->
+<ul class="nav nav-tabs nav-justified" role="tablist" id="tabs">
+    <li id="btn-free" role="presentation" class="active"><a ><span>Freelancer</span></a></li>
+    <li id="btn-job" role="presentation"><a>JobOwner</a></li>
+</ul>
+<div class="row" id="tab">
+<div class="col-md-12">
+    <br/>
+    <br/>
+    <br/>
+    {{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}
+
+    <div class="col-md-3"></div>
+    <div class="col-md-12" class="box-form text-left">
+        <h2 id="titre"></h2>
+        <div class="col-xs-md-10">
+            <div class="col-md-12">
+                <div class="form-group col-md-6">
+                {{ form_label(form.firstName) }}
+                {{ form_errors(form.firstName) }}
+                {{ form_widget(form.firstName, {'attr': {'class': 'form-control'}}) }}
+                </div>
+                <div class="form-group col-md-6">
+                {{ form_label(form.lastName) }}
+                {{ form_errors(form.lastName) }}
+                {{ form_widget(form.lastName, {'attr': {'class': 'form-control'}}) }}
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group col-md-6">
+                {{ form_label(form.email) }}
+                {{ form_errors(form.email) }}
+                {{ form_widget(form.email, {'attr': {'class': 'form-control'}}) }}
+                </div>
+                <div class="form-group col-md-6">
+                {{ form_label(form.birthDate) }}
+                {{ form_errors(form.birthDate) }}
+                {{ form_widget(form.birthDate, {'attr': {'class': 'form-control'}}) }}
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group col-md-6">
+                {{ form_label(form.phoneNumber) }}
+                {{ form_errors(form.phoneNumber) }}
+                {{ form_widget(form.phoneNumber, {'attr': {'class': 'form-control'}}) }}
+                </div>
+                <div class="form-group col-md-6">
+                {{ form_label(form.address) }}
+                {{ form_errors(form.address) }}
+                {{ form_widget(form.address, {'attr': {'class': 'form-control'}}) }}
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-12" id="free">
+            <div class="col-md-12">
+                <div class="form-group col-md-6">
+                {{ form_label(form.skills) }}
+                {{ form_errors(form.skills) }}
+                {{ form_widget(form.skills, {'attr': {'class': 'form-control'}}) }}
+                </div>
+                <div class="form-group col-md-6">
+                {{ form_label(form.disponibility) }}
+                {{ form_errors(form.disponibility) }}
+                {{ form_widget(form.disponibility, {'attr': {'class': 'form-control'}}) }}
+                </div>
+            </div>
+            <div class="form-group col-md-6">
+                {{ form_label(form.cv) }}
+                {{ form_errors(form.cv) }}
+                {{ form_widget(form.cv, {'attr': {'class': 'form-control'}}) }}
+            </div>
+        </div>
+
+        <div class="col-md-12" id="job">
+            <div class="col-md-12">
+                <div class="form-group col-md-6">
+                {{ form_label(form.domaine) }}
+                {{ form_errors(form.domaine) }}
+                {{ form_widget(form.domaine, {'attr': {'class': 'form-control'}}) }}
+                </div>
+                <div class="form-group col-md-6">
+                {{ form_label(form.registrationNum) }}
+                {{ form_errors(form.registrationNum) }}
+                {{ form_widget(form.registrationNum, {'attr': {'class': 'form-control'}}) }}
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group col-md-6">
+                {{ form_label(form.activitySector) }}
+                {{ form_errors(form.activitySector) }}
+                {{ form_widget(form.activitySector, {'attr': {'class': 'form-control'}}) }}
+                </div>
+                <div class="form-group col-md-6">
+                {{ form_label(form.socialRaison) }}
+                {{ form_errors(form.socialRaison) }}
+                {{ form_widget(form.socialRaison, {'attr': {'class': 'form-control'}}) }}
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="form-group col-md-6">
+                {{ form_label(form.username) }}
+                {{ form_errors(form.username) }}
+                {{ form_widget(form.username, {'attr': {'class': 'form-control'}}) }}
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="form-group col-md-6">
+                {{ form_label(form.plainPassword.first) }}
+                {{ form_errors(form.plainPassword.first) }}
+                {{ form_widget(form.plainPassword.first, {'attr': {'class': 'form-control'}}) }}
+            </div>
+            <div class="form-group col-md-6">
+                {{ form_label(form.plainPassword.second) }}
+                {{ form_errors(form.plainPassword.second) }}
+                {{ form_widget(form.plainPassword.second, {'attr': {'class': 'form-control'}}) }}
+            </div>
+        </div>
+        <div class="col-md-8 text-center">
+            <input type="submit" value="Submit" class="sign" />
+        </div>
+    </div>
+    <div class="col-md-3"></div>
+    {{ form_end(form) }}
+
+</div></div>
+<style>
+
+    .sign{
+        border:none;
+        background: #ffb61e;padding:15px;}
+    .sign:hover{background:#c7254e}
+    .box-form{background:#000;text-align:left;}
+    .btn-role{padding:15px;border:none;}
+
+
+    #tabs li.active > a{
+        border-bottom:4px solid #d6dec9!important; border-top:0px; border-left:0px; border-right:none; background-color:#03A9F4!important;
+    }
+    #tabs li > a {
+        border-top: 0px;
+        border-bottom: 4px solid #03A9F4!important;
+        border-bottom: 0px;
+        border-left: 0px;
+        border-right: 1px solid #ffffff;
+        background-color: #d6dec9;
+        border-radius: 0px;
+        color: #ffffff;
+    }
+
+    #titre{margin-bottom:20px;}
+
+
+
+    #about{ padding: 0em;}
+</style>
