@@ -17,3 +17,7 @@ freelancer_Freelancer:
 freelancer_JobOwner:
     path:     /JobOwner
     defaults: { _controller: MyAppJobOwnerBundle:JobOwner:jobOwner }
+
+freelancer_alluser:
+    path:     /Alluser
+    defaults: { _controller: FreelancerBundle:Freelancer:Alluser }

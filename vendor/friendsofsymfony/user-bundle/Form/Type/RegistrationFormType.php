@@ -42,18 +42,7 @@ class RegistrationFormType extends AbstractType
     {
         $builder
             ->add('email', EmailType::class, array('label' => 'Email', 'translation_domain' => 'FOSUserBundle'))
-            ->add('firstName', TextType::class, array('label' => 'firstName', 'translation_domain' => 'FOSUserBundle'))
-            ->add('lastName', TextType::class, array('label' => 'lastName', 'translation_domain' => 'FOSUserBundle'))
-            ->add('birthDate', TextType::class, array('label' => 'birthDate', 'translation_domain' => 'FOSUserBundle'))
-            ->add('phoneNumber', TextType::class, array('label' => 'phoneNumber', 'translation_domain' => 'FOSUserBundle'))
-            ->add('address', TextType::class, array('label' => 'address', 'translation_domain' => 'FOSUserBundle'))
-            ->add('registrationNum', TextType::class, array('label' => 'registrationNum', 'translation_domain' => 'FOSUserBundle'))
-            ->add('disponibility', TextType::class, array('label' => 'disponibility', 'translation_domain' => 'FOSUserBundle'))
-            ->add('activitySector', TextType::class, array('label' => 'activitySector', 'translation_domain' => 'FOSUserBundle'))
-            ->add('socialRaison', TextType::class, array('label' => 'socialRaison', 'translation_domain' => 'FOSUserBundle'))
-            ->add('cv', TextType::class, array('label' => 'cv', 'translation_domain' => 'FOSUserBundle'))
-            ->add('skills', TextType::class, array('label' => 'Skills', 'translation_domain' => 'FOSUserBundle'))
-            ->add('domaine', TextType::class, array('label' => 'Domaine', 'translation_domain' => 'FOSUserBundle'))
+
             ->add('username', null, array('label' => 'Username', 'translation_domain' => 'FOSUserBundle'))
             ->add('plainPassword', RepeatedType::class, array(
                 'type' => PasswordType::class,
@@ -67,11 +56,7 @@ class RegistrationFormType extends AbstractType
                 'second_options' => array('label' => 'confirm password'),
                 'invalid_message' => 'password mismatch',
             ))
-            ->add('roles',ChoiceType::class,
-                array('label' => ' ','choices' => array(
-                    'ROLE_FREELANCER' => 'ROLE_FREELANCER',
-                    'ROLE_JOBOWNER' => 'ROLE_JOBOWNER'),
-                    'choices_as_values' => true,'multiple'=>true,'expanded'=>false))
+
         ;
     }
 

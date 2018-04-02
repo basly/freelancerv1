@@ -5,3 +5,4 @@ services:
     redirect.after.login:
         class: MyApp\FreelancerBundle\Redirection\AfterLoginRedirection
         arguments: ["@router"]
+

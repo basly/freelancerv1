@@ -40,4 +40,12 @@ class FreelancerController extends Controller
         return $this->render('FreelancerBundle:Default:Freelancer_home.html.twig');
     }
 
+    public function AlluserAction()
+    {
+        $userManager = $this->get('fos_user.user_manager');
+        $users = $userManager->findUsers();
+
+        return $this->render('FreelancerBundle:Default:Alluser.html.twig', array('users' =>   $users));
+    }
+
 }
