@@ -21,3 +21,15 @@ freelancer_JobOwner:
 freelancer_alluser:
     path:     /Alluser
     defaults: { _controller: FreelancerBundle:Freelancer:Alluser }
+
+freelancer_Showfreelancer:
+    path:     /Freelancer/showfreelancer/{email}
+    defaults: { _controller: FreelancerBundle:Freelancer:showfreelancer }
+
+freelancer_Showjobowner:
+    path:     /Freelancer/showjobowner/{email}
+    defaults: { _controller: FreelancerBundle:Freelancer:showjobowner }
+
+freelancer_EditProfile:
+    path:     /Freelancer/Editprofile
+    defaults: { _controller: FreelancerBundle:Freelancer:Editprofile }

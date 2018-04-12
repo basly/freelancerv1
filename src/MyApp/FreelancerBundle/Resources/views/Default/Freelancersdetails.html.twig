@@ -1,0 +1,115 @@
+{% extends '@Freelancer/Default/layout.html.twig' %}
+{%  block content %}
+    {%  if app.user!= null %} }}
+        {% if (app.user.email==user.email) %}
+
+
+            <form method="post" action="{{ path('freelancer_EditProfile') }}">
+                <div class="col-md-offset-5 col-md-4">
+                    <img class="img-rounded" src={{ asset('bundles/freelancer/Front/images/user.png') }} >
+                </div>
+<div class="col-md-1">
+<button class="button18"  > raouf</button>
+</div>
+                <div class="col-md-1">
+                    <button class="button18" >
+                        Subscribe
+                    </button>
+                </div>
+                <div class="col-md-offset-4 col-md-4">
+                    <table class="table table-striped tablefont20">
+                        <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Value</th>
+
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>Username</td>
+                            <td>{{ user.username }}</td>
+
+                        </tr>
+                        <tr>
+                            <td>Firstname</td>
+                            <td><input name="firstname" type="text" placeholder="{{ user.firstname }}"></td>
+                        </tr>
+                        <tr>
+                            <td>Lastname</td>
+                            <td><input name="lastname" type="text" placeholder="{{ user.lastname }}" ></td>
+                        </tr>
+                        <tr>
+                            <td>email</td>
+                            <td>{{ user.email }}</td>
+
+                        </tr>
+                        <tr>
+                            <td>skills</td>
+                            <td><input name="skills" type="text" placeholder="{{ user.skills }}"></td>
+                        </tr>
+                        <tr>
+                            <td>Phone</td>
+                            <td><input name="phone" type="text" placeholder="{{ user.phonenumber }}"></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <td><input name="email" type="text" placeholder="{{ user.email }}" value="{{ user.email }}" hidden="hidden"></td>
+                <div class="col-lg-offset-5 col-md-2">
+                    <button type="submit" class="button18" ><div>Save</div></button>
+                </div>
+
+            </form>
+        {% endif %}
+        {% if (app.user.email!=user.email ) %}
+
+
+
+                <div class="col-md-offset-5">
+                    <img class="img-rounded" src={{ asset('bundles/freelancer/Front/images/user.png') }} alt="Avatar">
+                </div>
+
+                <div class="col-md-offset-4 col-md-4">
+                    <table class="table table-striped tablefont20">
+                        <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Value</th>
+
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>Username</td>
+                            <td>{{ user.username }}</td>
+
+                        </tr>
+                        <tr>
+                            <td>Firstname</td>
+                            <td>{{ user.firstname }}</td>
+                        </tr>
+                        <tr>
+                            <td>Lastname</td>
+                            <td>{{ user.lastname }}</td>
+                        </tr>
+                        <tr>
+                            <td>email</td>
+                            <td>{{ user.email }}</td>
+
+                        </tr>
+                        <tr>
+                            <td>skills</td>
+                            <td>{{ user.skills }}</td>
+                        </tr>
+                        <tr>
+                            <td>Phone</td>
+                            <td>{{ user.phonenumber }}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+        {% endif %}
+    {% endif %}
+{%  endblock %}

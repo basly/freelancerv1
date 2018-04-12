@@ -40,12 +40,36 @@ class FreelancerController extends Controller
         return $this->render('FreelancerBundle:Default:Freelancer_home.html.twig');
     }
 
-    public function AlluserAction()
+
+    public function showfreelancerAction($email)
     {
         $userManager = $this->get('fos_user.user_manager');
-        $users = $userManager->findUsers();
+        $user = $userManager->findUserByEmail($email);
 
-        return $this->render('FreelancerBundle:Default:Alluser.html.twig', array('users' =>   $users));
+        return $this->render('@Freelancer/Default/Freelancersdetails.html.twig', array('user' =>$user));
     }
+    public function showjobownerAction($email)
+    {
+        $userManager = $this->get('fos_user.user_manager');
+        $user = $userManager->findUserByEmail($email);
 
+        return $this->render('@Freelancer/Default/Freelancersdetails.html.twig', array('user' =>$user));
+    }
+    public function EditprofileAction(Request $request)
+    {
+        $firstname = $request->request->get('firstname');
+        $lastname = $request->request->get('lastname');
+        $skills = $request->request->get('skills');
+        $Phone = $request->request->get('phone');
+        $email = $request->request->get('email');
+        $filre = array('email' => $email);
+        $currentuser = $this->getDoctrine()->getRepository('FreelancerBundle:User')->findOneBy($filre);
+        $currentuser->setFirstName($firstname);
+        $currentuser->setLastName($lastname);
+        $currentuser->setPhoneNumber($Phone);
+        $currentuser->setSkills($skills);
+        $userManager = $this->get('fos_user.user_manager');
+        $user = $userManager->findUserByEmail($email);
+        return $this->render('@Freelancer/Default/Freelancersdetails.html.twig', array('user' =>$user));
+    }
 }
