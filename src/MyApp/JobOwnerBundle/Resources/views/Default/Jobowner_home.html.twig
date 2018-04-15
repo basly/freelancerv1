@@ -1,1 +1,58 @@
-jobowner
+{% extends 'FreelancerBundle:Default:index.html.twig' %}
+
+{% block body %}
+    <div class="services-breadcrumb">
+        <div class="agile_inner_breadcrumb">
+            <ul class="w3_short">
+                <li><a href="index.html">Home</a><i>||</i></li>
+                <li>Freelancer</li>
+            </ul>
+        </div>
+    </div>
+    <div class="banner-bottom">
+    <div class="container">
+        <div class="w3ls-title">
+            <h3 class="title-w3l"><span>F</span>reelancer list!</h3>
+        </div>
+    </div>
+    <div class="about-top w3ls-agile" >
+    <table class="table table-striped" >
+        <thead>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Skills</th>
+            <th>Activity Sector</th>
+            <th>Adress</th>
+            <th>Birthday Date</th>
+            <th>Disponibility</th>
+            <th>Action</th>
+
+
+        </tr>
+        </thead>
+        <tbody>
+
+        {% for freelancer in frees %}
+            <tr>
+                <td>{{ freelancer.firstName }}</td>
+                <td>{{ freelancer.lastName }}</td>
+                <td>{{ freelancer.skills }}</td>
+                <td>{{ freelancer.activitySector }}</td>
+                <td>{{ freelancer.address }}</td>
+                <td>{{ freelancer.birthDate }}</td>
+                <td>{{ freelancer.disponibility }}</td>
+                <td>
+                    <ul>
+                        <a class="btn btn-default" href="{{ path('user_show', { 'id': freelancer.id })}}" ><i class="fa fa-eye"></i> show</a>
+                    </ul>
+
+                </td>
+
+
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

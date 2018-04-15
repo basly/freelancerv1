@@ -999,7 +999,15 @@ h3.title-w3l-2 {
     font-size: 2.5em;
     letter-spacing: 1px;
     color: #03A9F4;
+	margin-bottom:1.5em;
 }
+h3.title-w3l-3 {
+	font-size: 2.5em;
+	letter-spacing: 1px;
+	color: #2b2a2a;
+	margin-bottom:1.5em;
+}
+
 
 /*-- //newsletter --*/
 /*-- footer --*/
@@ -1193,6 +1201,7 @@ footer{
     margin: 0 0 1em 0;
     color: #26bdef;
 	text-align: left;
+	margin-bottom:1.5em;
 }
 .Categories h2.agileits-title{ 
     margin: 1.5em 0 1em; 

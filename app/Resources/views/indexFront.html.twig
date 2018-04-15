@@ -1,0 +1,151 @@
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Ingenuity a Corporate Category Bootstrap Responsive website Template | Home :: w3layouts</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Ingenuity Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+	SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony Ericsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- Custom Theme files -->
+<link href="{{ asset('bundles/myappjobowner/front/web/css/bootstrap.css') }}" type="text/css" rel="stylesheet" media="all">
+<link href="{{ asset('bundles/myappjobowner/front/web/css/style.css') }}" type="text/css" rel="stylesheet" media="all">
+<link href="{{ asset('bundles/myappjobowner/front/web/css/font-awesome.css') }}" rel="stylesheet"> <!-- font-awesome icons -->
+<link rel="stylesheet" type="text/css" href="{{ asset('assets/css/modules/star-rating.min.css')}}">
+<link rel="stylesheet" href="{{ asset('bundles/myappjobowner/front/web/css/jquery.desoslide.css') }}">
+<link rel="stylesheet" href="{{ asset('bundles/myappjobowner/css/examen.css') }}">
+<link rel="stylesheet" href="{{ asset('bundles/myappjobowner/css/my_css2.css') }}">
+<link rel="stylesheet" href="{{ asset('bundles/myappjobowner/css/lightbox.css') }}">
+<link rel="stylesheet" href="{{ asset('bundles/myappjobowner/css/light.css') }}">
+<!-- //Custom Theme files -->
+<!-- js -->
+	<!--	<script src="{{ asset('bundles/myappjobowner/front/web/js/jquery-2.2.3.min.js') }}"></script>-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!-- //js -->
+<!-- web-fonts
+<link href="//fonts.googleapis.com/css?family=Oxygen:300,400,700" rel="stylesheet">
+<link href="//fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+ //web-fonts -->
+</head>
+<body onload="questions()">
+	<!-- banner -->
+
+	<!-- //register modal -->
+	<!-- welcome -->
+
+	<div class="welcome">
+		<div class="container">
+			{% block body %}
+            {% block box1 %}
+			<div class="col-md-7 welcome-w3lleft">
+
+				<h3 class="agileits-title">Welcome !</h3>
+				<h4>Cras porttitor imperdiet volutpat nulla malesuada lectus eros ut convallis felis consectetur ut </h4>
+				<p>Nulla ultricies nunc et lorem semper, quis accumsan dui aliquam aucibus sagittis placerat. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas
+					Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Morbi non nibh nec enim sollicitudin interdum.tristique senectus et netus et malesuada fames ac turpis egestas
+				</p>
+
+			</div>
+			<div class="col-md-5 welcome-w3lright">
+				<div class="welcome-grids">
+					<div class="service-box">
+						<div class="agileits-wicon">
+							<i class="fa fa-clone" aria-hidden="true"></i>
+						</div>
+						<h5>Proin eget ipsum ultrices</h5>
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+				<div class="welcome-grids">
+					<div class="col-md-6 col-sm-6 col-xs-6 service-box">
+						<div class="agileits-wicon">
+							<i class="fa fa-heart-o" aria-hidden="true"></i>
+						</div>
+						<h5>Proin eget ipsum ultrices</h5>
+					</div>
+					<div class="col-md-6 col-sm-6 col-xs-6 service-box">
+						<div class="agileits-wicon">
+							<i class="fa fa-tv" aria-hidden="true"></i>
+						</div>
+						<h5>Proin eget ipsum ultrices</h5>
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+			</div>
+            {% endblock box1 %}
+            {% endblock body %}
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+	<!-- //welcome -->
+	<!-- features -->
+
+	<!-- //footer --> 
+	<!-- menu js -->
+	<script>
+		$('.toggle').on('click', function() {
+			$('.menu').toggleClass('open');  
+			$('.w3nav').toggleClass('show-w3nav');  
+			$('.w3nav a').toggleClass('show-w3nav-link');  
+			$('.toggle').toggleClass('close');  
+		});
+	</script>
+	<!-- //menu js --> 
+	<!-- start-smooth-scrolling -->
+
+	<script src="{{ asset('bundles/myappjobowner/front/web/js/SmoothScroll.min.js') }}"></script>
+	<script type="text/javascript" src="{{ asset('bundles/myappjobowner/front/web/js/move-top.js') }}"></script>
+	<script type="text/javascript" src="{{ asset('bundles/myappjobowner/front/web/js/easing.js') }}"></script>
+	<script type="text/javascript">
+			jQuery(document).ready(function($) {
+				$(".scroll").click(function(event){		
+					event.preventDefault();
+			
+			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+				});
+			});
+	</script>
+	<!-- //end-smooth-scrolling -->	
+	<!-- smooth-scrolling-of-move-up -->
+	<script type="text/javascript">
+		$(document).ready(function() {
+			/*
+			var defaults = {
+				containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear' 
+			};
+			*/
+			
+			$().UItoTop({ easingType: 'easeOutQuart' });
+			
+		});
+	</script>
+	<!-- //smooth-scrolling-of-move-up -->  
+	<!-- desoslide-JavaScript --> 
+	<script src="{{ asset('bundles/myappjobowner/front/web/js/jquery.desoslide.js') }}"></script>
+	<script>
+		$('#demo1_thumbs').desoSlide({
+			main: {
+				container: '#demo1_main_image',
+				cssClass: 'img-responsive'
+			},
+			 effect: 'sideFade',
+			caption: true
+		});
+	</script> 
+	<!-- //desoslide-JavaScript --> 
+	<!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="{{ asset('bundles/myappjobowner/front/web/js/bootstrap.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/js/modules/star-rating.min.js') }}"></script>
+</body>
+</html>
