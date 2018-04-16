@@ -116,6 +116,22 @@ class Tests
     }
 
     /**
+     * @return mixed
+     */
+    public function getExamen()
+    {
+        return $this->examen;
+    }
+
+    /**
+     * @param mixed $examen
+     */
+    public function setExamen($examen)
+    {
+        $this->examen = $examen;
+    }
+
+    /**
      * Get testdescription
      *
      * @return string

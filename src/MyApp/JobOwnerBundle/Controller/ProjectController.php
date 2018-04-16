@@ -113,15 +113,15 @@ class ProjectController extends Controller
 
         $test = $this->getDoctrine()
             ->getRepository('MyAppJobOwnerBundle:Tests')
-            ->findBy(array('freelancer' => $freelancer,'examen'=>$examen));
+            ->findBy(array('freelancer' => $user,'examen'=>$examen));
 
         $nb = count($test);
-
+        var_dump($nb);
 
 
 
         return $this->render('MyAppJobOwnerBundle:project:show.html.twig', array(
-            'project' => $project,'examen'=>$examen,'test' => $nb,'free'=>$freelancer,'project'=>$project,'delete_form' => $deleteForm->createView()
+            'project' => $project,'examen'=>$examen,'test' => $nb,'free'=>$user,'project'=>$project,'delete_form' => $deleteForm->createView()
         ));
     }
 
