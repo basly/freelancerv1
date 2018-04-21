@@ -217,7 +217,9 @@ class FreelancerController extends Controller
             $save->persist($reply);
             $save->flush();
 
-            return $this->render('@Freelancer/Default/showReclamation.html.twig', array('rec' =>$reclamation,'form'=>$formview,'replys'=>$replys,'admin'=>$admin,'user'=>$user));
+            return $this->redirectToRoute('freelancer_showreclamation',array('id'=>$id));
+
+//            return $this->render('@Freelancer/Default/showReclamation.html.twig', array('rec' =>$reclamation,'form'=>$formview,'replys'=>$replys,'admin'=>$admin,'user'=>$user));
 
         }
 
