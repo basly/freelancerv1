@@ -1,6 +1,6 @@
 {% extends '@Freelancer/Default/layout.html.twig' %}
 {%  block content %}
-    {%  if app.user!= null %} }}
+    {%  if app.user!= null %}
         {% if (app.user.email==user.email) %}
 
 
@@ -71,10 +71,18 @@
 
 
 
-                <div class="col-md-offset-5">
+                <div class="col-md-offset-5 col-md-5">
                     <img class="img-rounded" src={{ asset('bundles/freelancer/Front/images/user.png') }} alt="Avatar">
                 </div>
 
+            <div class="col-md-1">
+                <button class="button18"  > raouf</button>
+            </div>
+            <div class="col-md-1">
+            <a href="{{ path('freelancer_Subscribe',{'idsubscriber':user.getId()}) }}" ><button class="button18" >
+                    Subscribe
+                </button></a>
+            </div>
                 <div class="col-md-offset-4 col-md-4">
                     <table class="table table-striped tablefont20">
                         <thead>

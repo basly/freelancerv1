@@ -1,0 +1,15 @@
+{% extends '@Freelancer/Default/layout.html.twig' %}
+
+{%  block content %}
+    <div class="col-lg-offset-1 col-md-2">
+        <div class="about w3layouts-agileinfo" id="about">
+            <ul class="list-group w3-agile">
+                <li class="list-group-item"><h4>Freelancer</h4></li>
+                {% for user in reclamations %}
+                    <li class="list-group-item"><span>  <a class="button18" href="{{ path('freelancer_showreclamation',{'id':user.id}) }}"><div> {{ user.titre }} </div></a></span></li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+
+{%  endblock %}

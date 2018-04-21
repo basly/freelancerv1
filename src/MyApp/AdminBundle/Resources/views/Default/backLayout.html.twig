@@ -13,12 +13,14 @@
     <!-- End plugin css for this page -->
     <!-- inject:css -->
     <link rel="stylesheet" href="{{ asset('bundles/myappadmin/css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('bundles/freelancer/Front/css/bootstrap.css')}}">
+
     <!-- endinject -->
     <link rel="shortcut icon" href="{{ asset('bundles/myappadmin/images/favicon.png') }}" />
 </head>
-{% block test2 %}
-{% endblock %}
+
 <body>
+
 <div class="body-wrapper">
     <!-- partial:partials/_sidebar.html -->
     <aside class="mdc-persistent-drawer mdc-persistent-drawer--open">
@@ -28,6 +30,7 @@
                     <img src="{{ asset('bundles/myappadmin/images/logo.svg') }}" alt="logo">
                 </a>
             </div>
+
             <div class="mdc-list-group">
                 <nav class="mdc-list mdc-drawer-menu">
                     <div class="mdc-list-item mdc-drawer-item">
@@ -187,9 +190,13 @@
             </section>
         </div>
     </header>
+
+
+
     <!-- partial -->
     <div class="page-wrapper mdc-toolbar-fixed-adjust">
-
+        {% block test2 %}
+        {% endblock %}
         <footer>
             <div class="mdc-layout-grid">
                 <div class="mdc-layout-grid__inner">

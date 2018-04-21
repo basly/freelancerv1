@@ -34,6 +34,7 @@
                 <h1><a href="index.html"><span>E</span>sprit<label>University</label></a></h1>
             </div>
             <div class="header-right">
+                {%  if app.user!= null %}
                 <div>
                     <a  href="{{ path('freelancer_Showfreelancer',{'email':app.user.email}) }}" >
                         <div class="col-md-offset-7 col-md-1" style="color:white;">
@@ -49,6 +50,7 @@
                     </a>
 
                 </div>
+                {% endif %}
                 {% if is_granted('ROLE_FREELANCER') or is_granted('ROLE_JOBOWNER') or is_granted('ROLE_ADMIN') %}
                     <ul>
                         <li><h3><a class="cd-logout" href="{{ path('fos_user_security_logout') }}">Logout</a></h3></li>
@@ -98,6 +100,16 @@
                     <div class="wrapper-inner-tab-backgrounds-first"><a href="single.html"><div class="sim-button button17">Read More</div></a>
                         <!-- alluser -->
                         <a href="{{ path('freelancer_alluser') }}"><div class="sim-button button17">Alluser</div></a></div>
+                </div>
+                <div class="wrapper-inner-tab-backgrounds">
+                    <div class="wrapper-inner-tab-backgrounds-first"><a href="single.html"><div class="sim-button button17">Read More</div></a>
+                        <!-- alluser -->
+                        <a href="{{ path('freelancer_CreateReclamations') }}"><div class="sim-button button17">reclamation</div></a></div>
+                </div>
+                <div class="wrapper-inner-tab-backgrounds">
+                    <div class="wrapper-inner-tab-backgrounds-first"><a href="single.html"><div class="sim-button button17">Read More</div></a>
+                        <!-- alluser -->
+                        <a href="{{ path('freelancer_Reclamations') }}"><div class="sim-button button17">reclamations</div></a></div>
                 </div>
             </div>
         </div>
@@ -258,21 +270,23 @@
             <div class="modal-body modal-body-sub">
                 <div class="w3_agileits_services_grid">
                 <h3 >Login Form !</h3>
+                    {% trans_default_domain 'FOSUserBundle' %}
                 </div>
-                {% trans_default_domain 'FOSUserBundle' %}
+
                 <form action="{{ path("fos_user_security_check") }}" method="post">
 
-                    <label for="username" class="col-md-12">Username</label>
-                    <input type="text" id="username" name="_username" placeholder="Username" required="required" autocomplete="username" class="col-md-12"/>
+                    <label for="username">username</label>
+                    <input type="text" id="username" name="_username"  required="required" autocomplete="username" />
 
-                    <label for="password" class="col-md-12">Passeword</label>
-                    <input type="password" id="password" name="_password" placeholder="Passeword" required="required" autocomplete="current-password" class="col-md-12"/>
+                    <label for="password"></label>
+                    <input type="password" id="password" name="_password" required="required" autocomplete="current-password" />
 
-                    <input type="checkbox" id="remember_me" name="_remember_me" value="on" class="col-md-2" />
-                    <label for="remember_me"class="col-md-10">Remember me</label>
+                    <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
+                    <label for="remember_me">remember me</label>
 
-                    <input type="submit" id="_submit" name="_submit" value="Log IN" class="col-md-4 col-md-offset-4" />
+                    <input type="submit" id="_submit" name="_submit" value="login" />
                 </form>
+
 
             </div>
         </div>
