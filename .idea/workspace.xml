@@ -2,34 +2,298 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="869c7c93-66b8-45cc-b8b6-3c2e9bbbafc1" name="Default" comment="show user profile">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/commandlinetools/Composer_08_04_18_13_36_c.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/commandlinetools/Symfony_08_04_18_16_30_s.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/Public/Front/css/ace.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/Public/Front/images/user.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/views/Default/Freelancersdetails.html.twig" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/views/Default/Jobownersdetails.html.twig" />
-      <change beforePath="$PROJECT_DIR$/.idea/Test_PI.iml" afterPath="$PROJECT_DIR$/.idea/Test_PI.iml" />
-      <change beforePath="$PROJECT_DIR$/.idea/commandlinetools/Symfony_03_04_18_19_14_s.xml" afterPath="$PROJECT_DIR$/.idea/commandlinetools/Symfony_03_04_18_19_14_s.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/Resources/views/indexFront.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/Resources/views/skills/edit.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/Resources/views/skills/index.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/Resources/views/skills/new.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/Resources/views/skills/show.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/Resources/views/skills/showDetail.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Controller/DemandeController.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Controller/RegistrationController.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Controller/SkillsController.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Controller/UserController.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Entity/Demande.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Entity/Skills.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Form/DemandeType.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Form/EditDemandeType.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Form/SkillsType.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Form/UserType.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Repository/DemandeRepository.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Repository/ProjectRepository.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Repository/SkillsRepository.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/Public/Front/js/jquery-3.3.1.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/Public/css/agency.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/Public/css/agency.min.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/Public/css/skillBar.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/Public/img/about/1.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/Public/img/about/2.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/Public/img/about/3.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/Public/img/about/4.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/Public/img/header-bg.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/Public/img/logos/creative-market.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/Public/img/logos/designmodo.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/Public/img/logos/envato.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/Public/img/logos/themeforest.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/Public/img/map-image.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/Public/img/portfolio/01-full.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/Public/img/portfolio/01-thumbnail.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/Public/img/portfolio/02-full.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/Public/img/portfolio/02-thumbnail.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/Public/img/portfolio/03-full.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/Public/img/portfolio/03-thumbnail.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/Public/img/portfolio/04-full.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/Public/img/portfolio/04-thumbnail.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/Public/img/portfolio/05-full.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/Public/img/portfolio/05-thumbnail.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/Public/img/portfolio/06-full.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/Public/img/portfolio/06-thumbnail.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/Public/img/team/1.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/Public/img/team/2.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/Public/img/team/3.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/Public/js/agency.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/Public/js/agency.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/Public/js/barAnimation.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/Public/js/contact_me.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/Public/js/contact_me.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/Public/js/jqBootstrapValidation.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/Public/js/jqBootstrapValidation.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/Public/vendor/bootstrap/css/bootstrap.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/Public/vendor/bootstrap/css/bootstrap.css.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/Public/vendor/bootstrap/css/bootstrap.min.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/Public/vendor/bootstrap/css/bootstrap.min.css.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/Public/vendor/bootstrap/js/bootstrap.bundle.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/Public/vendor/bootstrap/js/bootstrap.bundle.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/Public/vendor/bootstrap/js/bootstrap.bundle.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/Public/vendor/bootstrap/js/bootstrap.bundle.min.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/Public/vendor/bootstrap/js/bootstrap.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/Public/vendor/bootstrap/js/bootstrap.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/Public/vendor/bootstrap/js/bootstrap.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/Public/vendor/bootstrap/js/bootstrap.min.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/Public/vendor/font-awesome/css/font-awesome.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/Public/vendor/font-awesome/css/font-awesome.css.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/Public/vendor/font-awesome/css/font-awesome.min.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/Public/vendor/font-awesome/fonts/FontAwesome.otf" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/Public/vendor/font-awesome/fonts/fontawesome-webfont.eot" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/Public/vendor/font-awesome/fonts/fontawesome-webfont.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/Public/vendor/font-awesome/fonts/fontawesome-webfont.ttf" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/Public/vendor/font-awesome/fonts/fontawesome-webfont.woff" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/Public/vendor/font-awesome/fonts/fontawesome-webfont.woff2" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/Public/vendor/font-awesome/less/animated.less" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/Public/vendor/font-awesome/less/bordered-pulled.less" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/Public/vendor/font-awesome/less/core.less" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/Public/vendor/font-awesome/less/fixed-width.less" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/Public/vendor/font-awesome/less/font-awesome.less" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/Public/vendor/font-awesome/less/icons.less" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/Public/vendor/font-awesome/less/larger.less" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/Public/vendor/font-awesome/less/list.less" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/Public/vendor/font-awesome/less/mixins.less" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/Public/vendor/font-awesome/less/path.less" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/Public/vendor/font-awesome/less/rotated-flipped.less" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/Public/vendor/font-awesome/less/screen-reader.less" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/Public/vendor/font-awesome/less/stacked.less" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/Public/vendor/font-awesome/less/variables.less" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/Public/vendor/font-awesome/scss/_animated.scss" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/Public/vendor/font-awesome/scss/_bordered-pulled.scss" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/Public/vendor/font-awesome/scss/_core.scss" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/Public/vendor/font-awesome/scss/_fixed-width.scss" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/Public/vendor/font-awesome/scss/_icons.scss" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/Public/vendor/font-awesome/scss/_larger.scss" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/Public/vendor/font-awesome/scss/_list.scss" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/Public/vendor/font-awesome/scss/_mixins.scss" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/Public/vendor/font-awesome/scss/_path.scss" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/Public/vendor/font-awesome/scss/_rotated-flipped.scss" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/Public/vendor/font-awesome/scss/_screen-reader.scss" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/Public/vendor/font-awesome/scss/_stacked.scss" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/Public/vendor/font-awesome/scss/_variables.scss" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/Public/vendor/font-awesome/scss/font-awesome.scss" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/Public/vendor/jquery-easing/jquery.easing.compatibility.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/Public/vendor/jquery-easing/jquery.easing.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/Public/vendor/jquery-easing/jquery.easing.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/Public/vendor/jquery/jquery.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/Public/vendor/jquery/jquery.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/Public/vendor/jquery/jquery.min.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/Public/vendor/jquery/jquery.slim.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/Public/vendor/jquery/jquery.slim.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/Public/vendor/jquery/jquery.slim.min.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/config/routing/demande.yml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/config/routing/registration.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/config/routing/skills.yml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/config/routing/user.yml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/views/demande/demandeByFreelancer.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/views/demande/edit.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/views/demande/index.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/views/demande/new.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/views/demande/show.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/views/user/edit.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/views/user/index.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/views/user/new.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/views/user/show.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Tests/Controller/DemandeControllerTest.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Tests/Controller/SkillsControllerTest.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Tests/Controller/UserControllerTest.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/JobOwnerBundle/Controller/ExamenController.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/JobOwnerBundle/Controller/OfferController.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/JobOwnerBundle/Controller/ProjectController.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/JobOwnerBundle/Entity/Choix.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/JobOwnerBundle/Entity/Examen.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/JobOwnerBundle/Entity/Offer.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/JobOwnerBundle/Entity/Project.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/JobOwnerBundle/Entity/Question.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/JobOwnerBundle/Entity/Testresults.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/JobOwnerBundle/Entity/Tests.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/JobOwnerBundle/Form/OfferType.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/JobOwnerBundle/Form/ProjectType.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/JobOwnerBundle/Repository/ChoixRepository.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/JobOwnerBundle/Repository/ExamenRepository.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/JobOwnerBundle/Repository/OfferRepository.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/JobOwnerBundle/Repository/ProjectRepository.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/JobOwnerBundle/Repository/QuestionRepository.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/JobOwnerBundle/Repository/TestresultsRepository.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/JobOwnerBundle/Repository/TestsRepository.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/JobOwnerBundle/Resources/config/routing/examen.yml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/JobOwnerBundle/Resources/config/routing/offer.yml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/JobOwnerBundle/Resources/config/routing/project.yml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/JobOwnerBundle/Resources/public/admin/ingenuity-web_Free28-04-2017_1783349886.zip" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/JobOwnerBundle/Resources/public/admin/minimal_admin_panel.zip" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/JobOwnerBundle/Resources/public/css/bootstrap.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/JobOwnerBundle/Resources/public/css/custom.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/JobOwnerBundle/Resources/public/css/demo-page.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/JobOwnerBundle/Resources/public/css/examen.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/JobOwnerBundle/Resources/public/css/examples.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/JobOwnerBundle/Resources/public/css/font-awesome.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/JobOwnerBundle/Resources/public/css/geochart.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/JobOwnerBundle/Resources/public/css/hover.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/JobOwnerBundle/Resources/public/css/light.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/JobOwnerBundle/Resources/public/css/lightbox.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/JobOwnerBundle/Resources/public/css/magnific-popup.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/JobOwnerBundle/Resources/public/css/my_css.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/JobOwnerBundle/Resources/public/css/my_css2.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/JobOwnerBundle/Resources/public/css/style.admin.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/JobOwnerBundle/Resources/public/css/style.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/JobOwnerBundle/Resources/public/fonts/FontAwesome.otf" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/JobOwnerBundle/Resources/public/fonts/fontawesome-webfont.eot" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/JobOwnerBundle/Resources/public/fonts/fontawesome-webfont.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/JobOwnerBundle/Resources/public/fonts/fontawesome-webfont.ttf" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/JobOwnerBundle/Resources/public/fonts/fontawesome-webfont.woff" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/JobOwnerBundle/Resources/public/fonts/fontawesome-webfont.woff2" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/JobOwnerBundle/Resources/public/fonts/glyphicons-halflings-regular.eot" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/JobOwnerBundle/Resources/public/fonts/glyphicons-halflings-regular.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/JobOwnerBundle/Resources/public/fonts/glyphicons-halflings-regular.ttf" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/JobOwnerBundle/Resources/public/fonts/glyphicons-halflings-regular.woff" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/JobOwnerBundle/Resources/public/fonts/glyphicons-halflings-regular.woff2" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/JobOwnerBundle/Resources/public/front/web/css/bootstrap.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/JobOwnerBundle/Resources/public/front/web/css/font-awesome.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/JobOwnerBundle/Resources/public/front/web/css/jquery.desoslide.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/JobOwnerBundle/Resources/public/front/web/css/style.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/JobOwnerBundle/Resources/public/front/web/fonts/FontAwesome.otf" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/JobOwnerBundle/Resources/public/front/web/fonts/fontawesome-webfont.eot" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/JobOwnerBundle/Resources/public/front/web/fonts/fontawesome-webfont.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/JobOwnerBundle/Resources/public/front/web/fonts/fontawesome-webfont.ttf" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/JobOwnerBundle/Resources/public/front/web/fonts/fontawesome-webfont.woff" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/JobOwnerBundle/Resources/public/front/web/fonts/fontawesome-webfont.woff2" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/JobOwnerBundle/Resources/public/front/web/fonts/glyphicons-halflings-regular.woff" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/JobOwnerBundle/Resources/public/front/web/fonts/glyphicons-halflings-regular.woff2" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/JobOwnerBundle/Resources/public/front/web/images/4.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/JobOwnerBundle/Resources/public/front/web/images/b1.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/JobOwnerBundle/Resources/public/front/web/images/b2.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/JobOwnerBundle/Resources/public/front/web/images/b3.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/JobOwnerBundle/Resources/public/front/web/images/b4.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/JobOwnerBundle/Resources/public/front/web/images/b5.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/JobOwnerBundle/Resources/public/front/web/images/b6.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/JobOwnerBundle/Resources/public/front/web/images/banner.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/JobOwnerBundle/Resources/public/front/web/images/banner1.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/JobOwnerBundle/Resources/public/front/web/images/bg.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/JobOwnerBundle/Resources/public/front/web/images/client.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/JobOwnerBundle/Resources/public/front/web/images/free.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/JobOwnerBundle/Resources/public/front/web/images/g3.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/JobOwnerBundle/Resources/public/front/web/images/g5.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/JobOwnerBundle/Resources/public/front/web/images/g9.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/JobOwnerBundle/Resources/public/front/web/images/move-up.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/JobOwnerBundle/Resources/public/front/web/images/t1.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/JobOwnerBundle/Resources/public/front/web/images/t2.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/JobOwnerBundle/Resources/public/front/web/images/t3.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/JobOwnerBundle/Resources/public/front/web/images/t4.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/JobOwnerBundle/Resources/public/front/web/js/SmoothScroll.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/JobOwnerBundle/Resources/public/front/web/js/bootstrap.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/JobOwnerBundle/Resources/public/front/web/js/easing.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/JobOwnerBundle/Resources/public/front/web/js/jquery-2.2.3.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/JobOwnerBundle/Resources/public/front/web/js/jquery.desoslide.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/JobOwnerBundle/Resources/public/front/web/js/move-top.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/JobOwnerBundle/Resources/public/js/Chart.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/JobOwnerBundle/Resources/public/js/bars.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/JobOwnerBundle/Resources/public/js/bootstrap.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/JobOwnerBundle/Resources/public/js/chartinator.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/JobOwnerBundle/Resources/public/js/custom.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/JobOwnerBundle/Resources/public/js/gmaps.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/JobOwnerBundle/Resources/public/js/jquery-2.1.1.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/JobOwnerBundle/Resources/public/js/jquery.magnific-popup.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/JobOwnerBundle/Resources/public/js/jquery.metisMenu.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/JobOwnerBundle/Resources/public/js/jquery.nicescroll.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/JobOwnerBundle/Resources/public/js/jquery.slimscroll.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/JobOwnerBundle/Resources/public/js/modernizr.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/JobOwnerBundle/Resources/public/js/nic.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/JobOwnerBundle/Resources/public/js/nivo-lightbox.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/JobOwnerBundle/Resources/public/js/pie-chart.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/JobOwnerBundle/Resources/public/js/screenfull.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/JobOwnerBundle/Resources/public/js/script.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/JobOwnerBundle/Resources/public/js/scripts.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/JobOwnerBundle/Resources/public/js/skycons.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/JobOwnerBundle/Resources/public/login/web/css/font-awesome.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/JobOwnerBundle/Resources/public/login/web/css/style.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/JobOwnerBundle/Resources/public/login/web/fonts/FontAwesome.otf" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/JobOwnerBundle/Resources/public/login/web/fonts/fontawesome-webfont.eot" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/JobOwnerBundle/Resources/public/login/web/fonts/fontawesome-webfont.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/JobOwnerBundle/Resources/public/login/web/fonts/fontawesome-webfont.ttf" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/JobOwnerBundle/Resources/public/login/web/fonts/fontawesome-webfont.woff" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/JobOwnerBundle/Resources/public/login/web/fonts/fontawesome-webfont.woff2" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/JobOwnerBundle/Resources/public/login/web/images/4.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/JobOwnerBundle/Resources/public/login/web/images/tick.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/JobOwnerBundle/Resources/views/Default/demandByJobowner.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/JobOwnerBundle/Resources/views/examen/done.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/JobOwnerBundle/Resources/views/examen/exam.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/JobOwnerBundle/Resources/views/examen/get_exam.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/JobOwnerBundle/Resources/views/examen/layoutest.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/JobOwnerBundle/Resources/views/examen/new_exam.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/JobOwnerBundle/Resources/views/examen/result.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/JobOwnerBundle/Resources/views/offer/edit.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/JobOwnerBundle/Resources/views/offer/index.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/JobOwnerBundle/Resources/views/offer/new.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/JobOwnerBundle/Resources/views/offer/show.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/JobOwnerBundle/Resources/views/project/edit.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/JobOwnerBundle/Resources/views/project/index.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/JobOwnerBundle/Resources/views/project/indexAllProject.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/JobOwnerBundle/Resources/views/project/new.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/JobOwnerBundle/Resources/views/project/show.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/JobOwnerBundle/Tests/Controller/OfferControllerTest.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MyApp/JobOwnerBundle/Tests/Controller/ProjectControllerTest.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/uploads/cvs/349357f83185338c1529c20375d38584.pdf" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/uploads/cvs/551aa814b65fe9fc3d9a5176ee3e9c5b.pdf" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/uploads/cvs/a16b2223744085285dab9b945916a3eb.pdf" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/uploads/cvs/eee4160b71a6330ad3faa6c9e9d01bf6.pdf" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" afterPath="$PROJECT_DIR$/.idea/php.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/symfony2.xml" afterPath="$PROJECT_DIR$/.idea/symfony2.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/app/AppKernel.php" afterPath="$PROJECT_DIR$/app/AppKernel.php" />
+      <change beforePath="$PROJECT_DIR$/app/Resources/views/base.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
+      <change beforePath="$PROJECT_DIR$/app/config/config.yml" afterPath="$PROJECT_DIR$/app/config/config.yml" />
+      <change beforePath="$PROJECT_DIR$/app/config/routing.yml" afterPath="$PROJECT_DIR$/app/config/routing.yml" />
       <change beforePath="$PROJECT_DIR$/app/config/security.yml" afterPath="$PROJECT_DIR$/app/config/security.yml" />
-      <change beforePath="$PROJECT_DIR$/bin/symfony_requirements" afterPath="$PROJECT_DIR$/bin/symfony_requirements" />
+      <change beforePath="$PROJECT_DIR$/app/config/services.yml" afterPath="$PROJECT_DIR$/app/config/services.yml" />
+      <change beforePath="$PROJECT_DIR$/composer.json" afterPath="$PROJECT_DIR$/composer.json" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" afterPath="$PROJECT_DIR$/composer.lock" />
       <change beforePath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Controller/DefaultController.php" afterPath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Controller/DefaultController.php" />
       <change beforePath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Controller/FreelancerController.php" afterPath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Controller/FreelancerController.php" />
-      <change beforePath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/Public/Front/css/style.css" afterPath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/Public/Front/css/style.css" />
-      <change beforePath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/config/routing.yml" afterPath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/config/routing.yml" />
-      <change beforePath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/views/Default/Alluser.html.twig" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/views/Default/index.html.twig" afterPath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/views/Default/index.html.twig" />
-      <change beforePath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/views/Default/layout.html.twig" afterPath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/views/Default/layout.html.twig" />
-      <change beforePath="$PROJECT_DIR$/vendor/autoload.php" afterPath="$PROJECT_DIR$/vendor/autoload.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/ClassLoader.php" afterPath="$PROJECT_DIR$/vendor/composer/ClassLoader.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/LICENSE" afterPath="$PROJECT_DIR$/vendor/composer/LICENSE" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" afterPath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_files.php" afterPath="$PROJECT_DIR$/vendor/composer/autoload_files.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_namespaces.php" afterPath="$PROJECT_DIR$/vendor/composer/autoload_namespaces.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" afterPath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_real.php" afterPath="$PROJECT_DIR$/vendor/composer/autoload_real.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/installed.json" afterPath="$PROJECT_DIR$/vendor/composer/installed.json" />
+      <change beforePath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Entity/User.php" afterPath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Entity/User.php" />
+      <change beforePath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Form/RegistrationType.php" afterPath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Form/RegistrationType.php" />
+      <change beforePath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Redirection/AfterLoginRedirection.php" afterPath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Redirection/AfterLoginRedirection.php" />
+      <change beforePath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/views/Default/Freelancer_home.html.twig" afterPath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/views/Default/Freelancer_home.html.twig" />
+      <change beforePath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/views/Default/register.html.twig" afterPath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/views/Default/register.html.twig" />
+      <change beforePath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/views/Registration/register_content.html.twig" afterPath="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/views/Registration/register_content.html.twig" />
+      <change beforePath="$PROJECT_DIR$/src/MyApp/JobOwnerBundle/Controller/DefaultController.php" afterPath="$PROJECT_DIR$/src/MyApp/JobOwnerBundle/Controller/DefaultController.php" />
+      <change beforePath="$PROJECT_DIR$/src/MyApp/JobOwnerBundle/Controller/JobOwnerController.php" afterPath="$PROJECT_DIR$/src/MyApp/JobOwnerBundle/Controller/JobOwnerController.php" />
+      <change beforePath="$PROJECT_DIR$/src/MyApp/JobOwnerBundle/Resources/config/routing.yml" afterPath="$PROJECT_DIR$/src/MyApp/JobOwnerBundle/Resources/config/routing.yml" />
+      <change beforePath="$PROJECT_DIR$/src/MyApp/JobOwnerBundle/Resources/views/Default/Jobowner_home.html.twig" afterPath="$PROJECT_DIR$/src/MyApp/JobOwnerBundle/Resources/views/Default/Jobowner_home.html.twig" />
+      <change beforePath="$PROJECT_DIR$/src/MyApp/JobOwnerBundle/Resources/views/Default/index.html.twig" afterPath="" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -45,12 +309,12 @@
     <window id="1">
       <content type="file-editors">
         <state>
-          <leaf>
+          <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
             <file leaf-file-name="User.php" pinned="false" current-in-tab="true">
               <entry file="file://$PROJECT_DIR$/src/MyApp/FreelancerBundle/Entity/User.php">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="1575">
-                    <caret line="94" column="18" lean-forward="false" selection-start-line="94" selection-start-column="18" selection-end-line="94" selection-end-column="18" />
+                  <state relative-caret-position="836">
+                    <caret line="94" column="7" lean-forward="false" selection-start-line="94" selection-start-column="7" selection-end-line="94" selection-end-column="7" />
                     <folding />
                   </state>
                 </provider>
@@ -66,8 +330,8 @@
       <file leaf-file-name="index.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/views/Default/index.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-84">
-              <caret line="5" column="40" lean-forward="false" selection-start-line="5" selection-start-column="40" selection-end-line="5" selection-end-column="40" />
+            <state relative-caret-position="315">
+              <caret line="15" column="24" lean-forward="true" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -76,22 +340,26 @@
       <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/Public/Front/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="186">
-              <caret line="14" column="1" lean-forward="false" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
-              <folding />
+            <state relative-caret-position="0">
+              <caret line="0" column="4" lean-forward="true" selection-start-line="0" selection-start-column="4" selection-end-line="0" selection-end-column="4" />
+              <folding>
+                <marker date="1524327124113" expanded="true" signature="22604:22606" ph="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="layout.html.twig" pinned="false" current-in-tab="false">
+      <file leaf-file-name="layout.html.twig" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/views/Default/layout.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="630">
-              <caret line="51" column="10" lean-forward="false" selection-start-line="51" selection-start-column="10" selection-end-line="51" selection-end-column="10" />
+            <state relative-caret-position="-121">
+              <caret line="113" column="18" lean-forward="true" selection-start-line="113" selection-start-column="18" selection-end-line="113" selection-end-column="18" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#a#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#img#0;n#span#0;n#div#0;n#a#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="e#11366#11373#0#HTML" expanded="true" />
+                <element signature="n#style#0;n#a#0;n#ul#1;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#a#1;n#ul#1;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -107,14 +375,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Freelancersdetails.html.twig" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Freelancersdetails.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/views/Default/Freelancersdetails.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="57" column="126" lean-forward="false" selection-start-line="57" selection-start-column="126" selection-end-line="57" selection-end-column="126" />
-              <folding>
-                <element signature="e#12#48#0#Twig" expanded="true" />
-              </folding>
+            <state relative-caret-position="1197">
+              <caret line="57" column="19" lean-forward="false" selection-start-line="57" selection-start-column="19" selection-end-line="57" selection-end-column="19" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -122,7 +388,7 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../../products_WB0B30DGR/html/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="82">
+            <state relative-caret-position="1680">
               <caret line="80" column="42" lean-forward="false" selection-start-line="80" selection-start-column="28" selection-end-line="80" selection-end-column="42" />
               <folding>
                 <element signature="n#ul#0;n#li#0;n#ul#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
@@ -139,7 +405,7 @@
       <file leaf-file-name="FreelancerController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/MyApp/FreelancerBundle/Controller/FreelancerController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
+            <state relative-caret-position="882">
               <caret line="50" column="38" lean-forward="false" selection-start-line="50" selection-start-column="38" selection-end-line="50" selection-end-column="38" />
               <folding />
             </state>
@@ -159,9 +425,11 @@
       <file leaf-file-name="routing.yml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/config/routing.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="429">
-              <caret line="28" column="23" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="23" />
-              <folding />
+            <state relative-caret-position="504">
+              <caret line="24" column="23" lean-forward="false" selection-start-line="24" selection-start-column="23" selection-end-line="24" selection-end-column="23" />
+              <folding>
+                <marker date="1524327124113" expanded="true" signature="0:11" ph="freelancer_user: &lt;2 keys&gt;" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -242,9 +510,6 @@
       </map>
     </option>
   </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="mock:///Dummy.txt" root0="SKIP_INSPECTION" />
-  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
@@ -291,13 +556,13 @@
         <option value="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/views/Default/Alluser.html.twig" />
         <option value="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/config/routing.yml" />
         <option value="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/views/Default/Jobownersdetails.html.twig" />
-        <option value="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/views/Default/index.html.twig" />
         <option value="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Controller/FreelancerController.php" />
         <option value="$PROJECT_DIR$/../../products_WB0B30DGR/html/index.html" />
         <option value="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/Public/Front/css/ace.css" />
         <option value="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/Public/Front/css/style.css" />
         <option value="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/views/Default/layout.html.twig" />
         <option value="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/views/Default/Freelancersdetails.html.twig" />
+        <option value="$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/views/Default/index.html.twig" />
       </list>
     </option>
   </component>
@@ -352,13 +617,18 @@
       <path value="$PROJECT_DIR$/vendor/symfony/symfony" />
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php70" />
       <path value="$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle" />
+      <path value="$PROJECT_DIR$/vendor/knplabs/knp-components" />
+      <path value="$PROJECT_DIR$/vendor/knplabs/knp-menu-bundle" />
+      <path value="$PROJECT_DIR$/vendor/knplabs/knp-menu" />
+      <path value="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle" />
+      <path value="$PROJECT_DIR$/vendor/symfony/finder" />
     </include_path>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="2391" />
+    <option name="x" value="-9" />
     <option name="y" value="-9" />
-    <option name="width" value="1718" />
-    <option name="height" value="928" />
+    <option name="width" value="1938" />
+    <option name="height" value="1048" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -379,7 +649,6 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -578,6 +847,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -643,6 +913,8 @@
       <workItem from="1522778972752" duration="4835000" />
       <workItem from="1523189937603" duration="12822000" />
       <workItem from="1523565753086" duration="4154000" />
+      <workItem from="1524326111270" duration="51000" />
+      <workItem from="1524326960181" duration="194000" />
     </task>
     <task id="LOCAL-00001" summary="Update Vendor FOS">
       <created>1522516902427</created>
@@ -690,24 +962,21 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="133306000" />
+    <option name="totallyTimeSpent" value="133551000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="2391" y="-9" width="1718" height="928" extended-state="6" />
-    <editor active="true" />
+    <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843137" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="GitLabIntegration" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23984273" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32896462" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5686275" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2819732" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2905478" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -715,8 +984,10 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23984273" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -871,7 +1142,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -919,7 +1189,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="17" column="8" lean-forward="false" selection-start-line="17" selection-start-column="8" selection-end-line="17" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -949,7 +1218,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="336">
           <caret line="16" column="5" lean-forward="false" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -994,7 +1262,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1743">
           <caret line="83" column="0" lean-forward="false" selection-start-line="83" selection-start-column="0" selection-end-line="83" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1019,10 +1286,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="567">
           <caret line="29" column="65" lean-forward="false" selection-start-line="29" selection-start-column="65" selection-end-line="29" selection-end-column="65" />
-          <folding>
-            <marker date="1523279591019" expanded="true" signature="452:514" ph="SELECT u FRO... FreelancerBundle" />
-            <marker date="1523279591019" expanded="true" signature="723:785" ph="SELECT u FRO... FreelancerBundle" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1030,7 +1294,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2541">
           <caret line="121" column="28" lean-forward="false" selection-start-line="121" selection-start-column="28" selection-end-line="121" selection-end-column="28" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1044,15 +1307,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/config/routing.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="429">
-          <caret line="28" column="23" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="23" />
-          <folding />
+        <state relative-caret-position="504">
+          <caret line="24" column="23" lean-forward="false" selection-start-line="24" selection-start-column="23" selection-end-line="24" selection-end-column="23" />
+          <folding>
+            <marker date="1524327124113" expanded="true" signature="0:11" ph="freelancer_user: &lt;2 keys&gt;" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/MyApp/FreelancerBundle/Controller/FreelancerController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
+        <state relative-caret-position="882">
           <caret line="50" column="38" lean-forward="false" selection-start-line="50" selection-start-column="38" selection-end-line="50" selection-end-column="38" />
           <folding />
         </state>
@@ -1062,13 +1327,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
           <caret line="2095" column="4" lean-forward="false" selection-start-line="2095" selection-start-column="1" selection-end-line="2095" selection-end-column="4" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../../products_WB0B30DGR/html/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="82">
+        <state relative-caret-position="1680">
           <caret line="80" column="42" lean-forward="false" selection-start-line="80" selection-start-column="28" selection-end-line="80" selection-end-column="42" />
           <folding>
             <element signature="n#ul#0;n#li#0;n#ul#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
@@ -1081,19 +1345,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/Public/Front/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="14" column="1" lean-forward="false" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/Public/Front/css/ace.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="294">
           <caret line="431" column="1" lean-forward="true" selection-start-line="429" selection-start-column="0" selection-end-line="431" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1105,40 +1360,50 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/views/Default/index.html.twig">
+    <entry file="file://$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/views/Default/Freelancersdetails.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-84">
-          <caret line="5" column="40" lean-forward="false" selection-start-line="5" selection-start-column="40" selection-end-line="5" selection-end-column="40" />
+        <state relative-caret-position="1197">
+          <caret line="57" column="19" lean-forward="false" selection-start-line="57" selection-start-column="19" selection-end-line="57" selection-end-column="19" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/views/Default/layout.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
-          <caret line="51" column="10" lean-forward="false" selection-start-line="51" selection-start-column="10" selection-end-line="51" selection-end-column="10" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#a#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#span#0;n#div#0;n#a#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="e#11366#11373#0#HTML" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/MyApp/FreelancerBundle/Entity/User.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1575">
-          <caret line="94" column="18" lean-forward="false" selection-start-line="94" selection-start-column="18" selection-end-line="94" selection-end-column="18" />
+        <state relative-caret-position="836">
+          <caret line="94" column="7" lean-forward="false" selection-start-line="94" selection-start-column="7" selection-end-line="94" selection-end-column="7" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/views/Default/Freelancersdetails.html.twig">
+    <entry file="file://$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/views/Default/index.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="57" column="126" lean-forward="false" selection-start-line="57" selection-start-column="126" selection-end-line="57" selection-end-column="126" />
+        <state relative-caret-position="315">
+          <caret line="15" column="24" lean-forward="true" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/Public/Front/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="4" lean-forward="true" selection-start-line="0" selection-start-column="4" selection-end-line="0" selection-end-column="4" />
           <folding>
-            <element signature="e#12#48#0#Twig" expanded="true" />
+            <marker date="1524327124113" expanded="true" signature="22604:22606" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MyApp/FreelancerBundle/Resources/views/Default/layout.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-121">
+          <caret line="113" column="18" lean-forward="true" selection-start-line="113" selection-start-column="18" selection-end-line="113" selection-end-column="18" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#a#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#span#0;n#div#0;n#a#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#ul#1;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#1;n#ul#1;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>

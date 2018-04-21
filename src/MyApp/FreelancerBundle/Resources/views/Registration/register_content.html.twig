@@ -1,7 +1,7 @@
 {% trans_default_domain 'FOSUserBundle' %}
 
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="{{asset('bundles/freelancer/Front/js/jquery-3.3.1.min.js')}}"></script>
 
 
 <script>
@@ -19,7 +19,7 @@
         $('#fos_user_registration_form_skills').val('');
         $('#fos_user_registration_form_disponibility').val('');
         $('#fos_user_registration_form_cv').val('');
-        $('#fos_user_registration_form_firstName').val('');
+        $('#fos_user_registration_form_FirstName').val('');
         $('#fos_user_registration_form_lastName').val('');
         $('#fos_user_registration_form_birthDate').val('');
         $('#fos_user_registration_form_phoneNumber').val('');
@@ -29,7 +29,7 @@
             $('#fos_user_registration_form_skills').val('');
             $('#fos_user_registration_form_cv').val('');
             $('#fos_user_registration_form_disponibility').val('');
-            $('#fos_user_registration_form_firstName').val('');
+            $('#fos_user_registration_form_FirstName').val('');
             $('#fos_user_registration_form_lastName').val('');
             $('#fos_user_registration_form_birthDate').val('');
             $('#fos_user_registration_form_phoneNumber').val('');
@@ -47,8 +47,10 @@
             $('#titre').text('Register as Freelancer');
         });
         $("#btn-job").click(function(){
+
             $('#fos_user_registration_form_skills').val('null');
-            $('#fos_user_registration_form_cv').val('null');
+            $('#fos_user_registration_form_cv').val('');
+            $('#fos_user_registration_form_cv').removeAttr('required');
             $('#fos_user_registration_form_disponibility').val('null');
             $('#fos_user_registration_form_domaine').val('');
             $('#fos_user_registration_form_registrationNum').val('');
@@ -86,14 +88,14 @@
         <div class="col-xs-md-10">
             <div class="col-md-12">
                 <div class="form-group col-md-6">
-                {{ form_label(form.firstName) }}
-                {{ form_errors(form.firstName) }}
-                {{ form_widget(form.firstName, {'attr': {'class': 'form-control'}}) }}
+                {{ form_label(form.FirstName) }}
+                {{ form_errors(form.FirstName) }}
+                {{ form_widget(form.FirstName, {'attr': {'class': 'form-control'}}) }}
                 </div>
                 <div class="form-group col-md-6">
-                {{ form_label(form.lastName) }}
-                {{ form_errors(form.lastName) }}
-                {{ form_widget(form.lastName, {'attr': {'class': 'form-control'}}) }}
+                {{ form_label(form.LastName) }}
+                {{ form_errors(form.LastName) }}
+                {{ form_widget(form.LastName, {'attr': {'class': 'form-control'}}) }}
                 </div>
             </div>
             <div class="col-md-12">

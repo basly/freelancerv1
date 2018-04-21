@@ -1,0 +1,79 @@
+{% extends 'FreelancerBundle:Default:index.html.twig' %}
+
+{% block body %}
+<div class="services-breadcrumb">
+    <div class="agile_inner_breadcrumb">
+        <ul class="w3_short">
+            <li><a href="index.html">Home</a><i>||</i></li>
+            <li>Project Details</li>
+        </ul>
+    </div>
+</div>
+<div class="banner-bottom">
+    <div class="container">
+        <div class="w3ls-title">
+            <h3 class="title-w3l"><span>P</span>roject!</h3>
+        </div>
+    </div>
+
+    <table class="table table-striped">
+        <tbody>
+            <tr>
+                <th>Projectname</th>
+                <td>{{ project.projectname }}</td>
+            </tr>
+            <tr>
+                <th>Activityarea</th>
+                <td>{{ project.activityarea }}</td>
+            </tr>
+            <tr>
+                <th>Projectdescription</th>
+                <td>{{ project.projectdescription }}</td>
+            </tr>
+            <tr>
+                <th>Startdate</th>
+                <td>{% if project.startdate %}{{ project.startdate|date('Y-m-d') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Enddate</th>
+                <td>{% if project.enddate %}{{ project.enddate|date('Y-m-d') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Payment</th>
+                <td>{{ project.payment }}</td>
+            </tr>
+            <tr>
+                <th>Experiencelevel</th>
+                <td>{{ project.experiencelevel }}</td>
+            </tr>
+            <tr>
+                <th>Requiredskills</th>
+                <td>{{ project.requiredskills }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="col-md-12">
+        {% if is_granted('ROLE_FREELANCER') or is_granted('ROLE_ADMIN') %}
+            <a href="{{ path('demande_add',{ 'id': project.id }) }}" class="btn btn-default" {% if test ==0 %}{{ 'disabled'}}{% endif %} > Candidate sending</a>
+            <a href="{{ path('get_test',{ 'id': project.id }) }}" {% if test !=0 %}{{ 'disabled'}}{% endif %} class="btn btn-default" >Get a TEST</a>
+        {% endif %}
+
+        <div class="col-md-2">
+            <a class="btn btn-default" href="{{ path('project_index') }}"><i class="glyphicon glyphicon-list"></i>Back to the list</a>
+        </div>
+        {% if is_granted('ROLE_JOBOWNER') or is_granted('ROLE_ADMIN') %}
+        <div class="col-md-1">
+            <a class="btn btn-default"href="{{ path('project_edit', { 'id': project.id }) }}"><i class="glyphicon glyphicon-edit"></i>Edit</a>
+        </div>
+        <a href="{{ path('examen_project_new',{'id': project.id }) }}" {% if test ==0 %}{{ 'disabled'}}{% endif %} class="btn btn-default"> <i class="fa fa-plus"></i> Add a new test </a>
+        {% endif %}
+        {% if is_granted('ROLE_JOBOWNER') or is_granted('ROLE_ADMIN') %}
+    {{ form_start(delete_form) }}
+    <div class="col-md-1">
+    <button type="submit" value="Delete" class="btn btn-default"><i class="fa fa-trash">  Delete</i></button>
+    {{ form_end(delete_form) }}
+    </div>
+        {% endif %}
+
+{% endblock %}

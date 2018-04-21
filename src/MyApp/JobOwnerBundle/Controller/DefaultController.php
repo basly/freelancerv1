@@ -8,7 +8,7 @@ class DefaultController extends Controller
 {
     public function indexAction()
     {
-        return $this->render('MyAppJobOwnerBundle:Default:index.html.twig');
+        return $this->render('MyAppJobOwnerBundle:Default:Jobowner_home.html.twig');
     }
 
 }

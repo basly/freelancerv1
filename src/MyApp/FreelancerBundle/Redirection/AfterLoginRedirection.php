@@ -48,7 +48,7 @@ class AfterLoginRedirection implements AuthenticationSuccessHandlerInterface
             $redirection = new RedirectResponse($this->router->generate('freelancer_Freelancer'));
         } else if (in_array('ROLE_JOBOWNER', $rolesTab, true)) {
             // c'est un utilisaeur lambda : on le rediriger vers l'accueil
-            $redirection = new RedirectResponse($this->router->generate('freelancer_JobOwner'));
+            $redirection = new RedirectResponse($this->router->generate('my_app_job_owner_homepage'));
         }else if (in_array('ROLE_ADMIN', $rolesTab, true)) {
             // c'est un utilisaeur lambda : on le rediriger vers l'accueil
             $redirection = new RedirectResponse($this->router->generate('freelancer_admin_home'));

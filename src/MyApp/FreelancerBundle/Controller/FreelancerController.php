@@ -41,9 +41,25 @@ class FreelancerController extends Controller
         $form2 = $this->createForm('AppBundle\Form\JobownerType', $job);*/
         return $this->render('freelancer/freelancer_home.html.twig');
     }
-    public function FreelancerAction()
+    public function FreelancerAction(Request $request)
+
     {
-        return $this->render('FreelancerBundle:Default:Freelancer_home.html.twig');
+
+        $em = $this->getDoctrine()->getManager();
+
+        $projects = $em->getRepository('MyAppJobOwnerBundle:Project')->findAll();
+        $paginator  = $this->get('knp_paginator');
+
+        $result= $paginator->paginate(
+            $projects,
+            $request->query->getInt('page',1),
+            $request->query->getInt('limit',5)
+
+        );
+
+
+        return $this->render('FreelancerBundle:Default:Freelancer_home.html.twig',array(
+            'projects' => $result));
     }
 
 
