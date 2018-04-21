@@ -10,4 +10,9 @@ class DefaultController extends Controller
     {
         return $this->render('MyAppAdminBundle:Default:index.html.twig');
     }
+
+    public function adminAction()
+    {
+        return $this->render('MyAppAdminBundle:Default:Admin_home.html.twig');
+    }
 }

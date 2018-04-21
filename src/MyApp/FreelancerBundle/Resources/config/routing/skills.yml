@@ -1,0 +1,29 @@
+skills_index:
+    path:     /
+    defaults: { _controller: "FreelancerBundle:Skills:index" }
+    methods:  GET
+
+skills_skillbar:
+    path:     /skillbar
+    defaults: { _controller: "FreelancerBundle:Skills:skillbar" }
+    methods:  GET
+
+skills_show:
+    path:     /{id}/show
+    defaults: { _controller: "FreelancerBundle:Skills:show" }
+    methods:  GET
+
+skills_new:
+    path:     /new
+    defaults: { _controller: "FreelancerBundle:Skills:new" }
+    methods:  [GET, POST]
+
+skills_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "FreelancerBundle:Skills:edit" }
+    methods:  [GET, POST]
+
+skills_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "FreelancerBundle:Skills:delete" }
+    methods:  DELETE

@@ -1,0 +1,44 @@
+{% extends 'FreelancerBundle:Default:index.html.twig' %}
+{% block body %}
+
+    <div class="services-breadcrumb">
+        <div class="agile_inner_breadcrumb">
+            <ul class="w3_short">
+                <li><a href="index.html">Home</a><i>||</i></li>
+                <li>My Demande</li>
+            </ul>
+        </div>
+    </div>
+    <div class="banner-bottom">
+    <div class="container">
+        <div class="w3ls-title">
+            <h3 class="title-w3l"><span>D</span>emandes!</h3>
+        </div>
+    </div>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+
+            <th>Description</th>
+            <th>Statut</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for demande in demandes %}
+            <tr>
+
+                <td>{{ demande.description }}</td>
+                <td>{{ demande.status }}</td>
+
+
+                <td>
+
+                    <a class="btn btn-default" href="{{ path('demande_show', { 'id': demande.id }) }}"><i class="fa fa-eye"></i>show</a>
+
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

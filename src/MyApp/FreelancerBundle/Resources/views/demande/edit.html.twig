@@ -1,0 +1,31 @@
+{% extends 'FreelancerBundle:Default:index.html.twig' %}
+{% block body %}
+<div class="services-breadcrumb">
+    <div class="agile_inner_breadcrumb">
+        <ul class="w3_short">
+            <li><a href="index.html">Home</a><i>||</i></li>
+            <li>Demande Edit</li>
+        </ul>
+    </div>
+</div>
+<div class="banner-bottom">
+    <div class="container">
+        <div class="w3ls-title">
+            <h3 class="title-w3l"><span>D</span>emande edit!</h3>
+        </div>
+    </div>
+
+    <div class="col-md-12">
+        <div class="form-group col-md-3">
+            {{ form_label(edit_form.status) }}
+            {{ form_errors(edit_form.status) }}
+            {{ form_widget(edit_form.status, {'attr': {'class': 'form-control'}}) }}
+        </div>
+    </div>
+    <div class="col-md-1">
+        <button type="submit" value="Edit" class="btn btn-default" /> <i class="fa fa-pencil">  Edit</i></button>
+    </div>
+
+            <a class="btn btn-default" href="{{ path('demand_by_JobOwner') }}"> <i class="glyphicon glyphicon-list"></i>Back to the list </a>
+
+{% endblock %}

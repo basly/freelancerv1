@@ -1,3 +1,13 @@
+my_app_job_owner_offer:
+    resource: "@MyAppJobOwnerBundle/Resources/config/routing/offer.yml"
+    prefix:   /offer
+
 my_app_job_owner_homepage:
     path:     /
-    defaults: { _controller: MyAppJobOwnerBundle:Default:index }
+    defaults: { _controller: MyAppJobOwnerBundle:JobOwner:jobOwner}
+    methods:  GET
+
+
+
+
+

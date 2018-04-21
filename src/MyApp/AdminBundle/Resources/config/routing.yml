@@ -1,3 +1,11 @@
 my_app_admin_homepage:
-    path:     /test
-    defaults: { _controller: MyAppAdminBundle:Default:index }
+    path:     /
+    defaults: { _controller: MyAppAdminBundle:Default:admin }
+
+my_app_admin_ShowReclamations:
+    path:    /ShowReclamations
+    defaults: { _controller: MyAppAdminBundle:Admin:ShowReclamations }
+
+my_app_admin_replyReclamation:
+    path:    /ShowReclamation/{id}
+    defaults: { _controller: MyAppAdminBundle:Admin:showReclamation }

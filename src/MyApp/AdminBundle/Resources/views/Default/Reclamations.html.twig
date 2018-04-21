@@ -1,0 +1,13 @@
+{% extends '@MyAppAdmin/default/backLayout.html.twig' %}
+{% block test2 %}
+    <div class="col-lg-offset-2 col-md-6">
+        <div class="about w3layouts-agileinfo" id="about">
+            <ul class="list-group w3-agile">
+                <li class="list-group-item"><h4>Reclamations</h4></li>
+                {% for user in reclamations %}
+                    <li class="list-group-item"><span>  <a class="button18" href="{{ path('my_app_admin_replyReclamation',{'id':user.id}) }}"><div> {{ user.titre }} </div></a></span></li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+{% endblock %}

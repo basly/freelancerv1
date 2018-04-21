@@ -1,0 +1,45 @@
+{% extends '@Freelancer/Default/index.html.twig' %}
+
+{% block body %}
+    <h1>Demandes list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Summary</th>
+                <th>Description</th>
+                <th>Status</th>
+                <th>Content</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for demande in demandes %}
+            <tr>
+                <td><a href="{{ path('demande_show', { 'id': demande.id }) }}">{{ demande.id }}</a></td>
+                <td>{{ demande.summary }}</td>
+                <td>{{ demande.description }}</td>
+                <td>{{ demande.status }}</td>
+                <td>{{ demande.content }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('demande_show', { 'id': demande.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('demande_edit', { 'id': demande.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('demande_new') }}">Create a new demande</a>
+        </li>
+    </ul>
+{% endblock %}

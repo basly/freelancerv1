@@ -1,0 +1,39 @@
+demande_index:
+    path:     /
+    defaults: { _controller: "FreelancerBundle:Demande:index" }
+    methods:  GET
+
+demande_show:
+    path:     /{id}/show
+    defaults: { _controller: "FreelancerBundle:Demande:show" }
+    methods:  GET
+
+demande_add:
+    path:     /add/{id}
+    defaults: { _controller: "FreelancerBundle:Demande:add" }
+    methods:  [GET, POST]
+
+demande_new:
+    path:     /new
+    defaults: { _controller: "FreelancerBundle:Demande:new" }
+    methods:  [GET, POST]
+
+demande_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "FreelancerBundle:Demande:edit" }
+    methods:  [GET, POST]
+
+demande_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "FreelancerBundle:Demande:delete" }
+    methods:  DELETE
+
+demand_by_JobOwner:
+    path:     /demandByJobOnwer
+    defaults: { _controller: "FreelancerBundle:Demande:demandByJobOwner" }
+    methods:  GET
+
+demand_by_Freelancer:
+    path:     /demandByFreelancer
+    defaults: { _controller: "FreelancerBundle:Demande:demandByFreelancer" }
+    methods:  GET

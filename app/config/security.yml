@@ -27,6 +27,8 @@ security:
         - { path: ^/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/admin/, role: ROLE_ADMIN }
-        - { path: ^/admin/, role: ROLE_FREELANCER }
+        - { path: ^/Freelancer/, role: ROLE_FREELANCER }
         - { path: ^/f/, role: ROLE_JOBOWNER }
         - { path: ^/freelancer/^, role: [ROLE_FREE,ROLE_ADMIN]}
+        - { path: ^/jobowner/^, role: [ROLE_JOBOWNER,ROLE_ADMIN]}
+        - { path: ^/Project/^, role: [ROLE_JOBOWNER,ROLE_ADMIN]}

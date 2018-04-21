@@ -31,6 +31,7 @@ class ComposerStaticInit1c56b9f8baaef3511324c8a024f1eb72
             'Symfony\\Polyfill\\Php56\\' => 23,
             'Symfony\\Polyfill\\Mbstring\\' => 26,
             'Symfony\\Polyfill\\Apcu\\' => 22,
+            'Symfony\\Component\\Finder\\' => 25,
             'Symfony\\Component\\' => 18,
             'Symfony\\Bundle\\SwiftmailerBundle\\' => 33,
             'Symfony\\Bundle\\MonologBundle\\' => 29,
@@ -56,6 +57,12 @@ class ComposerStaticInit1c56b9f8baaef3511324c8a024f1eb72
         array (
             'Monolog\\' => 8,
         ),
+        'K' => 
+        array (
+            'Knp\\Menu\\' => 9,
+            'Knp\\Bundle\\PaginatorBundle\\' => 27,
+            'Knp\\Bundle\\MenuBundle\\' => 22,
+        ),
         'I' => 
         array (
             'Incenteev\\ParameterHandler\\' => 27,
@@ -69,6 +76,7 @@ class ComposerStaticInit1c56b9f8baaef3511324c8a024f1eb72
         array (
             'Doctrine\\Instantiator\\' => 22,
             'Doctrine\\Common\\Cache\\' => 22,
+            'Doctrine\\Common\\Annotations\\' => 28,
             'Doctrine\\Common\\' => 16,
             'Doctrine\\Bundle\\DoctrineCacheBundle\\' => 36,
             'Doctrine\\Bundle\\DoctrineBundle\\' => 31,
@@ -107,6 +115,10 @@ class ComposerStaticInit1c56b9f8baaef3511324c8a024f1eb72
         'Symfony\\Polyfill\\Apcu\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-apcu',
+        ),
+        'Symfony\\Component\\Finder\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/finder',
         ),
         'Symfony\\Component\\' => 
         array (
@@ -180,6 +192,18 @@ class ComposerStaticInit1c56b9f8baaef3511324c8a024f1eb72
         array (
             0 => __DIR__ . '/..' . '/monolog/monolog/src/Monolog',
         ),
+        'Knp\\Menu\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/knplabs/knp-menu/src/Knp/Menu',
+        ),
+        'Knp\\Bundle\\PaginatorBundle\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/knplabs/knp-paginator-bundle',
+        ),
+        'Knp\\Bundle\\MenuBundle\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/knplabs/knp-menu-bundle/src',
+        ),
         'Incenteev\\ParameterHandler\\' => 
         array (
             0 => __DIR__ . '/..' . '/incenteev/composer-parameter-handler',
@@ -199,6 +223,10 @@ class ComposerStaticInit1c56b9f8baaef3511324c8a024f1eb72
         'Doctrine\\Common\\Cache\\' => 
         array (
             0 => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache',
+        ),
+        'Doctrine\\Common\\Annotations\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/doctrine/annotations/lib/Doctrine/Common/Annotations',
         ),
         'Doctrine\\Common\\' => 
         array (
@@ -237,6 +265,13 @@ class ComposerStaticInit1c56b9f8baaef3511324c8a024f1eb72
                 0 => __DIR__ . '/..' . '/sensiolabs/security-checker',
             ),
         ),
+        'K' => 
+        array (
+            'Knp\\Component' => 
+            array (
+                0 => __DIR__ . '/..' . '/knplabs/knp-components/src',
+            ),
+        ),
         'D' => 
         array (
             'Doctrine\\ORM\\' => 
@@ -258,10 +293,6 @@ class ComposerStaticInit1c56b9f8baaef3511324c8a024f1eb72
             'Doctrine\\Common\\Collections\\' => 
             array (
                 0 => __DIR__ . '/..' . '/doctrine/collections/lib',
-            ),
-            'Doctrine\\Common\\Annotations\\' => 
-            array (
-                0 => __DIR__ . '/..' . '/doctrine/annotations/lib',
             ),
         ),
     );

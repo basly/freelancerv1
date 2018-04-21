@@ -1,6 +1,7 @@
 <?php
 
 namespace MyApp\FreelancerBundle\Entity;
+use Doctrine\Common\Collections\ArrayCollection;
 use FOS\UserBundle\Model\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
 /**
@@ -94,14 +95,22 @@ protected $id;
     /**
      * @var string
      *
-     * @ORM\Column(name="cv", type="string",length=255)
+     * @ORM\Column(name="cv", type="string",length=255,nullable=true)
      */
     private $cv;
+
+
+    /**
+     * One User has Many Projects.
+     * @ORM\OneToMany(targetEntity="MyApp\JobOwnerBundle\Entity\Project", mappedBy="jobowner")
+     */
+    public $projects;
 
 public function __construct()
 {
 parent::__construct();
 // your own logic
+    $this->projects= new ArrayCollection();
 }
 
     /**
