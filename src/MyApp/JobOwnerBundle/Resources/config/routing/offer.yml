@@ -1,0 +1,24 @@
+offer_index:
+    path:     /
+    defaults: { _controller: "MyAppJobOwnerBundle:Offer:index" }
+    methods:  GET
+
+offer_show:
+    path:     /{id}/show
+    defaults: { _controller: "MyAppJobOwnerBundle:Offer:show" }
+    methods:  GET
+
+offer_new:
+    path:     /new
+    defaults: { _controller: "MyAppJobOwnerBundle:Offer:new" }
+    methods:  [GET, POST]
+
+offer_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "MyAppJobOwnerBundle:Offer:edit" }
+    methods:  [GET, POST]
+
+offer_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "MyAppJobOwnerBundle:Offer:delete" }
+    methods:  DELETE

@@ -1,0 +1,56 @@
+{% extends 'FreelancerBundle:Default:index.html.twig' %}
+{% block body %}
+<div class="services-breadcrumb">
+    <div class="agile_inner_breadcrumb">
+        <ul class="w3_short">
+            <li><a href="index.html">Home</a><i>||</i></li>
+            <li>Demande Details</li>
+        </ul>
+    </div>
+</div>
+<div class="banner-bottom">
+    <div class="container">
+        <div class="w3ls-title">
+            <h3 class="title-w3l"><span>D</span>mande!</h3>
+        </div>
+    </div>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ demande.id }}</td>
+            </tr>
+            <tr>
+                <th>Summary</th>
+                <td>{{ demande.summary }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ demande.description }}</td>
+            </tr>
+            <tr>
+                <th>Status</th>
+                <td>{{ demande.status }}</td>
+            </tr>
+            <tr>
+                <th>Content</th>
+                <td>{{ demande.content }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            {% if is_granted('ROLE_JOBOWNER') or is_granted('ROLE_ADMIN') %}
+            <a href="{{ path('demand_by_JobOwner') }}">Back to the list of demands</a>
+            {% else%}
+            <a href="{{ path('demand_by_Freelancer') }}">Back to the list of demands</a>
+            {% endif %}
+        </li>
+        <li>
+            <a href="{{ path('demande_edit', { 'id': demande.id }) }}">Edit</a>
+        </li>
+
+    </ul>
+{% endblock %}

@@ -1,34 +1,157 @@
-{% extend 'Freelancer:Default:layout.html.twig' %}
-
-{%  block body %}
-    <div class="container">
-        <h3 class="title-w3l"><span>W</span>elcome</h3>
-        <div class="about-top w3ls-agile">
-            <div class="col-md-6 red">
-                <img class="img-responsive" src="{{ asset('bundles/Template/Front/images/2.jpg')}}" alt="">
-                <div class="about-img">
-                    <div class="col-md-6 col-xs-6 about-img1">
-                        <img class="img-responsive" src="{{ asset('bundles/Template/Front/images/3.jpg')}}" alt="">
-                    </div>
-                    <div class="col-md-6 col-xs-6 about-img2">
-                        <img class="img-responsive" src="{{ asset('bundles/Template/Front/images/4.jpg')}}" alt="">
-                    </div>
-                    <div class="clearfix"> </div>
-                </div>
+<!--
+   Author: W3layouts
+   Author URL: http://w3layouts.com
+   License: Creative Commons Attribution 3.0 Unported
+   License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE html>
+<html lang="zxx">
+<head>
+    <title>Business Field a Corporate Category Bootstrap Responsive Web Template | Contact :: w3layouts</title>
+    <!-- Meta tag Keywords -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Business Field web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+        function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!--// Meta tag Keywords -->
+    <!-- css files -->
+    <link rel="stylesheet" href="{{ asset('bundles/freelancer/Front/css/bootstrap.css')}}"> <!-- Bootstrap-Core-CSS -->
+    <link rel="stylesheet" href="{{ asset('bundles/freelancer/Front/css/style.css')}}" type="text/css" media="all" /> <!-- Style-CSS -->
+    <link rel="stylesheet" href="{{ asset('bundles/freelancer/Front/css/font-awesome.css')}}"> <!-- Font-Awesome-Icons-CSS -->
+    <!-- //css files -->
+    <link href="//fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i&amp;subset=latin-ext" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Athiti:200,300,400,500,600,700&amp;subset=latin-ext,thai,vietnamese" rel="stylesheet">
+</head>
+<body>
+<!-- banner-2 -->
+<div class="main-agile">
+    <div class="banner-w3l-2">
+        <!-- header -->
+        <div class="header">
+            <div class="logo">
+                <h1><a href="index.html"><span>B</span>usiness<label>Field</label></a></h1>
             </div>
-            <div class="col-md-6 come">
-                <div class=" about-wel">
-                    <h5>We provide service since <span>2006</span> with proud!</h5>
-                    <p>Masagni dolores eoquie int Basmodi temporant, autem vel eum iure reprehend.Unicmquam eius, Basmodi temurer sehsMunim.</p>
-                    <p>Basmodi temporant, ut laboreas dolore magnam kuyte hend.Unicmquam eius, Basmodi temurer sehsMunim.</p>
+            <div class="clearfix"> </div>
+        </div>
+        <ul>
+            <li><h3><a class="cd-logout" href="{{ path('fos_user_security_logout') }}">Logout</a></h3></li>
+        </ul>
+        <!-- //header -->
+        <!-- top-nav -->
+        <nav class="cd-stretchy-nav edit-content">
+            <a class="cd-nav-trigger" href="#0"> Menu <span aria-hidden="true"></span> </a>
+            {% if is_granted('ROLE_FREELANCER') or is_granted('ROLE_ADMIN') %}
+                <ul>
+                    <li><a href="{{ path('freelancer_Freelancer') }}"><span>Home</span></a></li>
+                    <li><a href="{{ path('demand_by_Freelancer') }}"><span>MyDemand</span></a></li>
+                    <li><a href=""><span></span></a></li>
+                    <li><a href=""><span></span></a></li>
+                    <li><a href="icons.html"><span>Icons</span></a></li>
+                    <li><a href="contact.html" class="active"><span>Contact</span></a></li>
+                </ul>
+                {% else %}
                     <ul>
-                        <li><i class="fa fa-hand-o-right" aria-hidden="true"></i>Masagni dolores eoquie oluptd olorem</li>
-                        <li><i class="fa fa-hand-o-right" aria-hidden="true"></i>Ipsumquia dolor sitamnetase eiuse</li>
-                        <li><i class="fa fa-hand-o-right" aria-hidden="true"></i>Ipsumquia dolor sitamne adipiscquam</li>
+                        <li><a href="{{ path('my_app_job_owner_homepage') }}"><span>Home</span></a></li>
+                        <li><a href="{{ path('project_index') }}"><span>ProjectsList</span></a></li>
+                        <li><a href="{{ path('project_new') }}"><span>NewProject</span></a></li>
+                        <li><a href="{{ path('project_index_user') }}"><span>MyProject</span></a></li>
+                        <li><a href="{{ path('demand_by_JobOwner') }}"><span>MyDemande</span></a></li>
+                        <li><a href="icons.html"><span>Icons</span></a></li>
+                        <li><a href="contact.html" class="active"><span>Contact</span></a></li>
                     </ul>
-                </div>
+            {% endif %}
+            <span aria-hidden="true" class="stretchy-nav-bg"></span>
+        </nav>
+        <!-- //top-nav -->
+    </div>
+</div>
+{% block body %}
+
+{% endblock %}
+</div>
+</div>
+<div class="map wow fadeInUp animated" data-wow-delay=".5s">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d50996.31320435244!2d-122.06676498187694!3d36.97949802442312!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808e441b7c36d549%3A0x52ca104b2ad7f985!2sSanta+Cruz%2C+CA%2C+USA!5e0!3m2!1sen!2sin!4v1469096018666" style="border:0"></iframe>
+</div>
+
+<!-- //mail -->
+
+
+<!-- footer -->
+<footer>
+    <div class="agileits-w3layouts-footer-top">
+        <div class="container">
+            <div class="col-md-6 agileits-w3layouts-footer-top-left">
+                <p><i class="fa fa-phone" aria-hidden="true"></i> +1 234 567 8901</p>
+            </div>
+            <div class="col-md-6 agileits-w3layouts-footer-top-left">
+                <p><i class="fa fa-envelope" aria-hidden="true"></i> Email :<a href="mailto:example@email.com"> mail@example.com</a></p>
             </div>
             <div class="clearfix"> </div>
         </div>
     </div>
-{%  endblock body %}
+    <div class="agileits-footer-bottom">
+        <div class="container">
+            <div class="agileits-footer-bottom-grids">
+                <div class="col-md-6 footer-bottom-left">
+                    <h2>About Us</h2>
+                    <div class="footer-img-grids">
+                        <div class="footer-img">
+                            <img src="{{ asset('bundles/freelancer/Front/images/f1.jpg')}}" alt="" />
+                        </div>
+                        <div class="footer-img-info">
+                            <p>Suspendisse potenti. Pellentesque pulvinar tellus at est ullamcorper, at elementum nibh laoreet. Nunc id diam in nulla sollicitudin auctor. Donec elementum felis turpis, vel interdum libero congue non. Mauris non magna convallis</p>
+                        </div>
+                        <div class="clearfix"> </div>
+                    </div>
+                </div>
+                <div class="col-md-3 footer-bottom-right">
+                    <h5>We are social</h5>
+                    <div class="agileinfo-social-grids">
+                        <ul>
+                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fa fa-rss"></i></a></li>
+                            <li><a href="#"><i class="fa fa-vk"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-3 w3l-footer one tweet footer-bottom-right">
+                    <h5>Tweets</h5>
+                    <ul>
+                        <li>
+                            <a href="#"><i class="fa fa-twitter"></i>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accus.
+                                <i>http//example.com</i></a>
+                            <span>About 15 minutes ago<span>
+                  </span></span></li>
+                    </ul>
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+        </div>
+    </div>
+    <div class="copyright">
+        <div class="container">
+            <p>© 2017 Business Field. All rights reserved | Design by <a href="http://w3layouts.com">W3layouts</a></p>
+        </div>
+    </div>
+</footer>
+<!-- //footer -->
+
+<!-- js-scripts -->
+<!-- js -->
+<script type="text/javascript" src="{{ asset('bundles/freelancer/Front/js/jquery-2.1.4.min.js')}}"></script>
+<script type="text/javascript" src="{{ asset('bundles/freelancer/Front/js/bootstrap.js')}}"></script> <!-- Necessary-JavaScript-File-For-Bootstrap -->
+<!-- //js -->
+<!-- menu-js -->
+<script src="{{ asset('bundles/freelancer/Front/js/modernizr.js')}}"></script> <!-- Modernizr -->
+<script src="{{ asset('bundles/freelancer/Front/js/menu.js')}}"></script> <!-- Resource jQuery -->
+<!-- //menu-js -->
+<!-- smooth scrolling -->
+<script src="{{ asset('bundles/freelancer/Front/js/SmoothScroll.min.js')}}"></script>
+<!-- //smooth scrolling -->
+<!-- //js-scripts -->
+
+</body>
+</html>

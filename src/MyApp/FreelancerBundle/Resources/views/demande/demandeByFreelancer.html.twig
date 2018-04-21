@@ -1,0 +1,37 @@
+{% extends '@Freelancer/Default/index.html.twig' %}
+
+{% block body %}
+    <h1>Demands list by Freelancer</h1>
+
+    <table>
+        <thead>
+        <tr>
+
+            <th>Description</th>
+            <th>Status</th>
+
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for demande in demandes %}
+            <tr>
+
+                <td>{{ demande.description }}</td>
+                <td>{{ demande.status }}</td>
+
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('demande_show', { 'id': demande.id }) }}">show</a>
+                        </li>
+
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+
+{% endblock %}

@@ -20,6 +20,7 @@ class AppKernel extends Kernel
             new MyApp\FreelancerBundle\FreelancerBundle(),
             new MyApp\JobOwnerBundle\MyAppJobOwnerBundle(),
             new MyApp\AdminBundle\MyAppAdminBundle(),
+            new Knp\Bundle\PaginatorBundle\KnpPaginatorBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

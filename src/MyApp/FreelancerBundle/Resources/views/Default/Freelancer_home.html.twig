@@ -1,1 +1,59 @@
-Freelancer
+{% extends '@Freelancer/Default/index.html.twig'%}
+
+{% block body %}
+<div class="services-breadcrumb">
+    <div class="agile_inner_breadcrumb">
+        <ul class="w3_short">
+            <li><a href="index.html">Home</a><i>||</i></li>
+            <li>Freelancer</li>
+        </ul>
+    </div>
+</div>
+<div class="banner-bottom">
+    <div class="container">
+        <div class="w3ls-title">
+            <h3 class="title-w3l"><span>P</span>rojects list!</h3>
+        </div>
+    </div>
+    <div class="about-top w3ls-agile" >
+        <table class="table table-striped" >
+            <thead>
+            <tr>
+                <th>Projectname</th>
+                <th>Activityarea</th>
+                <th>Projectdescription</th>
+                <th>Startdate</th>
+                <th>Enddate</th>
+                <th>Payment</th>
+                <th>Experiencelevel</th>
+                <th>Requiredskills</th>
+
+            </tr>
+            </thead>
+            <tbody>
+            {% for project in projects %}
+                <tr>
+
+                    <td>{{ project.projectname }}</td>
+                    <td>{{ project.activityarea }}</td>
+                    <td>{{ project.projectdescription }}</td>
+                    <td>{% if project.startdate %}{{ project.startdate|date('Y-m-d') }}{% endif %}</td>
+                    <td>{% if project.enddate %}{{ project.enddate|date('Y-m-d') }}{% endif %}</td>
+                    <td>{{ project.payment }}</td>
+                    <td>{{ project.experiencelevel }}</td>
+                    <td>{{ project.requiredskills }}</td>
+                    <td>
+                        <a class="btn btn-default" href="{{ path('project_show', { 'id': project.id }) }}"><i class="	fa fa-eye"></i> show</a>
+                    </td>
+
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+        <div class="navigation">
+            {{ knp_pagination_render(projects) }}
+        </div>
+    </div>
+
+    {% endblock %}
