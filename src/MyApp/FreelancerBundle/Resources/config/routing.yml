@@ -1,0 +1,26 @@
+freelancer_user:
+    resource: "@FreelancerBundle/Resources/config/routing/user.yml"
+    prefix:   /user
+
+freelancer_homepage:
+    path:     /
+    defaults: { _controller: "FreelancerBundle:Default:index" }
+
+freelancer_home:
+    path:     /
+    defaults: { _controller: "FreelancerBundle:Freelancer:home" }
+    methods:  DELETE
+
+freelancer_admin_home:
+    path:     /admin
+    defaults: { _controller: "MyAppAdminBundle:Admin:Admin" }
+
+freelancer_Freelancer:
+    path:     /Freelancer
+    defaults: { _controller: "FreelancerBundle:Freelancer:Freelancer" }
+
+
+
+freelancer_registUser_register:
+    path:     /FreelancerRegistration
+    defaults: { _controller: "FreelancerBundle:Registration:register" }
