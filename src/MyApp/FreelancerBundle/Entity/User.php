@@ -3,11 +3,16 @@
 namespace MyApp\FreelancerBundle\Entity;
 use FOS\UserBundle\Model\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
+use Mgilet\NotificationBundle\Annotation\Notifiable;
+use Mgilet\NotificationBundle\NotifiableInterface;
+
 /**
  * @ORM\Entity
+ * @ORM\Entity(repositoryClass="MyApp\FreelancerBundle\Repository\UserRepository")
  * @ORM\Table(name="user")
+ * @Notifiable(name="user")
 */
-class User extends BaseUser {
+class User extends BaseUser implements NotifiableInterface {
 
 /**
  * @ORM\Id
@@ -94,7 +99,7 @@ protected $id;
     /**
      * @var string
      *
-     * @ORM\Column(name="cv", type="string",length=255)
+     * @ORM\Column(name="cv", type="string",length=255,nullable=true)
      */
     private $cv;
 

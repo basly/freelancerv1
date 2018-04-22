@@ -3,11 +3,14 @@ imports:
     - { resource: security.yml }
     - { resource: services.yml }
     - { resource: "@FreelancerBundle/Resources/config/services.yml" }
+    - { resource: "@EspritApiBundle/Resources/config/services.yml" }
+    - { resource: "@NotifBundle/Resources/config/services.yml" }
 
 # Put parameters here that don't need to change on each machine where the app is deployed
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
     locale: en
+    cvs_directory: '%kernel.project_dir%/web/uploads/cvs'
 
 framework:
     #esi: ~
@@ -76,3 +79,6 @@ fos_user:
     from_email:
         address: yourmail@yourdomain.com
         sender_name: demo
+    registration:
+        form:
+            type: MyApp\FreelancerBundle\Form\RegistrationType

@@ -10,5 +10,4 @@ class FreelancerBundle extends Bundle
     {
         return 'FOSUserBundle';
     }
-
 }

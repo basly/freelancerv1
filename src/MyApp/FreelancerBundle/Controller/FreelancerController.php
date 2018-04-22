@@ -40,4 +40,5 @@ class FreelancerController extends Controller
         return $this->render('FreelancerBundle:Default:Freelancer_home.html.twig');
     }
 
+
 }

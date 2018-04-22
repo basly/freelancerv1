@@ -20,6 +20,9 @@ class AppKernel extends Kernel
             new MyApp\FreelancerBundle\FreelancerBundle(),
             new MyApp\JobOwnerBundle\MyAppJobOwnerBundle(),
             new MyApp\AdminBundle\MyAppAdminBundle(),
+            new Mgilet\NotificationBundle\MgiletNotificationBundle(),
+            new EspritApiBundle\EspritApiBundle(),
+            new NotifBundle\NotifBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {
