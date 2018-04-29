@@ -15,8 +15,13 @@
             <h3 class="title-w3l"><span>P</span>rojects list!</h3>
         </div>
     </div>
-<div class="about-top w3ls-agile" >
-    <table class="table table-striped" >
+</div>
+    <div class="container">
+        <a class="btn btn-default pull-right"  href="{{ path('project_new') }}"><i class="glyphicon glyphicon-plus"></i> Create a new project</a>
+    </br>
+    </br>
+        <div class="bs-docs-example" >
+            <table class="table">
         <thead>
             <tr>
                 <th>Projectname</th>
@@ -52,13 +57,15 @@
         </tbody>
     </table>
 
-    <div class="navigation">
-        {{ knp_pagination_render(projects) }}
-    </div>
+
+
 </div>
-    <ul>
-        <li>
-            <a class="btn btn-default"  href="{{ path('project_new') }}"><i class="glyphicon glyphicon-pencil"></i>Create a new project</a>
-        </li>
-    </ul>
+
+    </div>
+    <nav>
+        <div class="navigation text-center" >
+            {{ knp_pagination_render(projects) }}
+        </div>
+    </nav>
+
 {% endblock %}

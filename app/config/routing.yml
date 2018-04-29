@@ -6,7 +6,6 @@ my_app_job_owner:
     resource: "@MyAppJobOwnerBundle/Resources/config/routing.yml"
     prefix:   /jobowner
 
-
 skills_list:
     resource: "@FreelancerBundle/Resources/config/routing/skills.yml"
     prefix:   /skills

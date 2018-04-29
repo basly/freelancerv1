@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+{% extends 'FreelancerBundle:Default:index.html.twig' %}
 
 {% block body %}
     <h1>Skill creation</h1>
@@ -8,9 +8,7 @@
         <input type="submit" value="Create" />
     {{ form_end(form) }}
 
-    <ul>
-        <li>
+
             <a href="{{ path('skills_index') }}">Back to the list</a>
-        </li>
-    </ul>
+
 {% endblock %}

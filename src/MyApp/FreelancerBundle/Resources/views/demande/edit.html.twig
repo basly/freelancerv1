@@ -8,24 +8,40 @@
         </ul>
     </div>
 </div>
+
 <div class="banner-bottom">
     <div class="container">
         <div class="w3ls-title">
             <h3 class="title-w3l"><span>D</span>emande edit!</h3>
         </div>
     </div>
-
+</div>
     <div class="col-md-12">
         <div class="form-group col-md-3">
+            {{ form_label(edit_form.summary) }}
+            {{ form_errors(edit_form.summary) }}
+            {{ form_widget(edit_form.summary, {'disabled':'disabled' },{'attr': {'class': 'form-control'}}) }}
+        </div>
+            <div class="form-group col-md-3">
+            {{ form_label(edit_form.description) }}
+            {{ form_errors(edit_form.description) }}
+            {{ form_widget(edit_form.description, {'disabled':'disabled'},{'attr': {'class': 'form-control'}}) }}
+        </div>
+        </div>
+    </div>
+        <div class="col-md-12">
+            <div class="form-group col-md-3">
             {{ form_label(edit_form.status) }}
             {{ form_errors(edit_form.status) }}
             {{ form_widget(edit_form.status, {'attr': {'class': 'form-control'}}) }}
+            </div>
         </div>
-    </div>
-    <div class="col-md-1">
+    <span>
         <button type="submit" value="Edit" class="btn btn-default" /> <i class="fa fa-pencil">  Edit</i></button>
-    </div>
+    </span>
+    <span>
+        <a class="btn btn-default" href="{{ path('demand_by_JobOwner') }}"> <i class="glyphicon glyphicon-list"></i>Back to the list </a>
+    </span>
 
-            <a class="btn btn-default" href="{{ path('demand_by_JobOwner') }}"> <i class="glyphicon glyphicon-list"></i>Back to the list </a>
 
 {% endblock %}

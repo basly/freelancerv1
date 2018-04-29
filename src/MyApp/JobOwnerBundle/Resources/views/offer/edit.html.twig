@@ -1,13 +1,49 @@
-{% extends 'base.html.twig' %}
+{% extends '@Freelancer/Default/index.html.twig' %}
 
 {% block body %}
-    <h1>Offer edit</h1>
-
-    {{ form_start(edit_form) }}
-        {{ form_widget(edit_form) }}
-        <input type="submit" value="Edit" />
-    {{ form_end(edit_form) }}
-
+<div class="services-breadcrumb">
+    <div class="agile_inner_breadcrumb">
+        <ul class="w3_short">
+            <li><a href="index.html">Home</a><i>||</i></li>
+            <li>Freelancer Offer</li>
+        </ul>
+    </div>
+</div>
+<div class="banner-bottom">
+    <div class="container">
+        <div class="w3ls-title">
+            <h3 class="title-w3l"><span>O</span>ffer list!</h3>
+        </div>
+    </div>
+    <div class="about-top w3ls-agile" >
+        <div class="container">
+            <div class="bs-docs-example" >
+                <div class="col-md-12">
+                    <div class="form-group col-md-3">
+                        {{ form_label(edit_form.description) }}
+                        {{ form_errors(edit_form.description) }}
+                        {{ form_widget(edit_form.description, {'disabled':'disabled'},{'attr': {'class': 'form-control'}}) }}
+                    </div>
+                    <div class="form-group col-md-3">
+                        {{ form_label(edit_form.details) }}
+                        {{ form_errors(edit_form.details) }}
+                        {{ form_widget(edit_form.details,{'disabled':'disabled'}, {'attr': {'class': 'form-control'}}) }}
+                    </div>
+                    <div class="form-group col-md-3">
+                        {{ form_label(edit_form.amount) }}
+                        {{ form_errors(edit_form.amount) }}
+                        {{ form_widget(edit_form.amount, {'disabled':'disabled'}, {'attr': {'class': 'form-control'}}) }}
+                    </div>
+                    <div class="form-group col-md-3">
+                        {{ form_label(edit_form.datestart) }}
+                        {{ form_errors(edit_form.datestart) }}
+                        {{ form_widget(edit_form.datestart, {'disabled':'disabled'},{'attr': {'class': 'form-control'}}) }}
+                    </div>
+                    div class="form-group col-md-3">
+                    {{ form_label(edit_form.date) }}
+                    {{ form_errors(edit_form.date) }}
+                    {{ form_widget(edit_form.datestart, {'disabled':'disabled'},{'attr': {'class': 'form-control'}}) }}
+                </div>
     <ul>
         <li>
             <a href="{{ path('offer_index') }}">Back to the list</a>

@@ -5,9 +5,14 @@ use MyApp\JobOwnerBundle\Entity\Examen;
 use MyApp\JobOwnerBundle\Entity\Question;
 use MyApp\JobOwnerBundle\Entity\Choix;
 use MyApp\JobOwnerBundle\Entity\Tests;
+use Symfony\Component\Serializer\Encoder\JsonEncoder;
+use MyApp\FreelancerBundle\Entity\User;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
+use Symfony\Component\Serializer\Serializer;
 
 class ExamenController extends Controller
 {
@@ -188,5 +193,34 @@ class ExamenController extends Controller
 
         return $response;
     }
+
+    public function allexamapiAction()
+    {
+        $examen = $this->getDoctrine()->getManager()->getRepository('MyAppJobOwnerBundle:Examen')->findAll();
+       /* $serializer = new Serializer([new ObjectNormalizer()]);
+        $formatted = $serializer->normalize($test);*/
+
+        /*$normalizer = new ObjectNormalizer();
+        $normalizer->setCircularReferenceLimit(2);
+        $normalizer->setCircularReferenceHandler(function ($test){return $test->getId();});
+        $normalizer = array($normalizer);
+        $serializer = new Serializer([$normalizer]);*/
+
+        $encoder = new JsonEncoder();
+        $normalizer = new ObjectNormalizer();
+        $normalizer->setCircularReferenceLimit(1);
+        $normalizer->setCircularReferenceHandler(function ($object) {
+            return $object;
+        });
+        $normalizer = array($normalizer);
+        $serializer = new Serializer(array($normalizer), array($encoder));
+        var_dump($serializer->serialize($examen, 'json'));
+
+
+        return new JsonResponse($formatted);
+
+    }
+
+
     
 }

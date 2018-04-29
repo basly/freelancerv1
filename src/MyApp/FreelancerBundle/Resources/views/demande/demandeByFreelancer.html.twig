@@ -1,15 +1,31 @@
 {% extends '@Freelancer/Default/index.html.twig' %}
 
 {% block body %}
-    <h1>Demands list by Freelancer</h1>
 
-    <table>
+    <div class="services-breadcrumb">
+        <div class="agile_inner_breadcrumb">
+            <ul class="w3_short">
+                <li><a href="index.html">Home</a><i>||</i></li>
+                <li>Demand By Freelancer </li>
+            </ul>
+        </div>
+    </div>
+    <div class="banner-bottom">
+    <div class="container">
+        <div class="w3ls-title">
+            <h3 class="title-w3l"><span>D</span>emands list by Freelancer</h3>
+        </div>
+    </div>
+
+
+    <div class="container">
+    <div class="bs-docs-example" >
+    <table class="table">
         <thead>
         <tr>
 
             <th>Description</th>
             <th>Status</th>
-
             <th>Actions</th>
         </tr>
         </thead>
@@ -21,17 +37,21 @@
                 <td>{{ demande.status }}</td>
 
                 <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('demande_show', { 'id': demande.id }) }}">show</a>
-                        </li>
 
-                    </ul>
+                            <a class="btn btn-default"  href="{{ path('demande_show', { 'id': demande.id }) }}"><i class="	fa fa-eye"></i>show</a>
+
                 </td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
+        <nav>
+            <div class="navigation text-center">
+                {{ knp_pagination_render(demandes) }}
+            </div>
+        </nav>
+    </div>
+    </div>
 
 
 {% endblock %}

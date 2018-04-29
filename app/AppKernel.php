@@ -21,6 +21,7 @@ class AppKernel extends Kernel
             new MyApp\JobOwnerBundle\MyAppJobOwnerBundle(),
             new MyApp\AdminBundle\MyAppAdminBundle(),
             new Knp\Bundle\PaginatorBundle\KnpPaginatorBundle(),
+            new Nomaya\SocialBundle\NomayaSocialBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

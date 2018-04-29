@@ -22,7 +22,7 @@ class SkillsController extends Controller
 
         $skills = $em->getRepository('FreelancerBundle:Skills')->findAll();
 
-        return $this->render('skills/index.html.twig', array(
+        return $this->render('@Freelancer/skills/index.html.twig', array(
             'skills' => $skills,
         ));
     }
@@ -37,7 +37,22 @@ class SkillsController extends Controller
 
         $skills = $em->getRepository('FreelancerBundle:Skills')->findAll();
 
-        return $this->render('skills/showDetail.html.twig', array(
+        return $this->render('@Freelancer/skills/showDetail.html.twig', array(
+            'skills' => $skills,
+        ));
+    }
+        /**
+         * Lists skill for Project displayed as progress bar.
+         *
+         */
+        public function skillbarProjectAction($id)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $project = $em->getRepository('MyAppJobOwnerBundle:Project')->find($id);
+        $skills = $em->getRepository('FreelancerBundle:Skills')->findBy(array("project"=>$project));
+
+
+        return $this->render('@Freelancer/skills/showDetail.html.twig', array(
             'skills' => $skills,
         ));
     }
@@ -65,7 +80,35 @@ class SkillsController extends Controller
             return $this->redirectToRoute('skills_show', array('id' => $skill->getId()));
         }
 
-        return $this->render('skills/new.html.twig', array(
+        return $this->render('@Freelancer/skills/new.html.twig', array(
+            'skill' => $skill,
+            'form' => $form->createView(),
+        ));
+    }
+
+    /**
+     * Creates a new skill for project.
+     *
+     */
+    public function newSkillsProjectAction(Request $request,$id)
+    {
+        $skill = new Skills();
+        $form = $this->createForm('MyApp\FreelancerBundle\Form\SkillsType', $skill);
+        $em = $this->getDoctrine()->getManager();
+        $project = $em->getRepository('MyAppJobOwnerBundle:Project')->find($id);
+        $form->handleRequest($request);
+        $user = $this->getUser();
+        $skill->setUser($user);
+        $skill->setProject($project);
+        if ($form->isSubmitted() && $form->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($skill);
+            $em->flush();
+
+            return $this->redirectToRoute('skills_show', array('id' => $skill->getId()));
+        }
+
+        return $this->render('@Freelancer/skills/new.html.twig', array(
             'skill' => $skill,
             'form' => $form->createView(),
         ));
@@ -79,11 +122,12 @@ class SkillsController extends Controller
     {
         $deleteForm = $this->createDeleteForm($skill);
 
-        return $this->render('skills/show.html.twig', array(
+        return $this->render('@Freelancer/skills/show.html.twig', array(
             'skill' => $skill,
             'delete_form' => $deleteForm->createView(),
         ));
     }
+
 
     /**
      * Displays a form to edit an existing skill entity.
@@ -101,7 +145,7 @@ class SkillsController extends Controller
             return $this->redirectToRoute('skills_edit', array('id' => $skill->getId()));
         }
 
-        return $this->render('skills/edit.html.twig', array(
+        return $this->render('@Freelancer/skills/edit.html.twig', array(
             'skill' => $skill,
             'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),

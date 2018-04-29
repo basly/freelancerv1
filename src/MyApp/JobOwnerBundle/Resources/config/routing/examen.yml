@@ -2,7 +2,6 @@ examen_project_new:
     path:     /new-exam/{id}
     defaults: { _controller: "MyAppJobOwnerBundle:Examen:new" }
     methods:  [GET, POST]
-
 examen_new_ajax:
     path:     /new_examen
     defaults: { _controller: "MyAppJobOwnerBundle:Examen:exam" }
@@ -12,3 +11,7 @@ get_test:
 result_test:
     path:     /result_exam
     defaults: { _controller: "MyAppJobOwnerBundle:Examen:pass" }
+api_test:
+    path:     /allinfo
+    defaults: { _controller: "MyAppJobOwnerBundle:Examen:allexamapi" }
+    methods:  [GET, POST]

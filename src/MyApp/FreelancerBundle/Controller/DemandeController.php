@@ -40,14 +40,24 @@ class DemandeController extends Controller
      * Lists all demande by Freelancer.
      *
      */
-    public function demandByFreelancerAction()
+    public function demandByFreelancerAction(Request $request)
     {
         $em = $this->getDoctrine()->getManager();
         $freelancer= $this->getUser();
         $demandes = $em->getRepository('FreelancerBundle:Demande')->findBy(array("freelancer"=>$freelancer));
 
+        $paginator  = $this->get('knp_paginator');
+
+        $result= $paginator->paginate(
+            $demandes,
+            $request->query->getInt('page',1),
+            $request->query->getInt('limit',2)
+
+        );
+
+
         return $this->render('@Freelancer/demande/demandeByFreelancer.html.twig', array(
-            'demandes' => $demandes,
+            'demandes' => $result,
         ));
     }
 

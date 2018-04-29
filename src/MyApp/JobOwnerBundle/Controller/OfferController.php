@@ -3,6 +3,7 @@
 namespace MyApp\JobOwnerBundle\Controller;
 
 use MyApp\JobOwnerBundle\Entity\Offer;
+use MyApp\FreelancerBundle\User;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
@@ -26,17 +27,58 @@ class OfferController extends Controller
             'offers' => $offers,
         ));
     }
+    /**
+     * Lists all offer by Jobowner.
+     *
+     */
+    public function offerByJbOwnerAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+        $jobonwer= $this->getUser();
+        $offer = $em->getRepository('MyAppJobOwnerBundle:Offer')->findBy(array("jobowner"=>$jobonwer));
+
+        return $this->render('@MyAppJobOwner/Default/offerByJobOnwer.html.twig', array(
+            'offers' => $offer,
+        ));
+    }
+
+    /**
+     * Lists all offer by Freelancer.
+     *
+     */
+    public function offerByFreelancerAction(Request $request)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $freelancer= $this->getUser();
+        $offer = $em->getRepository('MyAppJobOwnerBundle:Offer')->findBy(array("freelancer"=>$freelancer));
+        $paginator  = $this->get('knp_paginator');
+
+        $result= $paginator->paginate(
+            $offer,
+            $request->query->getInt('page',1),
+            $request->query->getInt('limit',2)
+        );
+
+        return $this->render('@Freelancer/Default/offerByFreelancer.html.twig', array(
+            'offers' => $result,
+        ));
+    }
 
     /**
      * Creates a new offer entity.
      *
      */
-    public function newAction(Request $request)
+    public function newAction(Request $request, $id)
     {
+
         $offer = new Offer();
         $form = $this->createForm('MyApp\JobOwnerBundle\Form\OfferType', $offer);
+        $em = $this->getDoctrine()->getManager();
+        $freelancer = $em->getRepository('FreelancerBundle:User')->find($id);
         $form->handleRequest($request);
-
+        $jobowner=$this->getUser();
+        $offer->setFreelancer($freelancer);
+        $offer->setJobowner($jobowner);
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $em->persist($offer);
@@ -50,6 +92,9 @@ class OfferController extends Controller
             'form' => $form->createView(),
         ));
     }
+
+
+
 
     /**
      * Finds and displays a offer entity.

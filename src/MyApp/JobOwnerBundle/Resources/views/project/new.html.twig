@@ -19,7 +19,8 @@
         <h3 class="title-w3l"><span>J</span>ob Done!</h3>
         <h3 class="title-w3l-3">Post a Job for Free - Start receiving proposals within minutes</h3>
     </div>
-
+    </div>
+    <div class="container">
     {{ form_start(form) }}
     <div class="col-md-12">
         <div class="form-group col-md-3">
@@ -72,12 +73,14 @@
         </div>
 
     </div>
-    <div class="col-md-12">
-        <div class="form-group col-md-3">
-            <button type="submit" class="btn btn-success"><i class="fa fa-plus"></i> Add </button>
 
+          <span>
+             <input class="btn btn-default" type="submit" value="Add New Project" />
             <a class="btn btn-default" href="{{ path('project_index') }}"><i class="fa fa-list"></i> Back to the list</a>
-        </div>
+           </span>
     </div>
+</div>
+
+
     {{ form_end(form) }}
 {% endblock %}

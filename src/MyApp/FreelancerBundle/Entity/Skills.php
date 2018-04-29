@@ -57,6 +57,13 @@ class Skills
     private $user;
 
     /**
+     *
+     * @ORM\ManyToOne(targetEntity="MyApp\JobOwnerBundle\Entity\Project",inversedBy="id")
+     * @ORM\JoinColumn(name="project",referencedColumnName="id",onDelete="CASCADE")
+     */
+    private $project;
+
+    /**
      * @return mixed
      */
     public function getUser()
@@ -178,5 +185,23 @@ class Skills
     {
         return $this->skilllevel;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getProject()
+    {
+        return $this->project;
+    }
+
+    /**
+     * @param mixed $project
+     */
+    public function setProject($project)
+    {
+        $this->project = $project;
+    }
+
+
 }
 
