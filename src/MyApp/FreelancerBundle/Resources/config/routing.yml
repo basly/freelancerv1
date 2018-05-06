@@ -18,10 +18,6 @@ freelancer_JobOwner:
     path:     /JobOwner
     defaults: { _controller: MyAppJobOwnerBundle:JobOwner:jobOwnerr }
 
-notification_mark_all_as_seen:
-    path:     /{notifiable}/markAllAsSeen
-    defaults: { _controller: "NotifBundle:Notification:markAllAsSeen" }
-
 mysubscriptions:
     path:     /mysubscriptions
     defaults: { _controller: FreelancerBundle:Subscription:mysubscriptions }
