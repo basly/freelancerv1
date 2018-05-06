@@ -1,0 +1,25 @@
+{% block body %}
+    <h1>Users list</h1>
+
+    <a href="">Add new user</a>
+
+    <ul>
+        {% for user in users %}
+            <li>
+                {{ user.name }}
+
+                <ul>
+                    <li><details>
+                            <summary>Show notifications</summary>
+                            <p>{{ mgilet_notification_render(user) }}</p>
+                        </details>
+                    </li>
+                    <li><a href="{{ path('send_notification', {id: user.id}) }}">Send notification</a></li>
+                    <li><a href="{{ path('edit_user', {id: user.id}) }}">Edit</a></li>
+                </ul>
+            </li>
+        {% else %}
+            No user yet...
+        {% endfor %}
+    </ul>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'FOSMessageBundle::layout.html.twig' %}
+
+{% block fos_message_content %}
+
+<h2>{% trans from 'FOSMessageBundle' %}New Message{% endtrans %}</h2>
+
+<div class="form-group" action="{{ url('fos_message_thread_new') }}" method="post">
+    {{ form_start(form, {'method': 'post', 'action': path('fos_message_thread_new'), 'attr': {'class': 'fos_message_thread_new'}}) }}
+
+    <div class="form-group">
+        <label for="recipients">Recipients</label>
+        <textarea class="form-control"  rows="2"{{ form_widget(form.recipients) }}</textarea>
+        </div>
+    <div class="form-group">
+        <label for="subject">Subject</label>
+        <textarea class="form-control"  rows="1"{{ form_widget(form.subject) }}</textarea>
+    </div>
+    <div class="form-group">
+        <label for="body">Body</label>
+        <textarea class="form-control"  rows="10" {{ form_widget(form.body) }}</textarea>
+    </div>
+    <input type="submit" class="btn btn-warning" value="Envoyer" />
+    {{ form_end(form) }}
+</div>
+
+{% endblock %}

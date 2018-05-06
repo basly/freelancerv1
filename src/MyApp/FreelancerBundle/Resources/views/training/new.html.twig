@@ -1,0 +1,35 @@
+{% extends '@Freelancer/Default/training.html.twig' %}
+
+{% block show %}
+    <h1>Training creation</h1>
+<div class="form-group">
+    {{ form_start(form) }}
+
+    <div class="form-group">
+        <label for="trainingTitle">Title</label>
+        {{ form_widget(form.trainingTitle,{'attr':{'class':'form-control'}} ) }}
+    </div>
+    <div class="form-group">
+        <label for="trainingPrice">Price</label>
+        {{ form_widget(form.trainingPrice,{'attr':{'class':'form-control'}} ) }}
+    </div>
+
+    <div class="form-group">
+        <label for="startDate">Start Date</label>
+        <input type="date"{{ form_widget(form.startDate,{'attr':{'class':'form-control'}} ) }}
+    </div>
+
+    <div class="form-group">
+        <label for="trainingPrice">Seat Number</label>
+        {{ form_widget(form.seatNumber,{'attr':{'class':'form-control'}} ) }}
+    </div>
+
+    <div class="form-group">
+        <label for="trainingPrice">Training Status</label>
+        {{ form_widget(form.trainingStatus,{'attr':{'class':'form-control'}} ) }}
+    </div>
+        <input type="submit"value="Create" />
+    {{ form_end(form) }}
+</div>
+
+{% endblock %}

@@ -1,0 +1,73 @@
+{% extends '@Freelancer/Default/training.html.twig' %}
+
+
+{% block body %}
+    <h1>Users list</h1>
+
+    <a href="">Add new user</a>
+
+    <ul>
+        {% for user in users %}
+            <li>
+                {{ user.name }}
+
+                <ul>
+                    <li><details>
+                            <summary>Show notifications</summary>
+                            <p>{{ mgilet_notification_render(user) }}</p>
+                        </details>
+                    </li>
+                    <li><a href="{{ path('send_notification', {id: user.id}) }}">Send notification</a></li>
+                    <li><a href="{{ path('edit_user', {id: user.id}) }}">Edit</a></li>
+                </ul>
+            </li>
+        {% else %}
+            No user yet...
+        {% endfor %}
+    </ul>
+{% endblock %}
+
+{% block table %}
+    <h1>Training : {{ training.trainingTitle }}</h1>
+
+    <div style="align-items: center">
+
+    <table class="table table-sm">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ training.id }}</td>
+                <td><a class="btn btn-success" style="align-items: center" href="{{ path('training_index') }}">Back to the list</a></td>
+            </tr>
+            <tr>
+                <th>Trainingtitle</th>
+                <td>{{ training.trainingTitle }}</td>
+                <td><a class="btn btn-primary" href="{{ path('training_edit', { 'id': training.id }) }}">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Edit &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp </a></td>
+            </tr>
+            <tr>
+                <th>Trainingprice</th>
+                <td>{{ training.trainingPrice }}</td>
+                <td><input class="btn btn-danger" size="155" type="submit" value="&nbsp&nbsp&nbsp&nbsp&nbsp Delete &nbsp&nbsp&nbsp&nbsp&nbsp">
+                    {{ form_start(delete_form) }}
+
+                    {{ form_end(delete_form) }}</td>
+            </tr>
+            <tr>
+                <th>Startdate</th>
+                <td>{% if training.startDate %}{{ training.startDate|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Seatnumber</th>
+                <td>{{ training.seatNumber }}</td>
+            </tr>
+            <tr>
+                <th>Trainingstatus</th>
+                <td>{{ training.trainingStatus }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+
+{% endblock %}

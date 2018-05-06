@@ -1,3 +1,24 @@
+messaging:
+    resource: "@MessagingBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+freelancer_subscription:
+    resource: "@FreelancerBundle/Controller/SubscriptionController.php"
+    type:     annotation
+
+notif:
+    resource: "@NotifBundle/Resources/config/routing.yml"
+    prefix:   /notif
+
+esprit_api:
+    resource: "@EspritApiBundle/Resources/config/routing.yml"
+    prefix:   /api
+
+freelancer_training:
+    resource: "@FreelancerBundle/Controller/TrainingController.php"
+    type:     annotation
+
 my_app_admin:
     resource: "@MyAppAdminBundle/Resources/config/routing.yml"
     prefix:   /admin
@@ -38,4 +59,20 @@ app:
 
 fos_user:
     resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+
+mgilet_notifications:
+    resource: "@MgiletNotificationBundle/Controller/"
+    prefix:   /notifications
+
+fos_message:
+    resource: "@FOSMessageBundle/Resources/config/routing.xml"
+    prefix: /messages
+
+
+
+
+
+
+
+
 

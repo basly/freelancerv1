@@ -1,0 +1,43 @@
+{% extends '@Freelancer/Default/training.html.twig' %}
+
+{% block notification %}
+
+{% endblock %}
+
+{% block table %}
+<div class="bs-docs-example" align="center">
+            <div style="text-align: center;font-size: 19px;color: grey;"><a  class="btn btn-success" href="{{ path('training_new') }}">Add Training</a></div>
+    <table class="table table-sm">
+        <thead>
+                <th>Training Id</th>
+                <th>Training title</th>
+                <th>Training price</th>
+                <th>Start date</th>
+                <th>Seat number</th>
+                <th>Training status</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for training in trainings %}
+            <tr>
+                <td>{{ training.id }}</td>
+                <td>{{ training.trainingTitle }}</td>
+                <td>{{ training.trainingPrice }}</td>
+                <td>{% if training.startDate %}{{ training.startDate|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{{ training.seatNumber }}</td>
+                <td>{{ training.trainingStatus }}</td>
+                <td>
+                            <a class="btn btn-info" href="{{ path('training_show', { 'id': training.id }) }}">Details</a>
+                            <a class="btn btn-success" href="{{ path('subscription_new',{ 'idtraining': training.id}) }}">Subscribe</a>
+                </td>
+            </tr>
+
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock table %}
+
+
+

@@ -1,0 +1,7 @@
+notif_homepage:
+    path:    /
+    defaults: { _controller: NotifBundle:Default:index }
+
+notification_mark_all_seen:
+    path:    /{notifiable}/markAllSeen
+    defaults: { _controller: NotifBundle:Notification:markAllSeen }
