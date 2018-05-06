@@ -29,20 +29,11 @@ class Training  implements NotifiableInterface
 
     /**
      *
-     * @ORM\ManyToOne(targetEntity="MyApp\FreelancerBundle\Entity\User" ,inversedBy="training")
+     * @ORM\ManyToOne(targetEntity="MyApp\FreelancerBundle\Entity\User")
      * @ORM\JoinColumn(name="trainer")
      */
 
-
-     private $trainer;
-
-    /**
-     *
-     * @ORM\ManyToOne(targetEntity="MyApp\FreelancerBundle\Entity\Subscription" ,inversedBy="training")
-     * @ORM\JoinColumn(name="idsubscription")
-     */
-
-    private $subscription;
+    private $trainer;
 
     /**
      * @var string
@@ -79,25 +70,8 @@ class Training  implements NotifiableInterface
      */
     private $trainingStatus;
 
-    /**
-     * @return mixed
-     */
-    public function getTrainer()
-    {
-        return $this->trainer;
-    }
 
     /**
-     * @param mixed $trainer
-     */
-    public function setTrainer($trainer)
-    {
-        $this->trainer = $trainer;
-    }
-
-    /**
-     * Get id
-     *
      * @return int
      */
     public function getId()
@@ -106,22 +80,31 @@ class Training  implements NotifiableInterface
     }
 
     /**
-     * Set trainingTitle
-     *
-     * @param string $trainingTitle
-     *
-     * @return Training
+     * @param int $id
      */
-    public function setTrainingTitle($trainingTitle)
+    public function setId($id)
     {
-        $this->trainingTitle = $trainingTitle;
-
-        return $this;
+        $this->id = $id;
     }
 
     /**
-     * Get trainingTitle
-     *
+     * @return string
+     */
+    public function getTrainer()
+    {
+        return $this->trainer;
+    }
+
+    /**
+     * @param string $trainer
+     */
+    public function setTrainer($trainer)
+    {
+        $this->trainer = $trainer;
+    }
+
+
+    /**
      * @return string
      */
     public function getTrainingTitle()
@@ -130,27 +113,27 @@ class Training  implements NotifiableInterface
     }
 
     /**
-     * Set trainingPrice
-     *
-     * @param string $trainingPrice
-     *
-     * @return Training
+     * @param string $trainingTitle
      */
-    public function setTrainingPrice($trainingPrice)
+    public function setTrainingTitle($trainingTitle)
     {
-        $this->trainingPrice = $trainingPrice;
-
-        return $this;
+        $this->trainingTitle = $trainingTitle;
     }
 
     /**
-     * Get trainingPrice
-     *
      * @return string
      */
     public function getTrainingPrice()
     {
         return $this->trainingPrice;
+    }
+
+    /**
+     * @param string $trainingPrice
+     */
+    public function setTrainingPrice($trainingPrice)
+    {
+        $this->trainingPrice = $trainingPrice;
     }
 
     /**
@@ -170,22 +153,6 @@ class Training  implements NotifiableInterface
     }
 
     /**
-     * Set seatNumber
-     *
-     * @param integer $seatNumber
-     *
-     * @return Training
-     */
-    public function setSeatNumber($seatNumber)
-    {
-        $this->seatNumber = $seatNumber;
-
-        return $this;
-    }
-
-    /**
-     * Get seatNumber
-     *
      * @return int
      */
     public function getSeatNumber()
@@ -194,22 +161,14 @@ class Training  implements NotifiableInterface
     }
 
     /**
-     * Set trainingStatus
-     *
-     * @param string $trainingStatus
-     *
-     * @return Training
+     * @param int $seatNumber
      */
-    public function setTrainingStatus($trainingStatus)
+    public function setSeatNumber($seatNumber)
     {
-        $this->trainingStatus = $trainingStatus;
-
-        return $this;
+        $this->seatNumber = $seatNumber;
     }
 
     /**
-     * Get trainingStatus
-     *
      * @return string
      */
     public function getTrainingStatus()
@@ -218,20 +177,11 @@ class Training  implements NotifiableInterface
     }
 
     /**
-     * @return mixed
+     * @param string $trainingStatus
      */
-    public function getSubscription()
+    public function setTrainingStatus($trainingStatus)
     {
-        return $this->subscription;
-    }
-
-    /**
-     * @param mixed $subscription
-     */
-    public function setSubscription($subscription)
-    {
-        $this->subscription = $subscription;
+        $this->trainingStatus = $trainingStatus;
     }
 
 }
-

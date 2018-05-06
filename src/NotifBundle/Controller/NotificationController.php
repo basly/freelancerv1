@@ -2,6 +2,9 @@
 
 namespace NotifBundle\Controller;
 
+use Mgilet\NotificationBundle\Annotation\Notifiable;
+use NotifBundle\Entity\NotifiableEntity;
+use NotifBundle\Entity\NotifiableNotification;
 use Symfony\Component\HttpFoundation\Request;
 use Mgilet\NotificationBundle\Entity\Notification;
 use Mgilet\NotificationBundle\NotifiableInterface;
@@ -9,6 +12,13 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\JsonResponse;
+use MyApp\FreelancerBundle\Entity\Subscription;
+use MyApp\FreelancerBundle\Entity\Training;
+use MyApp\FreelancerBundle\Entity\User;
+use MyApp\FreelancerBundle\FreelancerBundle;
+use Doctrine\ORM\Query\ResultSetMapping;
+use Symfony\Component\Cache\Adapter\PdoAdapter;
+
 
 use Mgilet\NotificationBundle\Controller\NotificationController as Base;
 
@@ -17,7 +27,7 @@ use Mgilet\NotificationBundle\Controller\NotificationController as Base;
  * Class NotificationController
  * the base controller for notifications
  */
-class NotificationController extends Base
+class NotificationController extends Controller
 {
 
 
@@ -99,7 +109,7 @@ class NotificationController extends Base
     /**
      * Set all Notifications for a User as seen
      *
-     * @Route("/{notifiable}/markAllSeen", name="notification_mark_all_seen")
+     * @Route("/{notifiable}/markAllSeen", name="mark_all_seen")
      * @Method("POST")
      * @param $notifiable
      *
@@ -122,4 +132,34 @@ class NotificationController extends Base
         return $this->redirect($request->headers->get('referer'));
     }
 
+
+
+    /**
+     * Set all Notifications for a User as seen
+     *
+     * @Route("/markAllSeen", name="notification_mark_all_seen")
+     *
+     */
+    public function markSeenAction(Request $request){
+        /*
+
+        $sql = '
+        UPDATE notifiable_notification JOIN notifiable ON notifiable_notification.notifiable_entity_id = notifiable.id SET seen =1 WHERE seen = 0 AND identifier = id
+        ';
+        $stmt = $em->prepare($sql);
+        $stmt->execute(['id' => $this->getUser()->getId()]);*/
+        $em = $this->getDoctrine()->getManager();
+
+        $id = $this->getUser()->getId();
+        $notifiable = $em->getRepository('MgiletNotificationBundle:NotifiableEntity')->findBy(array('identifier'=>$id));
+
+
+
+        $query = $em->createQuery('UPDATE NotifBundle:NotifiableNotification n set n.seen = 1 where n.seen = 0 and n.notifiableEntity = ?1 ');
+        $query->setParameter(1, $notifiable[0]->getId());
+        $reslt = $query->getResult();
+
+        return $this->redirect($request->headers->get('referer'));
+
+    }
 }

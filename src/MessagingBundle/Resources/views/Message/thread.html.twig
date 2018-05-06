@@ -1,0 +1,30 @@
+{% extends 'FOSMessageBundle::layout.html.twig' %}
+
+{% block fos_message_content %}
+
+<h2 class="title"> Subject : {{ thread.subject }} </h2>
+
+{% for message in thread.messages %}
+    <div class="messenger_thread_message">
+        <div class="messenger_thread_message_info">
+            <h4 class="list-group-item1">{% trans with {sender: message.sender|e, '%date%': message.createdAt|date} from 'FOSMessageBundle' %}sender{% endtrans %}</h4>
+        </div>
+        <div class="messenger_thread_message_body" id="message_{{ message.id }}">
+         <li class="list-group">{{ message.body }}</li>
+        </div>
+    </div>
+{% endfor %}
+
+    <h3 class="text-left">{% trans from 'FOSMessageBundle' %}reply{% endtrans %}</h3>
+
+    <form action="{{ url('fos_message_thread_view', {'threadId': thread.id}) }}" method="post">
+
+        <div class="form-group">
+            <label for="body">Body</label>
+            <textarea class="form-control"rows="10"{{ form_widget(form.body) }}</textarea>
+        </div>
+        <input type="submit" class="btn btn-warning" value="Send" />
+        {{ form_end(form) }}
+    </form>
+
+{% endblock %}

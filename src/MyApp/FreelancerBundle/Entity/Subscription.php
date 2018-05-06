@@ -3,6 +3,8 @@
 namespace MyApp\FreelancerBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Mgilet\NotificationBundle\NotifiableInterface;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * Subscription
@@ -10,7 +12,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="subscription")
  * @ORM\Entity(repositoryClass="MyApp\FreelancerBundle\Repository\SubscriptionRepository")
  */
-class Subscription
+class Subscription  implements NotifiableInterface
 {
     /**
      * @var int
@@ -22,33 +24,81 @@ class Subscription
     private $id;
 
     /**
-     * @var string
+     *  @var \MyApp\FreelancerBundle\Entity\Training
      *
-     * @ORM\Column(name="idtraining", type="string", length=255)
+     *  @ORM\ManyToOne(targetEntity="MyApp\FreelancerBundle\Entity\Training")
+     *  @ORM\JoinColumns({
+     *  @ORM\JoinColumn(name="Idtraining", referencedColumnName="id")
+     * })
      */
     private $idtraining;
 
     /**
+     * @var string
      *
-     * @ORM\ManyToOne(targetEntity="MyApp\FreelancerBundle\Entity\User")
-     * @ORM\JoinColumn(name="idsubscriber",referencedColumnName="id")
+     * @ORM\Column(name="email", type="string", length=25, nullable=true)
      */
-
-    private $idsubscriber;
+    private $email;
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nom", type="string", length=25, nullable=false)
+     */
+    private $nom;
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="prenom", type="string", length=25, nullable=true)
+     */
+    private $prenom;
 
     /**
      * Subscription constructor.
      *
      */
+    /**
+     *
+     * @ORM\ManyToOne(targetEntity="MyApp\FreelancerBundle\Entity\User")
+     * @ORM\JoinColumn(name="trainer")
+     */
+
+    private $trainer;
+
+    /**
+     * @return mixed
+     */
+    public function getTrainer()
+    {
+        return $this->trainer;
+    }
+
+    /**
+     * @param mixed $trainer
+     */
+    public function setTrainer($trainer)
+    {
+        $this->trainer = $trainer;
+    }
+
     public function __construct()
     {
 
     }
 
+    /**
+     * Set id
+     *
+     * @param \MyApp\FreelancerBundle\Entity\Training $id
+     *
+     * @return Subscription
+     */
+    public function setId(\MyApp\FreelancerBundle\Entity\Training $id = null)
+    {
+        $this->id = $id;
+        return $this;
+    }
 
     /**
-     * Get id
-     *
      * @return int
      */
     public function getId()
@@ -56,24 +106,9 @@ class Subscription
         return $this->id;
     }
 
-    /**
-     * Set idtraining
-     *
-     * @param string $idtraining
-     *
-     * @return Subscription
-     */
-    public function setIdtraining($idtraining)
-    {
-        $this->idtraining = $idtraining;
-
-        return $this;
-    }
 
     /**
-     * Get idtraining
-     *
-     * @return string
+     * @return Training
      */
     public function getIdtraining()
     {
@@ -81,19 +116,59 @@ class Subscription
     }
 
     /**
-     * @return mixed
+     * @param Training $idtraining
      */
-    public function getIdsubscriber()
+    public function setIdtraining($idtraining)
     {
-        return $this->idsubscriber;
+        $this->idtraining = $idtraining;
     }
 
     /**
-     * @param mixed $idsubscriber
+     * @return string
      */
-    public function setIdsubscriber($idsubscriber)
+    public function getEmail()
     {
-        $this->idsubscriber = $idsubscriber;
+        return $this->email;
+    }
+
+    /**
+     * @param string $email
+     */
+    public function setEmail($email)
+    {
+        $this->email = $email;
+    }
+
+    /**
+     * @return string
+     */
+    public function getNom()
+    {
+        return $this->nom;
+    }
+
+    /**
+     * @param string $nom
+     */
+    public function setNom($nom)
+    {
+        $this->nom = $nom;
+    }
+
+    /**
+     * @return string
+     */
+    public function getPrenom()
+    {
+        return $this->prenom;
+    }
+
+    /**
+     * @param string $prenom
+     */
+    public function setPrenom($prenom)
+    {
+        $this->prenom = $prenom;
     }
 
 

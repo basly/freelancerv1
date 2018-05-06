@@ -3,12 +3,14 @@
 namespace MyApp\FreelancerBundle\Controller;
 
 use MyApp\FreelancerBundle\Entity\Subscription;
+use MyApp\FreelancerBundle\Entity\Training;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
 use Doctrine\ORM\EntityRepository;
 use Doctrine\ORM\Query\ResultSetMapping;
+use MyApp\FreelancerBundle\Entity\User;
 
 /**
  * Subscription controller.
@@ -17,22 +19,6 @@ use Doctrine\ORM\Query\ResultSetMapping;
  */
 class SubscriptionController extends Controller
 {
-    /**
-     * Lists all subscription entities.
-     *
-     * @Route("/", name="subscription_index")
-     * @Method("GET")
-     */
-    public function indexAction()
-    {
-        $em = $this->getDoctrine()->getManager();
-
-        $subscriptions = $em->getRepository('FreelancerBundle:Subscription')->findAll();
-
-        return $this->render('FreelancerBundle:subscription:index.html.twig', array(
-            'subscriptions' => $subscriptions,
-        ));
-    }
 
     /**
      * Creates a new subscription entity.
@@ -58,6 +44,42 @@ class SubscriptionController extends Controller
             'subscription' => $subscription,
             'form' => $form->createView(),
         ));
+    }
+
+    /**
+     * Lists all subscription entities.
+     *
+     * @Route("/mysubscribers", name="subscription_index")
+     * @Method("GET")
+     */
+    public function indexsubAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+        $id = $this->getUser()->getId();
+        $subscriptions = $em->getRepository('FreelancerBundle:Subscription')->findBy(array('trainer'=>$id));
+        return $this->render('FreelancerBundle:subscription:mysubscriptions.html.twig', array(
+            'subscriptions' => $subscriptions,
+        ));
+    }
+    /**
+     * Creates a new Reservation entity.
+     *
+     * @Route("/new/{idtraining}", name="subscription_new")
+     * @Method({"GET", "POST"})
+     */
+    public function newsubscriptionAction(Request $request, $idtraining)
+    {
+        $subscription = new Subscription();
+        $training = $this->getDoctrine()->getManager()->getRepository(Training::class)->find($idtraining);
+        $subscription->setIdtraining($training);
+        $subscription->setEmail($this->getUser()->getEmail());
+        $subscription->setPrenom($this->getUser()->getFirstName());
+        $subscription->setNom($this->getUser()->getLastName());
+        $subscription->setTrainer($training->getTrainer());
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($subscription);
+            $em->flush();
+        return $this->redirectToRoute('training_index');
     }
 
     /**
@@ -136,60 +158,4 @@ class SubscriptionController extends Controller
             ->getForm()
         ;
     }
-    /**
-     * Lists all subscription entities.
-     *
-     * @Route("/mysubscriptions", name="mysubscriptions")
-     *
-     * @Method("GET")
-     */
-   public function mysubscriptionsAction(Subscription $subscription)
-    {
-      //  $em = $this->getDoctrine()->getManager();
-      //  $subscription = new Subscription();
-       // $subscription = $em->getRepository('FreelancerBundle:Subscription')->findAll();
-
-
-      //  $userManager = $this->get('fos_user.user_manager');
-       // $us = $this->getUser();
-      // $user = $userManager->findUserByEmail($us->getEmail());
-        $user = $this->getUser();
-     //   $parameters = array('iduser' => $user->getId());
-        $iduser = $user->getId();
-/*
-        $sql = 'SELECT trainingTitle,firstName,lastName  FROM `subscription` as s, `training` as t,user as u WHERE t.trainer =: iduser and t.id =s.idtraining and u.id = s.idsubscriber';
-        $query1 = $this->getEntityManager()->createQuery($sql);
-
-        $subscriptions = $query1->getResult();
-
-        */
-
-        $rsm = new ResultSetMapping();
-        $rsm->addEntityResult('MyApp\FreelancerBundle\Entity\Training', 't');
-        $rsm->addEntityResult('MyApp\FreelancerBundle\Entity\Subscription', 's');
-        $rsm->addEntityResult('MyApp\FreelancerBundle\Entity\User', 'u');
-        $rsm->addFieldResult('t', 'trainer', 'trainer');
-        $rsm->addFieldResult('u', 'id', 'id');
-        $rsm->addFieldResult('s', 'idtraining', 'idtraining');
-        $rsm->addFieldResult('s', 'idsubscriber', 'idsubscriber');
-
-        $sql = 'SELECT trainingTitle,firstName,lastName  FROM `subscription` as s, `training` as t,user as u WHERE t.trainer = :? and t.id =s.idtraining and u.id = s.idsubscriber';
-
-        $query = $this->_em->createNativeQuery($sql, $rsm);
-        $query->setParameters(1, $iduser);
-
-        $subscriptions = $query->getResult();
-
-        return $this->redirectToRoute('mysubscriptions', array(
-            'mysubscribers' => $subscriptions,));
-    }
-
-
-
-
-
-
-
-
-
 }

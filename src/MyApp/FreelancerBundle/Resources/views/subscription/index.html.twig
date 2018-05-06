@@ -1,28 +1,24 @@
 {% extends '@Freelancer/Default/training.html.twig' %}
 
 {% block table %}
-    <h1 class="display-1">My Subscriptions</h1>
+    <h1 class="display-1">Subscriptions List </h1>
 <div class="bs-docs-example" align="center">
     <div style="text-align: center;font-size: 19px;color: grey;"></div>
         <thead>
             <tr>
-                <th>Id</th>
-                <th>Idtraining</th>
-                <th>Actions</th>
+                <th>Subscriber Last Name</th>
+                <th>Subscriber First Name</th>
+                <th>email</th>
             </tr>
         </thead>
         <tbody>
         {% for subscription in subscriptions %}
             <tr>
                 <td><a href="{{ path('subscription_show', { 'id': subscription.id }) }}">{{ subscription.id }}</a></td>
-                <td>{{ subscription.idtraining }}</td>
-                <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('subscription_show', { 'id': subscription.id }) }}">show</a>
-                        </li>
-                    </ul>
-                </td>
+                <td>{{ subscription.nom}}</td>
+                <td>{{ subscription.prenom }}</td>
+                <td>{{ subscription.email}}</td>
+                <td> <a href="{{ path('subscription_show', { 'id': subscription.id }) }}">show</a></td>
             </tr>
         {% endfor %}
         </tbody>

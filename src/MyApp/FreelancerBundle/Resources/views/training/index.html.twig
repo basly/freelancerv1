@@ -9,6 +9,7 @@
             <div style="text-align: center;font-size: 19px;color: grey;"><a  class="btn btn-success" href="{{ path('training_new') }}">Add Training</a></div>
     <table class="table table-sm">
         <thead>
+                <th>Training Id</th>
                 <th>Training title</th>
                 <th>Training price</th>
                 <th>Start date</th>
@@ -20,6 +21,7 @@
         <tbody>
         {% for training in trainings %}
             <tr>
+                <td>{{ training.id }}</td>
                 <td>{{ training.trainingTitle }}</td>
                 <td>{{ training.trainingPrice }}</td>
                 <td>{% if training.startDate %}{{ training.startDate|date('Y-m-d H:i:s') }}{% endif %}</td>
@@ -27,7 +29,7 @@
                 <td>{{ training.trainingStatus }}</td>
                 <td>
                             <a class="btn btn-info" href="{{ path('training_show', { 'id': training.id }) }}">Details</a>
-                            <a class="btn btn-success" href="{{ path('training_subscribe', { 'training': training.id }) }}">Subscribe</a>
+                            <a class="btn btn-success" href="{{ path('subscription_new',{ 'idtraining': training.id}) }}">Subscribe</a>
                 </td>
             </tr>
 

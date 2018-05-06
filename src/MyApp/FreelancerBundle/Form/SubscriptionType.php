@@ -13,7 +13,7 @@ class SubscriptionType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('idtraining')->add('idsubscriber');
+        $builder->add('email')->add('nom')->add('prenom')->add('idtraining');
     }/**
      * {@inheritdoc}
      */

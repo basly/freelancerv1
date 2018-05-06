@@ -23,6 +23,8 @@ class AppKernel extends Kernel
             new Mgilet\NotificationBundle\MgiletNotificationBundle(),
             new EspritApiBundle\EspritApiBundle(),
             new NotifBundle\NotifBundle(),
+            new FOS\MessageBundle\FOSMessageBundle(),
+            new MessagingBundle\MessagingBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

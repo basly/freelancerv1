@@ -52,17 +52,13 @@
             <li><a href="index.html">Home</a><i>||</i></li>
             <li><a href="{{ path('training_index') }}">Trainings</a><i>||</i></li>
             <li><a href="{{ path('my_trainings') }}">My Trainings</a><i>||</i></li>
-            <li><a href="">My Trainings</a><i>||</i></li>
+            <li><a href="{{ path('subscription_index') }}">My Subscribers</a><i>||</i></li>
             <li class="notifs">
                     <li class="dropdown ">
-                        <a class="btn btn-secondary dropdown-toggle btn btn-clean" href="#" role="button" id="dropdownMenuLink"
-                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <span class="badge badge-danger badge-corner">8</span>
+                        <a class="btn btn-secondary dropdown-toggle btn btn-clean" href="{{ path('fos_message_inbox') }}">
+                            <span class="badge badge-danger badge-corner">2</span>
                             <i class="fa fa-envelope size-20"></i>
                         </a>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                            <a class="dropdown-item">Message 1</a>
-                        </div>
                     </li>
                     <li class="dropdown ">
                         <a class="btn btn-secondary dropdown-toggle btn btn-clean" href="#" role="button" id="dropdownMenuLink"
@@ -71,8 +67,8 @@
                             <i class="fa fa-globe size-20"></i>
                         </a>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                            <a class="dropdown-item">{{ mgilet_notification_render(app.user,{'seen': false })}}</a>
-                            <form action="{{ path('notification_mark_all_seen',{'notifiable':app.user.id})}}"
+                            <p class="dropdown-item">{{ mgilet_notification_render(app.user,{'seen': false })}}</p>
+                            <form action="{{ path('notification_mark_all_seen',{'id':app.user.id})}}"
                                   method="post">
                                 <button type="submit">Mark all as seen</button>
                             </form>

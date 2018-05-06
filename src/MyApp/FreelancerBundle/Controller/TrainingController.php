@@ -7,6 +7,7 @@ use Mgilet\NotificationBundle\Entity\Notification;
 use MyApp\FreelancerBundle\Entity\Subscription;
 use MyApp\FreelancerBundle\Entity\Training;
 use MyApp\FreelancerBundle\Entity\User;
+use MyApp\FreelancerBundle\FreelancerBundle;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
@@ -36,7 +37,6 @@ class TrainingController extends Controller
             'trainings' => $trainings,
         ));
     }
-
 
     /**
      * Lists all training entities.
@@ -215,17 +215,18 @@ class TrainingController extends Controller
 
     /**
      * Creates a new training entity.
-     * @Route("/subscribe/{training}", name="training_subscribe")
+     * @Route("/subscribe/{training}/{trainer}", name="training_subscribe")
      * @Method({"GET", "POST"})
      */
 
-    public function subscribeAction(Request $request, $training)
+    public function subscribeAction(Request $request, $training,$trainer)
     {
+
 
         $subscription = new Subscription();
         $subscription->setIdsubscriber($this->getUser());
         $subscription->setIdtraining($training);
-
+        $subscription->setTrainer($trainer);
         $em = $this->getDoctrine()->getManager();
         $em->persist($subscription);
 
@@ -233,8 +234,8 @@ class TrainingController extends Controller
 
         $em->flush();
         $manager = $this->get('mgilet.notification');
-        $notif = $manager->createNotification('New training was created');
-        //  $notif->setMessage('This a notification.');
+        $notif = $manager->createNotification(': N');
+        $notif->setMessage('New training was created');
         $manager->addNotification([$user], $notif, true);
 
         return $this->redirectToRoute('training_index');
