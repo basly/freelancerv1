@@ -32,6 +32,7 @@
                 <th>Payment</th>
                 <th>Experiencelevel</th>
                 <th>Requiredskills</th>
+                <th>Action</th>
 
             </tr>
         </thead>
@@ -48,7 +49,7 @@
                 <td>{{ project.experiencelevel }}</td>
                 <td>{{ project.requiredskills }}</td>
                 <td>
-                <a class="btn btn-default" href="{{ path('project_show', { 'id': project.id }) }}"><i class="	fa fa-eye"></i> show</a>
+                <a class="btn btn-default" href="{{ path('project_show', { 'id': project.id }) }}"><i class="	fa fa-eye"></i> </a>
 
                 </td>
 
@@ -56,9 +57,6 @@
         {% endfor %}
         </tbody>
     </table>
-
-
-
 </div>
 
     </div>

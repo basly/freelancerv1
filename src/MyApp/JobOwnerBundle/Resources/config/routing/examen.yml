@@ -15,3 +15,7 @@ api_test:
     path:     /allinfo
     defaults: { _controller: "MyAppJobOwnerBundle:Examen:allexamapi" }
     methods:  [GET, POST]
+email:
+    path:     /email/{name}
+    defaults: { _controller: "MyAppJobOwnerBundle:Default:mailer" }
+    methods:  [GET, POST]

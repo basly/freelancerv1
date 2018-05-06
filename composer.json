@@ -25,8 +25,11 @@
         "doctrine/orm": "^2.5",
         "friendsofsymfony/user-bundle": "~2.0@dev",
         "incenteev/composer-parameter-handler": "^2.0",
+        "jms/serializer-bundle": "^2.3",
         "knplabs/knp-menu-bundle": "^2.0",
         "knplabs/knp-paginator-bundle": "^2.7",
+        "knplabs/knp-snappy-bundle": "^1.5",
+        "nomaya/social-bundle": "dev-master",
         "sensio/distribution-bundle": "^5.0.19",
         "sensio/framework-extra-bundle": "^3.0.2",
         "symfony/finder": "^3.4",
@@ -36,7 +39,7 @@
         "symfony/swiftmailer-bundle": "^2.3.10",
         "symfony/symfony": "3.3.*",
         "twig/twig": "^1.0||^2.0",
-        "nomaya/social-bundle": "dev-master"
+        "vich/uploader-bundle": "^1.4"
     },
     "require-dev": {
         "sensio/generator-bundle": "^3.0",

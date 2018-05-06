@@ -9,6 +9,7 @@
             </ul>
         </div>
     </div>
+    <link rel="stylesheet" href="{{asset('bundles/freelancer/css/skillBar.css')}}" />
     <div class="banner-bottom">
         <div class="container">
             <div class="w3ls-title">
@@ -16,7 +17,6 @@
             </div>
         </div>
     </div>
-
     {% for skill in skills %}
       {#  {% set i=0 %}
 
@@ -59,24 +59,19 @@
                 {% endif%}
                 <br>
             <div><p><b>Certification :</b> {{ skill.certification}}   &nbsp;&nbsp;&nbsp;&nbsp;         <b> Expertise :</b> {{ skill.skillexperience}} years</p></div>
-
                 <div class="skill-bar-percent">{{ size}}%</div>
             </div><br> <!-- End Skill Bar -->
 
-
         {% endfor %}
-    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-    <script src="{{asset('bundles/app/js/barAnimation.js')}}"></script>
+
     <br><br><ul>
-    {% if is_granted('ROLE_JOBOWNER') or is_granted('ROLE_ADMIN') %}
-    <li>
-            <a href="{{ path('skills_new') }}"><i class="fa fa-plus-square-o">  </i>  Create a new skill</a>
-        </li>
-    {% endif %}
+
     </ul>
 
 {% endblock %}
 {% block javascripts %}
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="{{ asset('bundles/freelancer/Front/js/jquery213.min.js')}}"></script>
     <script src="{{asset('bundles/freelancer/js/barAnimation.js')}}"></script>
+    <script type="text/javascript" src="{{ asset('bundles/freelancer/Front/js/jquery.min.js')}}"></script>
+
 {% endblock javascripts %}

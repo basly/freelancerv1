@@ -22,6 +22,9 @@ class AppKernel extends Kernel
             new MyApp\AdminBundle\MyAppAdminBundle(),
             new Knp\Bundle\PaginatorBundle\KnpPaginatorBundle(),
             new Nomaya\SocialBundle\NomayaSocialBundle(),
+            new JMS\SerializerBundle\JMSSerializerBundle(),
+            new Knp\Bundle\SnappyBundle\KnpSnappyBundle(),
+            new Vich\UploaderBundle\VichUploaderBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

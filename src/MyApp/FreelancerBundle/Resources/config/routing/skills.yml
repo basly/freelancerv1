@@ -33,6 +33,10 @@ skills_edit:
     defaults: { _controller: "FreelancerBundle:Skills:edit" }
     methods:  [GET, POST]
 
+skills_pdf:
+    path:     /pdf
+    defaults: { _controller: "FreelancerBundle:Skills:pdf" }
+
 skills_delete:
     path:     /{id}/delete
     defaults: { _controller: "FreelancerBundle:Skills:delete" }

@@ -1,14 +1,103 @@
 {% extends 'FreelancerBundle:Default:index.html.twig' %}
 
 {% block body %}
-    <h1>Skill creation</h1>
+    <div class="services-breadcrumb">
+        <div class="agile_inner_breadcrumb">
+            <ul class="w3_short">
+                <li><a href="index.html">Home</a><i>||</i></li>
+                <li>Skills</li>
+            </ul>
+        </div>
+    </div>
+        <div class="container">
+            <div class="w3ls-title">
+                <h3 class="title-w3l"><span>S</span>kills !</h3>
+            </div>
+        </div>
 
-    {{ form_start(form) }}
-        {{ form_widget(form) }}
-        <input type="submit" value="Create" />
+
+<div class="about w3layouts-agileinfo" id="about">
+    <div class="container">
+        {{ form_start(form) }}
+        <div class="about-top w3ls-agile">
+            <div class="col-md-6 red">
+                <img class="img-responsive" src="{{ asset('bundles/freelancer/img/g2.jpg')}}" alt="">
+            </div>
+            <div class="col-md-6 come">
+                <div class=" about-wel">
+                    <h5>Add New <span>Required </span> Skill !</h5>
+                    <div class="col-md-6">
+                        <div class="banner-bottom">
+                            <div class="container">
+            <div class="col-md-6 red">
+    <div class="col-md-12">
+        <div class="form-group col-md-3">
+            {{ form_label(form.skillname) }}
+        </div>
+        <div class="form-group col-md-3">
+            {{ form_errors(form.skillname) }}
+            {{ form_widget(form.skillname, {'attr': {'class': 'form-control'}}) }}
+        </div>
+        <div class="form-group col-md-3">
+            {{ form_label(form.skilllevel) }}
+        </div>
+        <div class="form-group col-md-3">
+            {{ form_errors(form.skilllevel) }}
+            {{ form_widget(form.skilllevel, {'attr': {'class': 'form-control'}}) }}
+        </div>
+    </div>
+    <div class="col-md-12">
+         <div class="form-group col-md-3">
+             {{ form_label(form.skillexperience) }}
+         </div>
+         <div class="form-group col-md-3">
+             {{ form_errors(form.skillexperience) }}
+             {{ form_widget(form.skillexperience, {'attr': {'class': 'form-control'}}) }}
+         </div>
+         <div class="form-group col-md-3">
+             {{ form_label(form.certification) }}
+         </div>
+         <div class="form-group col-md-3">
+             {{ form_errors(form.certification) }}
+             {{ form_widget(form.certification, {'attr': {'class': 'form-control'}}) }}
+         </div>
+    </div>
+    <div class="col-md-12">
+        <div class="form-group col-md-3">
+            {{ form_label(form.imageFile) }}
+        </div>
+        <div class="form-group col-md-3">
+            {{ form_errors(form.imageFile) }}
+            {{ form_widget(form.imageFile, {'attr': {'class': 'form-control'}}) }}
+        </div>
+        <div class="form-group col-md-3">
+            {{ form_label(form.imagesize) }}
+        </div>
+        <div class="form-group col-md-3">
+            {{ form_errors(form.imagesize) }}
+            {{ form_widget(form.imagesize, {'attr': {'class': 'form-control'}}) }}
+        </div>
+
+    </div>
+                <div class="col-md-12">
+             <div class="form-group col-md-3">
+            <a href="{{ path('project_index') }}" class="btn btn-default"> <i class="fa fa-list"></i>  Back to the list</a>
+            </div>
+        <div class="form-group col-md-3">
+        <input type="submit" value="Create" class="btn btn-default"/>
+        </div>
+                </div>
+    </div>
+
+            </div>
+        </div>
+   </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </div>
     {{ form_end(form) }}
-
-
-            <a href="{{ path('skills_index') }}">Back to the list</a>
 
 {% endblock %}

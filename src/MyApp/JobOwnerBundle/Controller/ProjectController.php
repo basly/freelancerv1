@@ -116,12 +116,13 @@ class ProjectController extends Controller
             ->findBy(array('freelancer' => $user,'examen'=>$examen));
 
         $nb = count($test);
+        $nbExam = count($examen);
         var_dump($nb);
 
 
 
         return $this->render('MyAppJobOwnerBundle:project:show.html.twig', array(
-            'project' => $project,'examen'=>$examen,'test' => $nb,'free'=>$user,'project'=>$project,'delete_form' => $deleteForm->createView()
+            'project' => $project,'examen'=>$examen,'nbExam'=>$nbExam,'test' => $nb,'free'=>$user,'project'=>$project,'delete_form' => $deleteForm->createView()
         ));
     }
 

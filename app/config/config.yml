@@ -130,3 +130,28 @@ nomaya_social:
         facebook:           "http://www.facebook.com/yann.chauvel"
         googleplus:         "https://plus.google.com/105931415830389032796"
     theme:                  'default' # optional
+
+knp_snappy:
+    pdf:
+        enabled:    true
+        binary:     'C:\\dev\\wkhtmltopdf\\bin\\wkhtmltopdf.exe'
+        options:    []
+    image:
+        enabled:    true
+        binary:     "C:\\dev\\wkhtmltopdf\\bin\\wkhtmltoimage.exe\""
+        options:    []
+
+    temporary_folder: "%kernel.cache_dir%/snappy"
+    process_timeout: 160 # In seconds
+
+vich_uploader:
+    db_driver: orm
+    # ...
+    mappings:
+        product_images:
+            uri_prefix:         '%kernel.project_dir%/web/uploads/images/skills'
+            upload_destination: '%kernel.root_dir%/../web/uploads/images/skills'
+            namer: vich_uploader.namer_origname
+            inject_on_load: false
+            delete_on_update: true
+            delete_on_remove: true

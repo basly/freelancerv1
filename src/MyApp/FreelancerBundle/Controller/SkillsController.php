@@ -5,6 +5,7 @@ namespace MyApp\FreelancerBundle\Controller;
 use MyApp\FreelancerBundle\Entity\Skills;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 
 /**
  * Skill controller.
@@ -185,4 +186,37 @@ class SkillsController extends Controller
             ->getForm()
         ;
     }
+
+    public function pdfAction()
+    {
+        $snappy = $this->get("knp_snappy.pdf");
+        $em = $this->getDoctrine()->getManager();
+
+        $skills = $em->getRepository('FreelancerBundle:Skills')->findAll();
+
+        $html = $this->renderView('FreelancerBundle:skills:pdf_skills.html.twig',array('skills' => $skills));
+        $filename = "custom_pdf_from_twig";
+
+        return new Response(
+            $snappy->getOutputFromHtml($html),
+            //ok status code
+            200,
+            array(
+
+                'Content-Type'=>'application/pdf',
+                'Content-Disposition'=> 'inline;filename="'.$filename.'.pdf'
+                //'Content-Disposition'=> 'attachment;filename="'.$filename.'.pdf'
+            )
+
+        );
+
+        //return new PdfResponse($this->get('knp_snappy.pdf')->getOutputFromHtml($html),'file.pdf');
+        //$snappy = new Pdf('C://"Program Files"/wkhtmltopdf/bin/wkhtmltopdf.exe');
+
+        // return new PdfResponse($snappy->generateFromHtml($html,'file.pdf'));
+    }
+
+
+
+
 }

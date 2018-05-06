@@ -4,6 +4,7 @@
 
     <style>#res{display:none;}</style>
     <h1>Exam : knowledge evaluation</h1>
+
     <br/>    <br/><input type="hidden" id="pr" value="{{ project }}"/>
     <br/>    <br/><input type="hidden" id="ex" value="{{ examen.id }}"/>
     <div id="res" class="tabcontent wow fadeInUp animated">
@@ -50,6 +51,14 @@
             </div>
         </div>
     </div>
+
+
+
+    <body onload="" >
+    <form name="f_chrono" ></form>
+    <div style="background:white;color: white;width:75px; margin-left:1000px;">
+        <B><div id="chrono" style="color:#eb752a;width:150px;height:100%;font-size:2em;"></div></B></div>
+    </body>
     <div class="tab-content box-questions">
         <div class="contain row avis" >
             <div class="tab" id="tabs-bts">
@@ -61,59 +70,60 @@
                     {% set i = i+1 %}
                     <div id="qu{{ i }}" class="tabcontent">
 
-                                <h3 class="tab-title question">Question N°{{ i }}</h3>
-                                <div class="content">
-                                    <div class="container-fluid">
-                                        <span class="text-danger" id="error-q{{ i }}"></span>
-                                        <div class="form-group">
-                                            <label for="que'+i+'">Question detail</label>
-                                            <p> {{ q.question }} </p>
-                                            {% set j =0 %}
-                                            {% for c in choix[i] %}
-                                                {% set j=j+1 %}
-                                                {% if c.etat == 'Valide' %}
-                                                    <input type="hidden" id="valide-q{{ i }}" value="rep{{ i~j }}" >
-                                                {% endif %}
-                                                <label>Answer{{ j }}</label><br/>
-                                                <label>{{ c.reponse }}</label><br/>
-                                                <input id="rep{{ i~j }}" type="radio" name="r{{ i }}" class="form-control"/>
-                                                <label for="rep{{ i~j }}"></label><br/>
-                                            {% endfor %}
+                        <h3 class="tab-title question">Question N°{{ i }}</h3>
 
-                                        </div>
-                                        {% if i==1 %}
-                                            <div class="col-md-12">
-
-                                                <div class="col-md-6">
-                                                    <button onclick="quest_check('{{ i }}')" class="btn btn-success pull-right"><i class="fa fa-arrow-right"></i>Next</button>
-                                                </div>
-                                            </div>
-                                        {% elseif i==5 %}
-                                            <div class="col-md-12">
-                                                <div class="col-md-6">
-                                                    <button onclick="back_quest('{{ i }}')" class="btn btn-warning pull-left"><i class="fa fa-arrow-left"></i>Previous</button>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <button class="btn btn-primary pull-right" id="new-exam"><i class="fa fa-check"></i>Validate</button>                                            </div>
-                                            </div>
-
-                                        {% else %}
-                                            <div class="col-md-12">
-                                                <div class="col-md-6">
-                                                    <button onclick="back_quest('{{ i }}')" class="btn btn-warning pull-left"><i class="fa fa-arrow-left"></i>Previous</button>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <button onclick="quest_check('{{ i }}')" class="btn btn-success pull-right"><i class="fa fa-arrow-right"></i>Next</button>
-                                                </div>
-                                            </div>
+                        <div class="content">
+                            <div class="container-fluid">
+                                <span class="text-danger" id="error-q{{ i }}"></span>
+                                <div class="form-group">
+                                    <label for="que'+i+'">Question detail</label>
+                                    <p> {{ q.question }} </p>
+                                    {% set j =0 %}
+                                    {% for c in choix[i] %}
+                                        {% set j=j+1 %}
+                                        {% if c.etat == 'Valide' %}
+                                            <input type="hidden" id="valide-q{{ i }}" value="rep{{ i~j }}" >
                                         {% endif %}
-                                    </div>
-                                </div>
+                                        <label>Answer{{ j }}</label><br/>
+                                        <label>{{ c.reponse }}</label><br/>
+                                        <input id="rep{{ i~j }}" type="radio" name="r{{ i }}" class="form-control"/>
+                                        <label for="rep{{ i~j }}"></label><br/>
+                                    {% endfor %}
 
+                                </div>
+                                {% if i==1 %}
+                                    <div class="col-md-12">
+
+                                        <div class="col-md-6">
+                                            <button onclick="quest_check('{{ i }}')" class="btn btn-success pull-right"><i class="fa fa-arrow-right"></i>Next</button>
+                                        </div>
+                                    </div>
+                                {% elseif i==5 %}
+                                    <div class="col-md-12">
+                                        <div class="col-md-6">
+                                            <button onclick="back_quest('{{ i }}')" class="btn btn-warning pull-left"><i class="fa fa-arrow-left"></i>Previous</button>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <button class="btn btn-primary pull-right" id="new-exam"><i class="fa fa-check"></i>Validate</button>                                            </div>
+                                    </div>
+
+                                {% else %}
+                                    <div class="col-md-12">
+                                        <div class="col-md-6">
+                                            <button onclick="back_quest('{{ i }}')" class="btn btn-warning pull-left"><i class="fa fa-arrow-left"></i>Previous</button>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <button onclick="quest_check('{{ i }}')" class="btn btn-success pull-right"><i class="fa fa-arrow-right"></i>Next</button>
+                                        </div>
+                                    </div>
+                                {% endif %}
+                            </div>
                         </div>
-                    {% endfor %}
-                </div>
+
+                    </div>
+                {% endfor %}
             </div>
+        </div>
     </div>
 
     <script>
@@ -150,6 +160,7 @@
         event = "tab";
 
         function quest(){
+
             var titre = $('#titre').val();
             var desc = $('#desc').val();
             var date = $('#date').val();
@@ -162,6 +173,7 @@
                 document.getElementById('btn1').className +=" active";
                 document.getElementById('btn1').disabled = false;
                 $('.box-questions').css('display','block');
+                DemarrerChrono();
             }
 
 
@@ -204,11 +216,15 @@
     <script>
         ///envoi controller
         $(document).on('click', '#new-exam', function(){
+            ArreterChrono();
             console.log('key listen');
             //console.log($(this).val());
             var num_stud=5;
             var datas = "";
             var score = 0;
+            var duration = 0;
+            duration = document.getElementById('chrono').innerText;
+            alert(duration);
             for(i=1;i<=num_stud;i++) {
 
 
@@ -235,7 +251,7 @@
             }else{
                 var projet = $('#pr').val();
                 var examen = $('#ex').val();
-                datas = "score="+score+"&project="+projet+"&exam="+examen;
+                datas = "score="+score+"&project="+projet+"&exam="+examen+"&duration="+duration;
                 $.ajax({
 
                     url: '{{ path('result_test') }}',
@@ -263,4 +279,78 @@
 
 
     </script>
+
+
+    <script>
+        var secondes = 5400;
+        var timer;
+        var pause = false;
+        var text = "";
+
+
+
+
+
+        function Chrono()
+        {
+            if (secondes > 0)
+            {
+                var minutes = Math.floor(secondes/60);
+                var heures = Math.floor(minutes/60);
+                secondes -= minutes * 60;
+                if (heures > 0)
+                {
+                    minutes -= heures * 60;
+                    if (minutes > 0)
+                    {
+                        text = '0'+heures + ' : ' + minutes + ' : ' + secondes;
+                    }
+                    else
+                    {
+                        text =  '00:'+heures + ' : ' + secondes;
+                    }
+                    minutes = minutes + (heures * 60);
+                    secondes = secondes + (minutes * 60) - 1;
+
+                }
+                else if (minutes > 0)
+                {
+                    text = minutes + ' : ' + secondes + ' : ';
+                    secondes = secondes + (minutes * 60) - 1;
+                }
+                else
+                {
+                    text = "Il reste " + secondes + ' sec';
+                    secondes = secondes + (minutes * 60) - 1;
+                }
+            }
+            else
+            {
+                clearInterval(timer);
+                text = "Time is up. The test is finished";
+            }
+            document.getElementById('chrono').innerHTML = text;
+        }
+
+        function DemarrerChrono()
+        {
+            timer = setInterval('Chrono()', 1000);
+            document.getElementById('btn_dem').style.display = 'none';
+            document.getElementById('btn_stop').style.display = 'inline';
+            document.getElementById('btn_pause').style.display = 'inline';
+
+        }
+
+        function ArreterChrono()
+        {
+            clearInterval(timer);
+            document.getElementById('chrono').style.display = 'none';
+            //document.getElementById('btn_stop').style.display = 'none';
+            //document.getElementById('btn_pause').style.display = 'none';
+        }
+
+
+    </script>
+
+
 {% endblock body %}

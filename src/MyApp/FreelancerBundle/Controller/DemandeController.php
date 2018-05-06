@@ -5,6 +5,8 @@ namespace MyApp\FreelancerBundle\Controller;
 use MyApp\FreelancerBundle\Entity\Demande;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use JMS\Serializer\SerializerBuilder;
+use Symfony\Component\HttpFoundation\JsonResponse;
 
 /**
  * Demande controller.
@@ -191,6 +193,17 @@ class DemandeController extends Controller
             'form' => $form->createView(),
         ));
     }
+
+
+    public function demandsJsonAction()
+    {
+        $tasks=$this->getDoctrine()->getManager()->getRepository('MyApp\FreelancerBundle\Entity\Demande')->findAll();
+        $serializer = SerializerBuilder::create()->build();
+        $formatted = $serializer->serialize($tasks, 'json');
+        return new JsonResponse($formatted);
+
+    }
+
 
 
 

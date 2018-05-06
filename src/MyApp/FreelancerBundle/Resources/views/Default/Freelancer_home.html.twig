@@ -46,8 +46,7 @@
                     <td>{{ project.requiredskills }}</td>
                     <td>
                         <a class="btn btn-default" href="{{ path('project_show', { 'id': project.id }) }}"><i class="	fa fa-eye"></i> show</a>
-                    </td>
-                   <td><a class="btn btn-default" target="_blank" href="{{ path('skillbarProject', { 'id': project.id }) }}"><i class="fa fa-file" style=""></i> View skills</a></td>
+                   <a class="btn btn-default" target="_blank" href="{{ path('skillbarProject', { 'id': project.id }) }}"><i class="fa fa-file" style=""></i> View skills</a></td>
 
                 </tr>
             {% endfor %}

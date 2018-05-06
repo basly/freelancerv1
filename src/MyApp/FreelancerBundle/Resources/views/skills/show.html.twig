@@ -33,6 +33,9 @@
             <a href="{{ path('skills_index') }}">Back to the list</a>
         </li>
         <li>
+            <a href="{{ asset('uploads/images/skills/' ~ skill.image) }}" />Certification view</a>
+        </li>
+        <li>
             <a href="{{ path('skills_edit', { 'id': skill.id }) }}">Edit</a>
         </li>
         <li>

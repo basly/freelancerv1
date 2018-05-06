@@ -51,14 +51,14 @@
         <div class="form-group col-md-3">
             {{ form_label(form.startdate) }}
             {{ form_errors(form.startdate) }}
-            {{ form_widget(form.startdate, {'attr':{'class': 'glyphicon glyphicon-th'}}) }}
+            {{ form_widget(form.startdate, {'attr':{'class': 'form-control'}}) }}
         </div>
-        <div class="input-group-em">
+        <div class="form-group col-md-3">
             {{ form_label(form.enddate) }}
             {{ form_errors(form.enddate) }}
-            {{ form_widget(form.enddate,{'attr':{'class': 'glyphicon glyphicon-th'}}) }}
-        </div>
+            {{ form_widget(form.enddate,{'attr':{'class': 'form-control'}}) }}
 
+        </div>
     </div>
     <div class="col-md-12">
         <div class="form-group col-md-3">
@@ -71,13 +71,13 @@
             {{ form_errors(form.requiredskills) }}
             {{ form_widget(form.requiredskills, {'attr': {'class': 'form-control'}}) }}
         </div>
-
     </div>
-
-          <span>
+        <div class="col-md-12">
+        <div class="col-md-6">
              <input class="btn btn-default" type="submit" value="Add New Project" />
             <a class="btn btn-default" href="{{ path('project_index') }}"><i class="fa fa-list"></i> Back to the list</a>
-           </span>
+        </div>
+        </div>
     </div>
 </div>
 

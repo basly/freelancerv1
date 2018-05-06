@@ -23,6 +23,11 @@ demande_edit:
     defaults: { _controller: "FreelancerBundle:Demande:edit" }
     methods:  [GET, POST]
 
+demande_json:
+    path:     /demandJson
+    defaults: { _controller: "FreelancerBundle:Demande:demandsJson" }
+    methods:  [GET, POST]
+
 demande_delete:
     path:     /{id}/delete
     defaults: { _controller: "FreelancerBundle:Demande:delete" }
