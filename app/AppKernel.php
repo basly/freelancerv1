@@ -20,6 +20,11 @@ class AppKernel extends Kernel
             new MyApp\FreelancerBundle\FreelancerBundle(),
             new MyApp\JobOwnerBundle\MyAppJobOwnerBundle(),
             new MyApp\AdminBundle\MyAppAdminBundle(),
+            new Mgilet\NotificationBundle\MgiletNotificationBundle(),
+            new EspritApiBundle\EspritApiBundle(),
+            new NotifBundle\NotifBundle(),
+            new FOS\MessageBundle\FOSMessageBundle(),
+            new MessagingBundle\MessagingBundle(),
             new Knp\Bundle\PaginatorBundle\KnpPaginatorBundle(),
             new Ivory\CKEditorBundle\IvoryCKEditorBundle(),
         ];

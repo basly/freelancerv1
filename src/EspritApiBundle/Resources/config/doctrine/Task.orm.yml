@@ -1,0 +1,17 @@
+EspritApiBundle\Entity\Task:
+    type: entity
+    table: null
+    repositoryClass: EspritApiBundle\Repository\TaskRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: 255
+        status:
+            type: integer
+    lifecycleCallbacks: {  }

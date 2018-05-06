@@ -3,7 +3,9 @@ imports:
     - { resource: security.yml }
     - { resource: services.yml }
     - { resource: "@FreelancerBundle/Resources/config/services.yml" }
-
+    - { resource: "@EspritApiBundle/Resources/config/services.yml" }
+    - { resource: "@NotifBundle/Resources/config/services.yml" }
+    - { resource: "@MessagingBundle/Resources/config/services.yml" }
 # Put parameters here that don't need to change on each machine where the app is deployed
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
@@ -94,3 +96,16 @@ knp_paginator:
         pagination: '@KnpPaginator/Pagination/twitter_bootstrap_v3_pagination.html.twig'     # sliding pagination controls template
         sortable: '@KnpPaginator/Pagination/sortable_link.html.twig' # sort link template
         filtration: '@KnpPaginator/Pagination/filtration.html.twig'  # filters template
+    registration:
+        form:
+            type: MyApp\FreelancerBundle\Form\RegistrationType
+
+fos_message:
+    db_driver: orm
+    thread_class: MyApp\FreelancerBundle\Entity\Thread
+    message_class: MyApp\FreelancerBundle\Entity\Message
+    new_thread_form:
+          type:               FOS\MessageBundle\FormType\NewThreadMultipleMessageFormType
+          handler:            fos_message.new_thread_multiple_form.handler
+          model:              FOS\MessageBundle\FormModel\NewThreadMultipleMessage
+          name:               message

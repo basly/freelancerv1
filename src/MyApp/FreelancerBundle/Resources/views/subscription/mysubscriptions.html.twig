@@ -1,0 +1,26 @@
+{% extends '@Freelancer/Default/training.html.twig' %}
+
+{% block table %}
+    <table class="table table-sm">
+        <thead>
+        <tr>
+            <th>prenom</th>
+            <th>nom</th>
+            <th>email</th>
+            <th>Training Title</th>
+            <th>Training id</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for subscription in subscriptions %}
+            <tr>
+                <td>{{ subscription.prenom }}</td>
+                <td>{{ subscription.nom}}</td>
+                <td>{{ subscription.email}}</td>
+                <td>{{ subscription.idtraining.trainingTitle}}</td>
+                <td>{{ subscription.idtraining.id}}</td>
+        {% endfor %}
+            </tr>
+        </tbody>
+    </table>
+{% endblock %}

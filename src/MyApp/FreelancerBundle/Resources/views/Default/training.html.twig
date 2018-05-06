@@ -1,0 +1,177 @@
+<!--
+	Author: W3layouts
+	Author URL: http://w3layouts.com
+	License: Creative Commons Attribution 3.0 Unported
+	License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Business Field a Corporate Category Bootstrap Responsive Web freelancer | Contact :: w3layouts</title>
+    <!-- Meta tag Keywords -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Business Field web freelancer, Bootstrap Web freelancers, Flat Web freelancers, Android Compatible web freelancer, Smartphone Compatible web freelancer, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+        function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!--// Meta tag Keywords -->
+    <!-- css files -->
+    <link rel="stylesheet" href="{{ asset('bundles/freelancer/Front/css/bootstrap.css')}}"> <!-- Bootstrap-Core-CSS -->
+    <link rel="stylesheet" href="{{ asset('bundles/freelancer/Front/css/style.css')}}" type="text/css" media="all" /> <!-- Style-CSS -->
+    <link rel="stylesheet" href="{{ asset('bundles/freelancer/Front/css/font-awesome.css')}}"> <!-- Font-Awesome-Icons-CSS -->
+    <!-- //css files -->
+    <link href="//fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i&amp;subset=latin-ext" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Athiti:200,300,400,500,600,700&amp;subset=latin-ext,thai,vietnamese" rel="stylesheet">
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+        function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <script src="{PATH}/alertify.min.js"></script>
+    <!--// Meta tag Keywords -->
+    <!-- css files -->
+
+</head>
+<body>
+<!-- banner-2 -->
+<div class="main-agile">
+    <div class="banner-w3l-2">
+        <!-- header -->
+        <div class="header">
+            <div class="logo">
+                <h1><a href="index.html"><span>F</span>ree<label>lancer</label></a></h1>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+    </div>
+</div>
+<!-- //banner-2 -->
+<!-- w3_short -->
+<div class="services-breadcrumb" align="right">
+    <div class="agile_inner_breadcrumb">
+        <ul class="w3_short " >
+            <li><a href="index.html">Home</a><i>||</i></li>
+            <li><a href="{{ path('training_index') }}">Trainings</a><i>||</i></li>
+            <li><a href="{{ path('my_trainings') }}">My Trainings</a><i>||</i></li>
+            <li><a href="{{ path('subscription_index') }}">My Subscribers</a><i>||</i></li>
+            <li class="notifs">
+                    <li class="dropdown ">
+                        <a class="btn btn-secondary dropdown-toggle btn btn-clean" href="{{ path('fos_message_inbox') }}">
+                            <span class="badge badge-danger badge-corner">2</span>
+                            <i class="fa fa-envelope size-20"></i>
+                        </a>
+                    </li>
+                    <li class="dropdown ">
+                        <a class="btn btn-secondary dropdown-toggle btn btn-clean" href="#" role="button" id="dropdownMenuLink"
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span class="badge badge-danger badge-corner">{{ mgilet_notification_unseen_count(app.user) }}</span>
+                            <i class="fa fa-globe size-20"></i>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <p class="dropdown-item">{{ mgilet_notification_render(app.user,{'seen': false })}}</p>
+                            <form action="{{ path('notification_mark_all_seen',{'id':app.user.id})}}"
+                                  method="post">
+                                <button type="submit">Mark all as seen</button>
+                            </form>
+                        </div>
+                    </li>
+            </li>
+        </ul>
+    </div>
+</div>
+<!-- //w3_short -->
+<!-- mail -->
+<div class="banner-bottom">
+    <div class="container">
+        <h3 class="title-w3l"><span>T</span>rainings</h3>
+        <div class="w3_testimonials_grids">
+            <div class="col-md-9 w3_contact_grid">
+{% block show %}{% endblock %}
+            </div>
+        </div>
+    </div>
+</div>
+<div class="bs-docs-example">
+    <table class="table table-hover">
+        {% block table %}{% endblock %}
+    </table>
+</div>
+<!-- footer -->
+<footer>
+    <div class="agileits-w3layouts-footer-top">
+        <div class="container">
+            <div class="col-md-6 agileits-w3layouts-footer-top-left">
+                <p><i class="fa fa-phone" aria-hidden="true"></i> +1 234 567 8901</p>
+            </div>
+            <div class="col-md-6 agileits-w3layouts-footer-top-left">
+                <p><i class="fa fa-envelope" aria-hidden="true"></i> Email :<a href="mailto:example@email.com"> mail@example.com</a></p>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+    </div>
+    <div class="agileits-footer-bottom">
+        <div class="container">
+            <div class="agileits-footer-bottom-grids">
+                <div class="col-md-6 footer-bottom-left">
+                    <h2>About Us</h2>
+                    <div class="footer-img-grids">
+                        <div class="footer-img">
+                            <img src="{{ asset('bundles/freelancer/Front/images/f1.jpg')}}" alt="" />
+                        </div>
+                        <div class="footer-img-info">
+                            <p>Suspendisse potenti. Pellentesque pulvinar tellus at est ullamcorper, at elementum nibh laoreet. Nunc id diam in nulla sollicitudin auctor. Donec elementum felis turpis, vel interdum libero congue non. Mauris non magna convallis</p>
+                        </div>
+                        <div class="clearfix"> </div>
+                    </div>
+                </div>
+                <div class="col-md-3 footer-bottom-right">
+                    <h5>We are social</h5>
+                    <div class="agileinfo-social-grids">
+                        <ul>
+                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fa fa-rss"></i></a></li>
+                            <li><a href="#"><i class="fa fa-vk"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-3 w3l-footer one tweet footer-bottom-right">
+                    <h5>Tweets</h5>
+                    <ul>
+                        <li>
+                            <a href="#"><i class="fa fa-twitter"></i>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accus.
+                                <i>http//example.com</i></a>
+                            <span>About 15 minutes ago<span>
+						</span></span></li>
+                    </ul>
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+        </div>
+    </div>
+    <div class="copyright">
+        <div class="container">
+            <p>© 2017 Business Field. All rights reserved | Design by <a href="http://w3layouts.com">W3layouts</a></p>
+        </div>
+    </div>
+</footer>
+<!-- //footer -->
+
+<!-- js-scripts -->
+<!-- js -->
+<script type="text/javascript" src="{{ asset('bundles/freelancer/Front/js/jquery-2.1.4.min.js')}}"></script>
+<script type="text/javascript" src="{{ asset('bundles/freelancer/Front/js/bootstrap.js')}}"></script> <!-- Necessary-JavaScript-File-For-Bootstrap -->
+<!-- //js -->
+<!-- menu-js -->
+<script src="{{ asset('bundles/freelancer/Front/js/modernizr.js')}}"></script> <!-- Modernizr -->
+<script src="{{ asset('bundles/freelancer/Front/js/menu.js')}}"></script> <!-- Resource jQuery -->
+<!-- //menu-js -->
+<!-- smooth scrolling -->
+<script src="{{ asset('bundles/freelancer/Front/js/SmoothScroll.min.js')}}"></script>
+<!-- //smooth scrolling -->
+<!-- //js-scripts -->
+
+</body>
+
+</html>
+
+

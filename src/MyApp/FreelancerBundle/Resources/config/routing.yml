@@ -65,3 +65,10 @@ freelancer_Subscribe:
 freelancer_UnSubscribe:
     path:     /freelancer/UnSubscribe/{idsubscriber}
     defaults: { _controller: FreelancerBundle:Freelancer:UnSubscribe }
+    defaults: { _controller: MyAppJobOwnerBundle:JobOwner:jobOwnerr }
+
+mysubscriptions:
+    path:     /mysubscriptions
+    defaults: { _controller: FreelancerBundle:Subscription:mysubscriptions }
+
+
