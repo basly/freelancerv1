@@ -1,68 +1,109 @@
 {% extends '@MyAppAdmin/default/backLayout.html.twig' %}
 {% block test2 %}
 
-        <div class="col-lg-offset-2 col-md-10">
-            <div class="about w3layouts-agileinfo" id="about">
-                <div class="row">
-                    <div class="col-md-2">
-                        <h3>Titre : </h3> </div>
-                    <div class="col-md-8">
-                        <h3>{{ rec.titre }}</h3> </div>
-                    <div class="col-md-2">
-                        <h3>State : {{ rec.statue }}</h3>
-                    </div>
+    <div class="col-md-offset-1">
+    <div class="row">
+        <div class="col-md-offset-1 col-md-10">
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>Titre : </th>
+                    <th>Contenu : </th>
+                    <th>State : </th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>
+                        <h3>{{ rec.titre }}</h3> </td>
+                    <td> <div class="col-md-6 ckeeditor">
+                            {{ rec.sujet|raw }}</div></td>
+                    <td>
+                        <h3>{{ rec.statue }} </h3></td>
+                </tr>
 
-                </div>
-                <div class="row">
-                    <div class="col-md-2">
-                        <h4> Message :</h4>
-                    </div>
-                    <div class="col-md-9">
-                        <h4>{{ rec.sujet }}</h4>
-                    </div>
-                </div>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-md-1" ></div>
+    </div>
 
-
-                {% for reply in replys %}
-                    <div class="row">
-                        {% set breakLoop = false %}
-
-                            {% for ad in admin  %}
-                                {% if breakLoop==false %}
-                                    {% if(reply.iduser==user.id) %}
-                                        <div class="col-md-1">
-                                            <img class="img-rounded" src={{ asset('bundles/freelancer/Front/images/user.png') }} alt="Avatar" style="width:40%">
-
-
-                                            <h3>{{ user.firstname }} {{ user.lastname }}</h3>
-                                        </div>
-
-
-                                    {% else %}
-                                    <div class="col-md-1">
-                                        <img class="img-rounded" src={{ asset('bundles/freelancer/Front/images/admin.jpg') }} alt="Avatar" style="width:40%">
-
-                                        <h3>{{ ad.firstname }} {{ ad.lastname }}</h3>
-                                    </div>
-                                    {%set breakLoop = true %}
-                                    {% endif %}
-                                {% endif %}
-                            {% endfor %}
-
-
-                        <div class="col-md-2">
-                            <h4> Message :</h4>
-                        </div>
-                        <div class="col-md-9">
-                            <h4>{{ reply.message }}</h4>
-                        </div>
-                    </div>
-                {% endfor %}
-                <div class="col-md-12">
-                    {{ form_start(form) }}
-                    {{ form_end(form) }}
+    {#<div class="col-lg-offset-2 col-md-10">
+        <div class="about w3layouts-agileinfo" id="about">
+            <div class="row">
+                <div class="col-md-2">
+                    <h3>Titre : </h3> </div>
+                <div class="col-md-8">
+                    <h3>{{ rec.titre }}</h3> </div>
+                <div class="col-md-2">
+                    <h3>State : {{ rec.statue }}</h3>
                 </div>
 
             </div>
+            <div class="row">
+                <div class="col-md-2">
+                    <h4> Contenu :</h4>
+                </div>
+                <div class="col-md-9 Subjet ">
+                    <h4>{{ rec.sujet }}</h4>
+                </div>
+            </div>
+#}
+
+    {% for reply in replys %}
+        <div class="row">
+            {% set breakLoop = false %}
+
+            {% for ad in admin  %}
+                {% if breakLoop==false %}
+                    {% if(reply.iduser==user.id) %}
+                        <div class="col-md-1 col-md-offset-1">
+                            <div class="col-md-8">
+                                <img class="img-rounded" src={{ asset('bundles/freelancer/Front/images/user.png') }} alt="Avatar" style="width:40%">
+
+
+                                <h5>{{ user.firstname }} {{ user.lastname }}</h5>
+
+                            </div>
+
+                        </div>
+
+
+                    {% else %}
+                        <div class="col-md-1 col-md-offset-1">
+                            <div class="col-md-8">
+                                <img class="img-rounded" src={{ asset('bundles/freelancer/Front/images/admin.jpg') }} alt="Avatar" style="width:40%">
+
+                                <h5>{{ ad.firstname }} {{ ad.lastname }}</h5>
+                            </div>
+                        </div>
+                        {%set breakLoop = true %}
+                    {% endif %}
+                {% endif %}
+            {% endfor %}
+
+
+            <div class="col-md-2">
+                <h4> Message :</h4>
+            </div>
+            <div class="col-md-9">
+                <h4>{{ reply.message }}</h4>
+            </div>
         </div>
+    {% endfor %}
+    <div class="col-md-offset-1 col-md-10 ">
+        {{ form_start(form) }}
+        <div class="col-md-8">
+
+            {{ form_label(form.message) }}
+            {{ form_errors(form.message) }}
+            {{ form_widget(form.message, {'attr': {'class': 'form-control col-md-6','rows':'4' ,'style':'height:100px'}}) }}
+
+
+            {{ form_end(form) }}
+        </div>
+
+    </div>
+    </div>
+    </div>
 {%  endblock %}

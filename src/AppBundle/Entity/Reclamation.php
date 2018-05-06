@@ -114,6 +114,8 @@ class Reclamation
      */
     public function setSujet($sujet)
     {
+
+
         $this->sujet = $sujet;
     
         return $this;
@@ -126,7 +128,7 @@ class Reclamation
      */
     public function getSujet()
     {
-        return $this->sujet;
+        return  htmlspecialchars_decode($this->sujet);
     }
 
     /**

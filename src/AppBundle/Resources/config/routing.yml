@@ -1,0 +1,7 @@
+my_app_API_login:
+    path:     /login
+    defaults: { _controller: AppBundle:MobileApi:login }
+
+my_app_API_json:
+    path:     /json
+    defaults: { _controller: AppBundle:MobileApi:Reclamations }

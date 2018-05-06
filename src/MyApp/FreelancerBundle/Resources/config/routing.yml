@@ -2,7 +2,7 @@ freelancer_homepage:
     path:     /
     defaults: { _controller: FreelancerBundle:Default:index }
 freelancer_home:
-    path:     /
+    path:     /freelancer/
     defaults: { _controller: "FreelancerBundle:Freelancer:home" }
     methods:  DELETE
 
@@ -35,21 +35,33 @@ freelancer_EditProfile:
     defaults: { _controller: FreelancerBundle:Freelancer:Editprofile }
 
 freelancer_Reclamations:
-    path:     /Reclamations
+    path:      /freelancer/Reclamations
     defaults: { _controller: FreelancerBundle:Freelancer:Reclamations }
 
 freelancer_CreateReclamations:
-    path:     /CreateReclamations
+    path:      /freelancer/CreateReclamations
     defaults: { _controller: FreelancerBundle:Freelancer:createreclamation }
 
-freelancer_showreclamation:
-    path:     /showreclamation/{id}
+freelancer_showReclamation:
+    path:     /freelancer/showReclamation/{id}
     defaults: { _controller: FreelancerBundle:Freelancer:showReclamation }
 
+freelancer_Suggestions:
+    path:      /freelancer/Suggestions
+    defaults: { _controller: FreelancerBundle:Freelancer:Suggestions }
+
+freelancer_CreateSuggestions:
+    path:      /freelancer/CreateSuggestions
+    defaults: { _controller: FreelancerBundle:Freelancer:CreateSuggestions }
+
+freelancer_showSuggestion:
+    path:     /freelancer/showSuggestion/{id}
+    defaults: { _controller: FreelancerBundle:Freelancer:showSuggestion }
+
 freelancer_Subscribe:
-    path:     /Subscribe/{idsubscriber}
+    path:     /freelancer/Subscribe/{idsubscriber}
     defaults: { _controller: FreelancerBundle:Freelancer:Subscribe }
 
 freelancer_UnSubscribe:
-    path:     /UnSubscribe/{idsubscriber}
+    path:     /freelancer/UnSubscribe/{idsubscriber}
     defaults: { _controller: FreelancerBundle:Freelancer:UnSubscribe }

@@ -192,7 +192,6 @@ class FreelancerController extends Controller
     WHERE u.idreclamation=:idreclamation 
     
    ';
-
         $query1 = $this->getDoctrine()->getEntityManager()->createQuery($dql)
             ->setParameters($parameters);
 
@@ -251,5 +250,112 @@ class FreelancerController extends Controller
         $save->remove($subscription);
         $save->flush();
         return $this->redirectToRoute('freelancer_homepage');
+    }
+    public function SuggestionsAction()
+    {
+        $userManager = $this->get('fos_user.user_manager');
+        $us = $this->getUser();
+        $ty="Suggestion";
+        $user = $userManager->findUserByEmail($us->getEmail());
+        $parameters = array(
+            'iduser' => $user->getId(),
+            'ty' => $ty
+        );
+
+        $dql = 'SELECT u
+    FROM AppBundle:Reclamation u
+    WHERE u.iduser=:iduser 
+    AND u.type =:ty 
+   ';
+
+        $query1 = $this->getDoctrine()->getEntityManager()->createQuery($dql)
+            ->setParameters($parameters);
+
+
+
+        /*$parameters = array(
+            'iduser' => $user->getId()
+        );
+
+        $query = $this->getDoctrine()->getEntityManager()
+            ->createQuery(
+                'SELECT u FROM AppBundle:Reclamation u WHERE u.iduser LIKE :iduser '
+            )->setParameter('iduser',$user->getId());*/
+
+        $reclamations = $query1->getResult();
+
+
+        return $this->render('@Freelancer/Default/Suggestions.html.twig',array('reclamations' =>   $reclamations));
+    }
+    public function CreateSuggestionsAction(Request $request)
+    {
+        $reclamation=new Reclamation();
+        $form=$this->createForm(ReclamationType::class, $reclamation);
+        $formview =$form->createView();
+        $form->handleRequest($request);
+        if($form->isSubmitted()&&$form->isValid())
+        {
+            $save=$this->getDoctrine()->getManager();
+            $this->get('session')->getFlashBag()->add(
+                'notice','Suggestion sended to administrator'
+            );
+            $reclamation->setIduser($this->getUser()->getId());
+            $reclamation->setType("Suggestion");
+            $reclamation->setCreationdate(new \DateTime('now'));
+            $reclamation->setStatue("Created");
+            $save->persist($reclamation);
+            $save->flush();
+            return $this->render('@Freelancer/Default/index.html.twig');
+        }
+        return $this->render('@Freelancer/Default/CreateSuggestion.twig',array('form'=>$formview));
+    }
+    public function showSuggestionAction(Request $request,$id)
+    {
+        $query = $this->getDoctrine()->getEntityManager()
+            ->createQuery(
+                'SELECT u FROM FreelancerBundle:User u WHERE u.roles LIKE :role'
+            )->setParameter('role', '%"ROLE_ADMIN"%');
+
+        $admin = $query->getResult();
+        $parameters = array(
+            'idreclamation' => $id
+        );
+
+        $dql = 'SELECT u
+    FROM AppBundle:Replyreclamation u
+    WHERE u.idreclamation=:idreclamation 
+    
+   ';
+        $query1 = $this->getDoctrine()->getEntityManager()->createQuery($dql)
+            ->setParameters($parameters);
+
+
+        $replys = $query1->getResult();
+
+        $reclamation = $this->getDoctrine()->getRepository('AppBundle:Reclamation')->find($id);
+        $user = $this->getDoctrine()->getRepository('FreelancerBundle:User')->find($reclamation->getIduser());
+        $reply=new Replyreclamation();
+        $form=$this->createForm(ReplyreclamationType::class, $reply);
+        $formview =$form->createView();
+        $form->handleRequest($request);
+
+        if($form->isSubmitted()&&$form->isValid())
+        {
+            $save=$this->getDoctrine()->getManager();
+            $this->get('session')->getFlashBag()->add(
+                'notice','Suggestion sended to administrator'
+            );
+            $reply->setIduser($this->getUser()->getId());
+            $reply->setIdreclamation($id);
+            $save->persist($reply);
+            $save->flush();
+
+            return $this->redirectToRoute('freelancer_showSuggestion',array('id'=>$id));
+
+//            return $this->render('@Freelancer/Default/showReclamation.html.twig', array('rec' =>$reclamation,'form'=>$formview,'replys'=>$replys,'admin'=>$admin,'user'=>$user));
+
+        }
+
+        return $this->render('@Freelancer/Default/showReclamation.html.twig', array('rec' =>$reclamation,'form'=>$formview,'replys'=>$replys,'admin'=>$admin,'user'=>$user));
     }
 }
