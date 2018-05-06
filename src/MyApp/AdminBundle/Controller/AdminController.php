@@ -39,7 +39,7 @@ class AdminController extends Controller
     public function showReclamationAction(Request $request,$id)
     {
 
-        $query = $this->getDoctrine()->getEntityManager()
+    /*    $query = $this->getDoctrine()->getEntityManager()
             ->createQuery(
                 'SELECT u FROM FreelancerBundle:User u WHERE u.roles LIKE :role'
             )->setParameter('role', '%"ROLE_ADMIN"%');
@@ -51,7 +51,7 @@ class AdminController extends Controller
 
         $dql = 'SELECT u
     FROM AppBundle:Replyreclamation u
-    WHERE u.idreclamation=:idreclamation 
+    WHERE u.idreclamation=:idreclamation and statue!="Closed"
     
    ';
 
@@ -60,8 +60,10 @@ class AdminController extends Controller
 
 
         $replys = $query1->getResult();
-
-        $reclamation = $this->getDoctrine()->getRepository('AppBundle:Reclamation')->find($id);
+        $savee=$this->getDoctrine()->getManager();
+        $reclamation = $this->getDoctrine()->getManager()->getRepository('AppBundle:Reclamation')->find($id);
+        $reclamation->setStatue("InProgress");
+        $savee->flush();
         $user = $this->getDoctrine()->getRepository('FreelancerBundle:User')->find($reclamation->getIduser());
         $reply=new Replyreclamation();
         $form=$this->createForm(ReplyreclamationType::class, $reply);
@@ -84,6 +86,66 @@ class AdminController extends Controller
         }
 
         return $this->render('@MyAppAdmin/Default/showReclamation.html.twig', array('rec' =>$reclamation,'form'=>$formview,'replys'=>$replys,'admin'=>$admin,'user'=>$user));
+    */
+
+
+
+
+
+
+
+        $query = $this->getDoctrine()->getEntityManager()
+            ->createQuery(
+                'SELECT u FROM FreelancerBundle:User u WHERE u.roles LIKE :role'
+            )->setParameter('role', '%"ROLE_ADMIN"%');
+
+        $admin = $query->getResult();
+        $parameters = array(
+            'idreclamation' => $id
+        );
+
+        $dql = 'SELECT u
+    FROM AppBundle:Replyreclamation u
+    WHERE u.idreclamation=:idreclamation and u.statue
+    
+    
+   ';
+
+        $query1 = $this->getDoctrine()->getEntityManager()->createQuery($dql)
+            ->setParameters($parameters);
+
+
+        $replys = $query1->getResult();
+
+        $reclamation = $this->getDoctrine()->getRepository('AppBundle:Reclamation')->find($id);
+        $reclamation->setStatue("InProgress");
+        $this->getDoctrine()->getManager()->persist($reclamation);
+        $this->getDoctrine()->getManager()->flush();
+        $user = $this->getDoctrine()->getRepository('FreelancerBundle:User')->find($reclamation->getIduser());
+        $reply=new Replyreclamation();
+        $form=$this->createForm(ReplyreclamationType::class, $reply);
+        $formview =$form->createView();
+        $form->handleRequest($request);
+
+        if($form->isSubmitted()&&$form->isValid())
+        {
+            $save=$this->getDoctrine()->getManager();
+            $this->get('session')->getFlashBag()->add(
+                'notice','Reclamation sended to administrator'
+            );
+            $reply->setIduser($this->getUser()->getId());
+            $reply->setIdreclamation($id);
+            $save->persist($reply);
+            $save->flush();
+
+            return $this->redirectToRoute('my_app_admin_replyReclamation',array('id'=>$id));
+
+//            return $this->render('@Freelancer/Default/showReclamation.html.twig', array('rec' =>$reclamation,'form'=>$formview,'replys'=>$replys,'admin'=>$admin,'user'=>$user));
+
+        }
+
+        return $this->render('@MyAppAdmin/Default/showReclamation.html.twig', array('rec' =>$reclamation,'form'=>$formview,'replys'=>$replys,'admin'=>$admin,'user'=>$user));
+
     }
 
 }

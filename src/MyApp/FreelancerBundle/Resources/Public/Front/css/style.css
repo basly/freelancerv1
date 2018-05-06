@@ -4,6 +4,54 @@ Author URL: http://w3layouts.com
 License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 --*/
+.caret{
+    color: white;
+}
+.navbar-defaultuser{
+    background-color: transparent !important;
+    border-color: transparent !important;
+    width: 20px !important;
+    height: 20px !important;
+}
+ul.dropdown-cart{
+	min-width:250px;
+}
+ul.dropdown-cart li .item{
+	display:block;
+	padding:3px 10px;
+	margin: 3px 0;
+}
+ul.dropdown-cart li .item:hover{
+	background-color:#f3f3f3;
+}
+ul.dropdown-cart li .item:after{
+	visibility: hidden;
+	display: block;
+	font-size: 0;
+	content: " ";
+	clear: both;
+	height: 0;
+}
+
+ul.dropdown-cart li .item-left{
+	float:left;
+}
+ul.dropdown-cart li .item-left img,
+ul.dropdown-cart li .item-left span.item-info{
+	float:left;
+}
+ul.dropdown-cart li .item-left span.item-info{
+	margin-left:10px;
+}
+ul.dropdown-cart li .item-left span.item-info span{
+	display:block;
+}
+ul.dropdown-cart li .item-right{
+	float:right;
+}
+ul.dropdown-cart li .item-right button{
+	margin-top:14px;
+}
 .ace-nav .nav-user-photo {
 	margin: -4px 8px 0 0;
 	border-radius: 100%;
@@ -36,6 +84,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 .tablefont20{
 	font-size: 20px;
 }
+
 body{
 	margin:0;
 	font-family: 'Athiti', sans-serif;

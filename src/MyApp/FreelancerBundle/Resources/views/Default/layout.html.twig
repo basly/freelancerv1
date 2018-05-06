@@ -25,6 +25,7 @@
 
 
 <!-- /section:basics/navbar.user_menu -->
+
 <!-- banner -->
 <div class="main-agile">
     <div class="banner-w3l">
@@ -40,7 +41,51 @@
                         <div class="col-md-offset-7 col-md-1" style="color:white;">
                             <span>
                             <img class="img-rounded" src={{ asset('bundles/freelancer/Front/images/user.png') }} alt="Avatar" style="width:40%">
-                            <h3>Welcome,{{ app.user.firstname }} {{ app.user.lastname }}</h3>
+                           <nav class="navbar navbar-default navbar-fixed-top navbar-defaultuser">
+    <div class="container-fluid">
+
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                         Welcome,{{ app.user.firstname }} {{ app.user.lastname }}
+                        <span class="caret caretuser"></span></a>
+                    <ul class="dropdown-menu dropdown-cart" role="menu">
+                        <li class="divider"></li>
+                        <li><a class="text-center" href="">View Cart</a></li>
+                        <li class="divider"></li>
+                    </ul>
+                </li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+                                <ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
+								<li>
+									<a href="{{ path('freelancer_Reclamations') }}">
+										<i class="menu-icon fa fa-list-alt"></i>
+										MyReclamations
+									</a>
+								</li>
+
+								<li>
+									<a href="{{ path('freelancer_Suggestions') }}l">
+										<i class="fab fa-angellist"></i>
+										Profile
+									</a>
+								</li>
+
+								<li class="divider"></li>
+
+								<li>
+									<a href="{{ path('fos_user_security_logout') }}">
+										<i class="fa fa-power-off"></i>
+										Logout
+									</a>
+								</li>
+							</ul>
                                 </span>
                         </div>
 

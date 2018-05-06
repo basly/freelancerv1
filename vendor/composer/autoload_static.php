@@ -65,6 +65,8 @@ class ComposerStaticInit1c56b9f8baaef3511324c8a024f1eb72
         ),
         'I' => 
         array (
+            'Ivory\\JsonBuilder\\' => 18,
+            'Ivory\\CKEditorBundle\\' => 21,
             'Incenteev\\ParameterHandler\\' => 27,
         ),
         'F' => 
@@ -203,6 +205,14 @@ class ComposerStaticInit1c56b9f8baaef3511324c8a024f1eb72
         'Knp\\Bundle\\MenuBundle\\' => 
         array (
             0 => __DIR__ . '/..' . '/knplabs/knp-menu-bundle/src',
+        ),
+        'Ivory\\JsonBuilder\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/egeloen/json-builder/src',
+        ),
+        'Ivory\\CKEditorBundle\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/egeloen/ckeditor-bundle',
         ),
         'Incenteev\\ParameterHandler\\' => 
         array (
