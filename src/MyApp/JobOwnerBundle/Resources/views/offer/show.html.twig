@@ -1,14 +1,26 @@
-{% extends 'base.html.twig' %}
+{% extends '@Freelancer/Default/index.html.twig' %}
 
 {% block body %}
-    <h1>Offer</h1>
-
-    <table>
+<div class="services-breadcrumb">
+    <div class="agile_inner_breadcrumb">
+        <ul class="w3_short">
+            <li><a href="index.html">Home</a><i>||</i></li>
+            <li> Offer</li>
+        </ul>
+    </div>
+</div>
+<div class="banner-bottom">
+    <div class="container">
+        <div class="w3ls-title">
+            <h3 class="title-w3l"><span>O</span>ffer !</h3>
+        </div>
+    </div>
+    <div class="about-top w3ls-agile" >
+        <div class="container">
+            <div class="bs-docs-example" >
+        <table class="table table-striped">
         <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ offer.id }}</td>
-            </tr>
+
             <tr>
                 <th>Description</th>
                 <td>{{ offer.description }}</td>
@@ -32,17 +44,19 @@
         </tbody>
     </table>
 
-    <ul>
-        <li>
-            <a href="{{ path('offer_index') }}">Back to the list</a>
-        </li>
-        <li>
-            <a href="{{ path('offer_edit', { 'id': offer.id }) }}">Edit</a>
-        </li>
-        <li>
-            {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
-            {{ form_end(delete_form) }}
-        </li>
-    </ul>
+
+
+            {% if is_granted('ROLE_FREELANCER') or is_granted('ROLE_ADMIN') %}
+                <a class="btn btn-default" href="{{ path('offer_by_Freelancer') }}"><i class="	fa fa-list">Back to the list</i></a>
+            {% else %}
+            <a class="btn btn-default"  href="{{ path('offer_by_JobOnwer') }}"><i class="	fa fa-list"></i>Back to the list</a>
+            {% endif %}
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}

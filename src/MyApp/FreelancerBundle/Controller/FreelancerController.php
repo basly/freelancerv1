@@ -51,9 +51,9 @@ class FreelancerController extends Controller
         $paginator  = $this->get('knp_paginator');
 
         $result= $paginator->paginate(
-            $projects,
-            $request->query->getInt('page',1),
-            $request->query->getInt('limit',5)
+        $projects,
+        $request->query->getInt('page',1),
+        $request->query->getInt('limit',2)
 
         );
 

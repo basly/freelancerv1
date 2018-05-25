@@ -14,13 +14,11 @@
             <h3 class="title-w3l"><span>D</span>mande!</h3>
         </div>
     </div>
-
-    <table>
+    <div class="container">
+        <div class="bs-docs-example" >
+            <table class="table table-striped">
         <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ demande.id }}</td>
-            </tr>
+
             <tr>
                 <th>Summary</th>
                 <td>{{ demande.summary }}</td>
@@ -41,16 +39,19 @@
     </table>
 
     <ul>
-        <li>
+        <span>
             {% if is_granted('ROLE_JOBOWNER') or is_granted('ROLE_ADMIN') %}
-            <a href="{{ path('demand_by_JobOwner') }}">Back to the list of demands</a>
-            {% else%}
-            <a href="{{ path('demand_by_Freelancer') }}">Back to the list of demands</a>
-            {% endif %}
-        </li>
-        <li>
-            <a href="{{ path('demande_edit', { 'id': demande.id }) }}">Edit</a>
-        </li>
+            <a class="btn btn-default" href="{{ path('demand_by_JobOwner') }}"><i class="fa fa-list"></i>  Back to the list of demands</a>
+            <a class="btn btn-default" href="{{ path('demande_edit', { 'id': demande.id }) }}"><i class="fa fa-pencil"></i>Edit</a>
 
+            {% else%}
+            <a class="btn btn-default" href="{{ path('demand_by_Freelancer') }}"><i class="fa fa-list"></i>  Back to the list of demands</a>
+            {% endif %}
+       </span>
     </ul>
+        </div>
+    </div>
+</div>
+
+
 {% endblock %}

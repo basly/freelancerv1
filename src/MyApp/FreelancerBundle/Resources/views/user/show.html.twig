@@ -1,4 +1,4 @@
-{% extends 'MyAppJobOwnerBundle:Default:index.html.twig' %}
+{% extends '@Freelancer/Default/index.html.twig' %}
 
 {% block body %}
     <h1>User</h1>
@@ -67,7 +67,9 @@
         </li>
         {% endif %}
         <td><a class="btn btn-default" target="_blank" href="{{ asset('uploads/cvs/' ~ user.cv) }}"><i class="fa fa-file" style=""></i> View Cv (PDF)</a></td>
+
         <td><a class="btn btn-default" target="_blank" href="{{ path('skills_skillbar') }}"><i class="fa fa-file" style=""></i> View skills</a></td>
 
+        <td><a class="btn btn-default" href="{{ path('offer_new', { 'id': user.id })}}" ><i class="fa fa-eye"></i> Offer</a></td>
     </ul>
 {% endblock %}

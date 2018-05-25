@@ -9,8 +9,23 @@ offer_show:
     methods:  GET
 
 offer_new:
-    path:     /new
+    path:     /{id}/new
     defaults: { _controller: "MyAppJobOwnerBundle:Offer:new" }
+    methods:  [GET, POST]
+
+offer_add:
+    path:     /add
+    defaults: { _controller: "MyAppJobOwnerBundle:Offer:add" }
+    methods:  [GET, POST]
+
+offer_by_JobOnwer:
+    path:     /offerByJbOwner
+    defaults: { _controller: "MyAppJobOwnerBundle:Offer:offerByJbOwner" }
+    methods:  [GET, POST]
+
+offer_by_Freelancer:
+    path:     /offerByFreelancer
+    defaults: { _controller: "MyAppJobOwnerBundle:Offer:offerByFreelancer" }
     methods:  [GET, POST]
 
 offer_edit:

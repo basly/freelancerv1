@@ -1,0 +1,60 @@
+{% extends '@Freelancer/Default/index.html.twig' %}
+
+{% block body %}
+<div class="services-breadcrumb">
+    <div class="agile_inner_breadcrumb">
+        <ul class="w3_short">
+            <li><a href="index.html">Home</a><i>||</i></li>
+            <li>Freelancer Offer</li>
+        </ul>
+    </div>
+</div>
+<div class="banner-bottom">
+    <div class="container">
+        <div class="w3ls-title">
+            <h3 class="title-w3l"><span>O</span>ffer list!</h3>
+        </div>
+    </div>
+    <div class="about-top w3ls-agile" >
+        <div class="container">
+            <div class="bs-docs-example" >
+    <table class="table table-striped">
+        <thead>
+        <tr>
+
+            <th>Description</th>
+            <th>Details</th>
+            <th>Date</th>
+            <th>Amount</th>
+            <th>Datestart</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for offer in offers %}
+            <tr>
+
+                <td>{{ offer.description }}</td>
+                <td>{{ offer.details }}</td>
+                <td>{% if offer.date %}{{ offer.date|date('Y-m-d') }}{% endif %}</td>
+                <td>{{ offer.amount }}</td>
+                <td>{% if offer.datestart %}{{ offer.datestart|date('Y-m-d') }}{% endif %}</td>
+                <td>
+
+                    <a class="btn btn-default" href="{{ path('offer_show', { 'id': offer.id }) }}"><i class="	fa fa-eye"></i>show</a>
+
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+        <nav>
+            <div class="navigation text-center">
+                {{ knp_pagination_render(offers) }}
+            </div>
+        </nav>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

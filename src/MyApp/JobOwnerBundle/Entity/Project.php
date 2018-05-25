@@ -291,18 +291,35 @@ class Project
     /**
      * @return mixed
      */
-    public function getUser()
+    public function getDemandes()
     {
-        return $this->user;
+        return $this->demandes;
     }
 
     /**
-     * @param mixed $user
+     * @param mixed $demandes
      */
-    public function setUser($user)
+    public function setDemandes($demandes)
     {
-        $this->user = $user;
+        $this->demandes = $demandes;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getJobowner()
+    {
+        return $this->jobowner;
+    }
+
+    /**
+     * @param mixed $jobowner
+     */
+    public function setJobowner($jobowner)
+    {
+        $this->jobowner = $jobowner;
+    }
+
 
 
 }

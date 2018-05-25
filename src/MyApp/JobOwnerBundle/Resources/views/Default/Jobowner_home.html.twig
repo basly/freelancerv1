@@ -15,44 +15,32 @@
             <h3 class="title-w3l"><span>F</span>reelancer list!</h3>
         </div>
     </div>
-    <div class="about-top w3ls-agile" >
-    <table class="table table-striped" >
-        <thead>
-        <tr>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Skills</th>
-            <th>Activity Sector</th>
-            <th>Adress</th>
-            <th>Birthday Date</th>
-            <th>Disponibility</th>
-            <th>Action</th>
 
 
-        </tr>
-        </thead>
-        <tbody>
+        <!--team-->
 
-        {% for freelancer in frees %}
-            <tr>
-                <td>{{ freelancer.firstName }}</td>
-                <td>{{ freelancer.lastName }}</td>
-                <td>{{ freelancer.skills }}</td>
-                <td>{{ freelancer.activitySector }}</td>
-                <td>{{ freelancer.address }}</td>
-                <td>{{ freelancer.birthDate }}</td>
-                <td>{{ freelancer.disponibility }}</td>
-                <td>
-                    <ul>
-                        <a class="btn btn-default" href="{{ path('user_show', { 'id': freelancer.id })}}" ><i class="fa fa-eye"></i> show</a>
-                    </ul>
+        <div class="team">
+            <div class="container">
+                <div class="team-row" >
+                    {% set i =1 %}
+                    {% for freelancer in frees %}
+                    <div class="col-md-3 team-grids team-mdl1 wow fadeInUp animated" data-wow-delay=".5s" >
+                    <h5>{{ freelancer.firstName }} <span> {{ freelancer.lastName }}</span></h5>
 
-                </td>
-
-
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+                        <p > {{ freelancer.skills }}</p>
+                        <p> {{ freelancer.activitySector }}</p>
+                        <p> {{ freelancer.address }}</p>
+                        <p>  {{ freelancer.birthDate }}</p>
+                        <p> {{ freelancer.disponibility }}</p>
+                        <a class="btn btn-default" href="{{ path('user_show', { 'id': freelancer.id })}}" ><i class="fa fa-eye" aria-hidden="true"></i> show</a>
+                        <div class="team-img">
+                            <img src="{{ asset('bundles/freelancer/img/t'~i~'.jpg')}}" alt="">
+                        </div>
+                        {% set i =i+1 %}
+            </div>
+        </div>
+                {% endfor %}
+        <!--//team-->
+    </div>
 
 {% endblock %}

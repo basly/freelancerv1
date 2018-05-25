@@ -37,6 +37,30 @@ class Tests
     private $testdescription;
 
     /**
+     * @return string
+     */
+    public function getDuration()
+    {
+        return $this->duration;
+    }
+
+    /**
+     * @param string $duration
+     */
+    public function setDuration($duration)
+    {
+        $this->duration = $duration;
+    }
+
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="duration", type="string", length=255)
+     */
+    private $duration;
+
+    /**
      *
      * @ORM\ManyToOne(targetEntity="MyApp\FreelancerBundle\Entity\User",inversedBy="id")
      * @ORM\JoinColumn(name="freelancer",referencedColumnName="id",onDelete="CASCADE")

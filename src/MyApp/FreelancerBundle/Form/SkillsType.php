@@ -5,6 +5,7 @@ namespace MyApp\FreelancerBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 
 class SkillsType extends AbstractType
 {
@@ -13,7 +14,14 @@ class SkillsType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('skillname')->add('skillexperience')->add('certification')->add('skilllevel');
+        $builder->add('skillname')->add('skillexperience')
+            ->add('certification')
+            ->add('skilllevel')
+            ->add('imagesize')
+            ->add('imageFile', FileType::class)
+
+
+        ;
     }/**
      * {@inheritdoc}
      */

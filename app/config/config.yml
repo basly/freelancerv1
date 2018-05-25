@@ -13,6 +13,9 @@ parameters:
     cvs_directory: '%kernel.project_dir%/web/uploads/cvs'
 
 framework:
+    serializer:
+        enable_annotations: true
+        enabled: true
     #esi: ~
     #translator: { fallbacks: ['%locale%'] }
     secret: '%secret%'
@@ -96,16 +99,61 @@ knp_paginator:
         pagination: '@KnpPaginator/Pagination/twitter_bootstrap_v3_pagination.html.twig'     # sliding pagination controls template
         sortable: '@KnpPaginator/Pagination/sortable_link.html.twig' # sort link template
         filtration: '@KnpPaginator/Pagination/filtration.html.twig'  # filters template
-    registration:
-        form:
-            type: MyApp\FreelancerBundle\Form\RegistrationType
 
-fos_message:
+nomaya_social:
+    buttons:
+        facebook:
+            url:            null
+            locale:         "en_EN"
+            send:           false
+            width:          300
+            showFaces:      false
+            layout:         "button_count"
+        twitter:
+            url:            null
+            locale:         "fr"
+            message:        "Je veux partager ça avec vous"
+            text:           "Tweet"
+            via:            "L'Equipe cartedevisitevirtuelle.fr"
+            tag:            "ttot"
+        googleplus:
+            url:            null
+            locale :        "fr"
+            size :          "medium"
+            annotation :    "bubble"
+            width :         300
+        linkedin:
+            url:            null
+            locale:         "en_EN"
+            counter:        "right"
+        pinterest:
+            url:            null
+    links:
+        facebook:           "http://www.facebook.com/yann.chauvel"
+        googleplus:         "https://plus.google.com/105931415830389032796"
+    theme:                  'default' # optional
+
+knp_snappy:
+    pdf:
+        enabled:    true
+        binary:     'C:\\dev\\wkhtmltopdf\\bin\\wkhtmltopdf.exe'
+        options:    []
+    image:
+        enabled:    true
+        binary:     "C:\\dev\\wkhtmltopdf\\bin\\wkhtmltoimage.exe\""
+        options:    []
+
+    temporary_folder: "%kernel.cache_dir%/snappy"
+    process_timeout: 160 # In seconds
+
+vich_uploader:
     db_driver: orm
-    thread_class: MyApp\FreelancerBundle\Entity\Thread
-    message_class: MyApp\FreelancerBundle\Entity\Message
-    new_thread_form:
-          type:               FOS\MessageBundle\FormType\NewThreadMultipleMessageFormType
-          handler:            fos_message.new_thread_multiple_form.handler
-          model:              FOS\MessageBundle\FormModel\NewThreadMultipleMessage
-          name:               message
+    # ...
+    mappings:
+        product_images:
+            uri_prefix:         '%kernel.project_dir%/web/uploads/images/skills'
+            upload_destination: '%kernel.root_dir%/../web/uploads/images/skills'
+            namer: vich_uploader.namer_origname
+            inject_on_load: false
+            delete_on_update: true
+            delete_on_remove: true

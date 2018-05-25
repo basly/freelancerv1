@@ -15,8 +15,9 @@
             <h3 class="title-w3l"><span>P</span>rojects list!</h3>
         </div>
     </div>
-    <div class="about-top w3ls-agile" >
-        <table class="table table-striped" >
+    <div class="container">
+    <div class="bs-docs-example" >
+        <table class="table">
             <thead>
             <tr>
                 <th>Projectname</th>
@@ -27,6 +28,7 @@
                 <th>Payment</th>
                 <th>Experiencelevel</th>
                 <th>Requiredskills</th>
+                <th>Action</th>
 
             </tr>
             </thead>
@@ -44,16 +46,19 @@
                     <td>{{ project.requiredskills }}</td>
                     <td>
                         <a class="btn btn-default" href="{{ path('project_show', { 'id': project.id }) }}"><i class="	fa fa-eye"></i> show</a>
-                    </td>
+                   <a class="btn btn-default" target="_blank" href="{{ path('skillbarProject', { 'id': project.id }) }}"><i class="fa fa-file" style=""></i> View skills</a></td>
 
                 </tr>
             {% endfor %}
             </tbody>
         </table>
-
-        <div class="navigation">
+        <nav>
+        <div class="navigation text-center">
             {{ knp_pagination_render(projects) }}
         </div>
+        </nav>
+    </div>
+
     </div>
 
     {% endblock %}

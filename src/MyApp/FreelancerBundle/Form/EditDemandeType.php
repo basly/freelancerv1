@@ -17,7 +17,10 @@ class EditDemandeType extends AbstractType
     {
         $builder
 
-            ->add('status', ChoiceType::class, array('choices'=>array('Sent'=>'sent','Approved'=>'approved')));
+            ->add('status', ChoiceType::class, array('choices'=>array('Sent'=>'sent','Approved'=>'approved')))
+            ->add('summary')
+            ->add('description')
+            ->add('content');
             //->add('freelancer',UserType::class)
            // ->add('project',ProjectType::class);
     }/**

@@ -13,6 +13,16 @@ skills_show:
     defaults: { _controller: "FreelancerBundle:Skills:show" }
     methods:  GET
 
+newSkillsProject:
+    path:     /{id}/newSkillsProject
+    defaults: { _controller: "FreelancerBundle:Skills:newSkillsProject" }
+    methods:  [GET, POST]
+
+skillbarProject:
+    path:     /{id}/skillbarProject
+    defaults: { _controller: "FreelancerBundle:Skills:skillbarProject" }
+    methods:  GET
+
 skills_new:
     path:     /new
     defaults: { _controller: "FreelancerBundle:Skills:new" }
@@ -22,6 +32,10 @@ skills_edit:
     path:     /{id}/edit
     defaults: { _controller: "FreelancerBundle:Skills:edit" }
     methods:  [GET, POST]
+
+skills_pdf:
+    path:     /pdf
+    defaults: { _controller: "FreelancerBundle:Skills:pdf" }
 
 skills_delete:
     path:     /{id}/delete

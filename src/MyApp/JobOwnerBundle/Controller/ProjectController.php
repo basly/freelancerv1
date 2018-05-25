@@ -29,7 +29,7 @@ class ProjectController extends Controller
         $result= $paginator->paginate(
           $projects,
             $request->query->getInt('page',1),
-            $request->query->getInt('limit',5)
+            $request->query->getInt('limit',3)
 
         );
         return $this->render('MyAppJobOwnerBundle:project:indexAllProject.html.twig', array(
@@ -69,7 +69,7 @@ class ProjectController extends Controller
         $form = $this->createForm('MyApp\JobOwnerBundle\Form\ProjectType', $project);
         $form->handleRequest($request);
         $user = $this->getUser();
-        $project->setUser($user);
+        $project->setJobowner($user);
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $em->persist($project);
@@ -116,12 +116,13 @@ class ProjectController extends Controller
             ->findBy(array('freelancer' => $user,'examen'=>$examen));
 
         $nb = count($test);
+        $nbExam = count($examen);
         var_dump($nb);
 
 
 
         return $this->render('MyAppJobOwnerBundle:project:show.html.twig', array(
-            'project' => $project,'examen'=>$examen,'test' => $nb,'free'=>$user,'project'=>$project,'delete_form' => $deleteForm->createView()
+            'project' => $project,'examen'=>$examen,'nbExam'=>$nbExam,'test' => $nb,'free'=>$user,'project'=>$project,'delete_form' => $deleteForm->createView()
         ));
     }
 

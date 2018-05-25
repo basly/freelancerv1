@@ -1,5 +1,6 @@
 <?php
 
+
 namespace MyApp\JobOwnerBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;

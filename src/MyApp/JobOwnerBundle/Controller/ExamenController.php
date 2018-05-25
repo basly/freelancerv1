@@ -1,13 +1,16 @@
 <?php
 
 namespace MyApp\JobOwnerBundle\Controller;
+use JMS\Serializer\SerializerBuilder;
 use MyApp\JobOwnerBundle\Entity\Examen;
 use MyApp\JobOwnerBundle\Entity\Question;
 use MyApp\JobOwnerBundle\Entity\Choix;
 use MyApp\JobOwnerBundle\Entity\Tests;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+
 
 class ExamenController extends Controller
 {
@@ -125,7 +128,7 @@ class ExamenController extends Controller
         $response->headers->set('Content-Type', 'application/json; charset=utf-8');
 
         return $response;
-       // return $this->render('project/examen/new_exam.html.twig');
+        // return $this->render('project/examen/new_exam.html.twig');
 
     }
     public function passAction(Request $request)
@@ -141,25 +144,28 @@ class ExamenController extends Controller
 
             if ($request->isXmlHttpRequest()) {
 
-                    //entrée valide
-                    $valide = true;
-                    //extraire les données de l'url
-                    $pr = $request->request->get('project');
-                    $project = $em->getRepository('MyAppJobOwnerBundle:Project')->find($pr);
-                    $ex = $request->request->get('exam');
-                    $examen = $em->getRepository('MyAppJobOwnerBundle:Examen')->find($ex);
-                    $score = $request->request->get('score');
+                //entrée valide
+                $valide = true;
+                //extraire les données de l'url
+                $pr = $request->request->get('project');
+                $project = $em->getRepository('MyAppJobOwnerBundle:Project')->find($pr);
+                $ex = $request->request->get('exam');
+                $examen = $em->getRepository('MyAppJobOwnerBundle:Examen')->find($ex);
+                $score = $request->request->get('score');
+                $duration = $request->request->get('duration');
+                var_dump($duration);
+                //le freelancer connecté
+                $user = $this->getUser();
 
-                    //le freelancer connecté
-                    $user = $this->getUser();
-               
 
-                    $test = new Tests();
-                    $test->setExamen($examen);
-                    $test->setFreelancer($user);
-                    $test->setTestdescription($score);
-                    $test->setTestdate(new \DateTime());
-                    $em->persist($test);
+                $test = new Tests();
+                $test->setExamen($examen);
+                $test->setFreelancer($user);
+                $test->setTestdescription($score);
+                $test->setTestdate(new \DateTime());
+                $test->setDuration($duration);
+
+                $em->persist($test);
 
 
             }
@@ -167,7 +173,7 @@ class ExamenController extends Controller
 
         if($valide){
             $data = $this->render('MyAppJobOwnerBundle::examen/result.html.twig', array(
-                'titre'=>$examen->getTitre(),'score'=>$test->getTestdescription()
+                'titre'=>$examen->getTitre(),'score'=>$test->getTestdescription(),'duration'=>$test->getDuration()
             ));
             $status = 'success';
             $html = $data->getContent();
@@ -188,5 +194,16 @@ class ExamenController extends Controller
 
         return $response;
     }
-    
+
+    public function allexamapiAction()
+    {
+        $tasks=$this->getDoctrine()->getManager()->getRepository('MyApp\JobOwnerBundle\Entity\Examen')->findAll();
+        $serializer = SerializerBuilder::create()->build();
+        $formatted = $serializer->serialize($tasks, 'json');
+        return new JsonResponse($formatted);
+
+    }
+
+
+
 }

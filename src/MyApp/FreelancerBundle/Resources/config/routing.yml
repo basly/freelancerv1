@@ -1,74 +1,27 @@
+freelancer_user:
+    resource: "@FreelancerBundle/Resources/config/routing/user.yml"
+    prefix:   /user
+
 freelancer_homepage:
     path:     /
-    defaults: { _controller: FreelancerBundle:Default:index }
+    defaults: { _controller: "FreelancerBundle:Default:index" }
+
 freelancer_home:
-    path:     /freelancer/
+    path:     /
     defaults: { _controller: "FreelancerBundle:Freelancer:home" }
     methods:  DELETE
 
 freelancer_admin_home:
     path:     /admin
-    defaults: { _controller: MyAppAdminBundle:Admin:Admin }
+    defaults: { _controller: "MyAppAdminBundle:Admin:Admin" }
 
 freelancer_Freelancer:
     path:     /Freelancer
-    defaults: { _controller: FreelancerBundle:Freelancer:Freelancer }
-
-freelancer_JobOwner:
-    path:     /JobOwner
-    defaults: { _controller: MyAppJobOwnerBundle:JobOwner:jobOwner }
-
-freelancer_alluser:
-    path:     /Alluser
-    defaults: { _controller: FreelancerBundle:Freelancer:Alluser }
-
-freelancer_Showfreelancer:
-    path:     /showfreelancer/{email}
-    defaults: { _controller: FreelancerBundle:Freelancer:showfreelancer }
-
-freelancer_Showjobowner:
-    path:     /showjobowner/{email}
-    defaults: { _controller: FreelancerBundle:Freelancer:showjobowner }
-
-freelancer_EditProfile:
-    path:     /Freelancer/Editprofile
-    defaults: { _controller: FreelancerBundle:Freelancer:Editprofile }
-
-freelancer_Reclamations:
-    path:      /freelancer/Reclamations
-    defaults: { _controller: FreelancerBundle:Freelancer:Reclamations }
-
-freelancer_CreateReclamations:
-    path:      /freelancer/CreateReclamations
-    defaults: { _controller: FreelancerBundle:Freelancer:createreclamation }
-
-freelancer_showReclamation:
-    path:     /freelancer/showReclamation/{id}
-    defaults: { _controller: FreelancerBundle:Freelancer:showReclamation }
-
-freelancer_Suggestions:
-    path:      /freelancer/Suggestions
-    defaults: { _controller: FreelancerBundle:Freelancer:Suggestions }
-
-freelancer_CreateSuggestions:
-    path:      /freelancer/CreateSuggestions
-    defaults: { _controller: FreelancerBundle:Freelancer:CreateSuggestions }
-
-freelancer_showSuggestion:
-    path:     /freelancer/showSuggestion/{id}
-    defaults: { _controller: FreelancerBundle:Freelancer:showSuggestion }
-
-freelancer_Subscribe:
-    path:     /freelancer/Subscribe/{idsubscriber}
-    defaults: { _controller: FreelancerBundle:Freelancer:Subscribe }
-
-freelancer_UnSubscribe:
-    path:     /freelancer/UnSubscribe/{idsubscriber}
-    defaults: { _controller: FreelancerBundle:Freelancer:UnSubscribe }
-    defaults: { _controller: MyAppJobOwnerBundle:JobOwner:jobOwnerr }
-
-mysubscriptions:
-    path:     /mysubscriptions
-    defaults: { _controller: FreelancerBundle:Subscription:mysubscriptions }
+    defaults: { _controller: "FreelancerBundle:Freelancer:Freelancer" }
 
 
+
+freelancer_registUser_register:
+    path:     /FreelancerRegistration
+    defaults: { _controller: "FreelancerBundle:Registration:register" }
+    
